@@ -79,9 +79,9 @@ User CoCoyh
 IdentityFile ~/.ssh/id_rsa
 
 
-Host gitlab.weidiango
-HostName gitlab.weidiango.com
-User guoyanhong
+Host gitlab
+HostName gitlab.com
+User CoCoyh
 IdentityFile ~/.ssh/id_rsa_gitlab
 ```
 
@@ -89,6 +89,13 @@ IdentityFile ~/.ssh/id_rsa_gitlab
 
 以GitHub为例，先在本地复制公钥。进入**ssh**目录，使用**cat id_rsa_github.pub**查看生成的GitHub公钥，全选进行复制。
 
-登陆GitHub，点击右上角头像选择**settings**，在打开的页面中选择SSH and GPG keys，至此，托管网站的公钥添加完成。总结来说，就是针对每个托管网站分别生成一对密钥，然后分别添加到本地和托管网站。这时候，可以测试一下是否成功，测试命令使用别名。例如，对于GitHub，本来应该使用的测试命令是
+登陆GitHub，点击右上角头像选择**settings**，在打开的页面中选择SSH and GPG keys，至此，托管网站的公钥添加完成。总结来说，就是针对每个托管网站分别生成一对密钥，然后分别添加到本地和托管网站。这时候，可以测试一下是否成功，测试命令使用别名。例如，对于GitHub，本来应该使用的测试命令是:
+
 ```
+ssh -T git@github.com
+```
+在config文件中，给GitHub网站配置的别名就是gitHub，所以直接使用别名，就是
+
+```
+ssh -T git@github
 ```
