@@ -4,6 +4,7 @@
 * [Node](node/README.md)
   * [egg应用自定义4xx和5xx的方案](node/egg应用自定义4xx和5xx的方案.md)
   * [egg的Http请求](node/egg的Http请求.md)
+  * [如何发布一个npm包](如何发布一个npm包.md)
 * [工具](tools/README.md)
   * [Mac安装mongodb](tools/Mac安装mongodb.md)
   * [Docker与Kubernetes在Mac本地环境搭建与应用部署](tools/Docker与Kubernetes在Mac本地环境搭建与应用部署.md)
@@ -19,4 +20,5 @@
   * [怎样修改CentOS 7 SSH端口](linux/怎样修改CentOS7SSH端口.md)
 * [deploy](deploy/README.md)
   * [使用AppVeyor和Travis，自动构建和发布Electron应用](deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.md)
+  * [跨平台桌面应用Electron](跨平台桌面应用Electron.md)
 
