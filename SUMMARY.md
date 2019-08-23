@@ -11,6 +11,7 @@
   * [Docker使用](tools/Docker使用.md)
   * [centos7下yum安装和配置Nginx](tools/centos7下yum安装和配置Nginx.md)
   * [使用kubectl连接远程k8s集群](tools/使用kubectl连接远程k8s集群.md)
+  * [MacOS上安装DockerDesktop和Kubernetes](MacOS上安装DockerDesktop和Kubernetes.md)
 * [Git](git/README.md)
   * [Mac下配置多个Git账户](git/Mac下配置多个Git账户.md)
   * [Git删除远程仓库的某次错误提交](git/删除远程仓库的某次错误提交.md)
