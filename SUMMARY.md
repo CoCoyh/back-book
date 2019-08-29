@@ -13,14 +13,13 @@
   * [Docker使用](tools/Docker使用.md)
   * [centos7下yum安装和配置Nginx](tools/centos7下yum安装和配置Nginx.md)
   * [使用kubectl连接远程k8s集群](tools/使用kubectl连接远程k8s集群.md)
-  * [MacOS上安装DockerDesktop和Kubernetes](MacOS上安装DockerDesktop和Kubernetes.md)
+  * [MacOS上安装DockerDesktop和Kubernetes](tools/MacOS上安装DockerDesktop和Kubernetes.md)
+  * [alinode使用](alinode.md)
 
 * [Git](git/README.md)
 * [Git以及代码规范](git/README.md)
   * [Mac下配置多个Git账户](git/Mac下配置多个Git账户.md)
   * [Git删除远程仓库的某次错误提交](git/删除远程仓库的某次错误提交.md)
-  * [项目开发中的规范](项目开发中的规范.md)
-
 
 * [Linux](linux/README.md)
   * [Linux上部署Node服务-外网无法访问](linux/Linux上部署Node服务-外网无法访问.md)
@@ -33,6 +32,7 @@
   * [跨平台桌面应用Electron](deploy/跨平台桌面应用Electron.md)
 
 
-* [Yarn](yarn/README.md)
+* [Yarn或npm](yarn/README.md)
 * [package.json中的workspace(yarn)](yarn/package.json中的workspace(yarn).md)
-
+* [项目开发中的规范](yarn/项目开发中的规范.md)
+* [npm库：AJV，JSON模式验证](npm库：AJV，JSON模式验证.md)
