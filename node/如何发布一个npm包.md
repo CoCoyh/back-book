@@ -350,7 +350,7 @@ npm whoami
 ```
 如果出现了你的用户名，说明你已经成功登陆了
 
-特别注意：
+特别⚠️
 
 因为包名字唯一，否则发布不了
 
@@ -358,3 +358,82 @@ npm whoami
 
 npm publish
 即可发布成功啦！
+
+# 更新已发布的包
+
+更新包和发布包的命令是一样的，更新包只需修改package.json里面的`version`字段,也可以使用npm自带的版本控制命令修改版本号，更新的步骤为
+1. 修改版本号
+2. npm publish
+
+## npm version
+
+npm 官方提供了`npm version`来进行版本控制，其效果跟手动修改`package.json`里面的`version`字段是一样的，好处在于，可以在构建过程中用命令自动修改，而且具有语义化即`Semantic versioning`
+
+```
+npm version [<newversion> | major | minor | patch | premajor | preminor |
+prepatch | prerelease | from-git]
+```
+
+其语义为：
+
+```
+major：主版本号（大版本）
+minor：次版本号（小更新）
+patch：补丁号（补丁）
+premajor：预备主版本
+preminor: 预备次版本
+prepatch：预备补丁版本
+prerelease：预发布版本
+```
+
+如初始版本为1.0.0，执行相关类型命令后，对应的语义为：
+
+```
+npm version patch  // 1.0.1 表示小的bug修复
+npm version minor // 1.1.0 表示新增一些小功能
+npm version mmajor // 2.0.0 表示大的版本或大升级
+npm version preminor // 1.1.0-0 后面多了个0，表示预发布
+```
+
+可以在当前模块的`package.json`里面看到相应的版本变化
+
+
+# 撤销发布
+
+由于撤销发布会让把要撤销的包作为依赖的包不能正常工作，所以npm官方对包的撤销是有限制的：
+
+1. 不允许撤销发布已经超过24小时的包
+2. 如果在24小时内确实要撤销，需要`--force`参数
+3. 即使撤销了发布的包，再次发布的时候也不能与之前被撤销的包的名称/版本其中之一相同，因为这两者构成的唯一性已经被占用，官方并没有随着测笑而删除
+
+## npm publish
+
+撤销发布的命令为 npm unpublish
+
+```
+npm unpublish my-test-project
+// 报错
+npm ERR! Refusing to delete entire project.
+npm ERR! Run with --force to do this.
+npm ERR! npm unpublish [<@scope>/]<pkg>[@<version>]
+
+// 加 --force参数重新撤销发布
+npm unpublish my-test-project --force
+npm WARN using --force I sure hope you know what you are doing.
+- my-test-project
+
+```
+
+## npm deprecate
+
+npm unpublish的推荐替代命令：
+
+```
+npm deprecate <pkg>[@<version>] <message>
+```
+
+这个命令，并不会在npm上里撤销已有的包，但会在任何人尝试安装这个包的时候得到deprecated的警告，例如：
+
+```
+npm deprecate my-test-project 'this package is no longer maintained'
+```
