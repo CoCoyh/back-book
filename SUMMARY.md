@@ -16,7 +16,6 @@
   * [MacOS上安装DockerDesktop和Kubernetes](tools/MacOS上安装DockerDesktop和Kubernetes.md)
   * [alinode使用](alinode.md)
 
-* [Git](git/README.md)
 * [Git以及代码规范](git/README.md)
   * [Mac下配置多个Git账户](git/Mac下配置多个Git账户.md)
   * [Git删除远程仓库的某次错误提交](git/删除远程仓库的某次错误提交.md)
@@ -32,7 +31,7 @@
   * [跨平台桌面应用Electron](deploy/跨平台桌面应用Electron.md)
 
 
-* [Yarn或npm](yarn/README.md)
-* [package.json中的workspaces](yarn/package.json中的workspace.md)
+* [yarn](yarn/README.md)
+* [package.json中的workspaces](yarn/package.json中的workspaces.md)
 * [项目开发中的规范](yarn/项目开发中的规范.md)
 * [npm库：AJV，JSON模式验证](yarn/npm库：AJV，JSON模式验证.md)
