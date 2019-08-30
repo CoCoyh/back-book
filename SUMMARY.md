@@ -33,6 +33,6 @@
 
 
 * [Yarn或npm](yarn/README.md)
-* [package.json中的workspace(yarn)](yarn/package.json中的workspace(yarn).md)
+* [package.json中的workspaces](yarn/package.json中的workspace.md)
 * [项目开发中的规范](yarn/项目开发中的规范.md)
-* [npm库：AJV，JSON模式验证](npm库：AJV，JSON模式验证.md)
+* [npm库：AJV，JSON模式验证](yarn/npm库：AJV，JSON模式验证.md)
