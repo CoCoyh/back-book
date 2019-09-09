@@ -5,6 +5,11 @@
   * [egg应用自定义4xx和5xx的方案](node/egg应用自定义4xx和5xx的方案.md)
   * [egg的Http请求](node/egg的Http请求.md)
   * [如何发布一个npm包](node/如何发布一个npm包.md)
+  * [怎么开发一个像egg-init的脚手架](node/怎么开发一个像egg-init的脚手架.md)
+  * [结合源码揭秘egg运行原理](node/结合源码揭秘egg运行原理.md)
+  * [脚手架之egg-init](node/脚手架之egg-init.md)
+  * [egg框架中的参数校验](node/egg框架中的参数校验.md)
+  * [egg的Controller最佳实践](egg的Controller最佳实践.md)
 
 
 * [工具](tools/README.md)
@@ -14,7 +19,7 @@
   * [centos7下yum安装和配置Nginx](tools/centos7下yum安装和配置Nginx.md)
   * [使用kubectl连接远程k8s集群](tools/使用kubectl连接远程k8s集群.md)
   * [MacOS上安装DockerDesktop和Kubernetes](tools/MacOS上安装DockerDesktop和Kubernetes.md)
-  * [alinode使用](alinode.md)
+  * [alinode使用](tools/alinode.md)
 
 * [Git](git/README.md)
 * [Git以及代码规范](git/README.md)
@@ -35,4 +40,8 @@
 * [Yarn或npm](yarn/README.md)
 * [package.json中的workspace(yarn)](yarn/package.json中的workspace(yarn).md)
 * [项目开发中的规范](yarn/项目开发中的规范.md)
-* [npm库：AJV，JSON模式验证](npm库：AJV，JSON模式验证.md)
+* [npm库：AJV，JSON模式验证](yarn/npm库：AJV，JSON模式验证.md)
+
+
+* [性能](performance/README.md)
+  * [SEO小技巧](performance/SEO小技巧.md)
