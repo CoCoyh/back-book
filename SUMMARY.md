@@ -9,8 +9,8 @@
   * [结合源码揭秘egg运行原理](node/结合源码揭秘egg运行原理.md)
   * [脚手架之egg-init](node/脚手架之egg-init.md)
   * [egg框架中的参数校验](node/egg框架中的参数校验.md)
-  * [egg的Controller最佳实践](egg的Controller最佳实践.md)
-  * [egg基于egg-validate的定制化升级](egg基于egg-validate的定制化升级.md)
+  * [egg的Controller最佳实践](node/egg的Controller最佳实践.md)
+  * [egg基于egg-validate的定制化升级](node/egg基于egg-validate的定制化升级.md)
 
 
 * [工具](tools/README.md)
