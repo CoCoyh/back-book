@@ -41,10 +41,7 @@
 * [package.json中的workspaces](yarn/package.json中的workspaces.md)
 * [项目开发中的规范](yarn/项目开发中的规范.md)
 * [npm库：AJV，JSON模式验证](yarn/npm库：AJV，JSON模式验证.md)
-<<<<<<< HEAD
 
-
-* [性能](performance/README.md)
+* [浏览器性能](performance/README.md)
   * [SEO小技巧](performance/SEO小技巧.md)
-=======
->>>>>>> dd440d61564155b38ff2c965662da6de1bfe509d
+  * [URL的最大长度是多少？](performance/URL的最大长度是多少？.md)
