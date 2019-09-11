@@ -11,6 +11,7 @@
   * [egg框架中的参数校验](node/egg框架中的参数校验.md)
   * [egg的Controller最佳实践](node/egg的Controller最佳实践.md)
   * [egg基于egg-validate的定制化升级](node/egg基于egg-validate的定制化升级.md)
+  * [egg中cookie与Session的使用笔记](node/egg中cookie与Session的使用笔记.md)
 
 
 * [工具](tools/README.md)
@@ -46,3 +47,6 @@
   * [SEO小技巧](browser/SEO小技巧.md)
   * [URL的最大长度是多少？](browser/URL的最大长度是多少？.md)
   * [深入理解Session和Cookie](browser/深入理解Session和Cookie.md)
+
+
+* [设计](design/README.md)
