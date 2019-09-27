@@ -68,6 +68,22 @@ waterline是从Salis框架衍生出来的ORM框架
 
 [http://sailsjs.com/documentation/reference/waterline-orm](http://sailsjs.com/documentation/reference/waterline-orm) 文档不完善，放弃。
 
+# typeorm
+
+基于Decorator的ORM框架，对TypeScript支持比较好，同时支持在JavaScript中通过手动声明使用，以及JSON方式的Entity配置声明
+
+
+- 官网：https://github.com/typeorm/typeorm/
+- 数据库： 支持关系行数据库，beta支持MongoDB
+- 编程风格：
+
+基本上是Hibernate的js版本
+支持Promise/async/await
+支持基于链式构造的Query Builder查询
+支持CLI工具
+
+热度： 周频更新， NPM周下载2.8w
+
 
 # 最终对比
 

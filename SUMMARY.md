@@ -13,6 +13,8 @@
   * [egg基于egg-validate的定制化升级](node/egg基于egg-validate的定制化升级.md)
   * [egg中cookie与Session的使用笔记](node/egg中cookie与Session的使用笔记.md)
   * [ORM框架选型](node/ORM框架选型.md)
+  * [Knexjs笔记](Knexjs笔记.md)
+  * [bookshelf笔记](bookshelf笔记.md)
 
 * [工具](tools/README.md)
   * [Mac安装mongodb](tools/Mac安装mongodb.md)
@@ -50,3 +52,11 @@
 
 
 * [设计](design/README.md)
+
+* [Mysql](mysql/README.md)
+  * [语法笔记一：delete和truncate的区别和联系](mysql/语法笔记一：delete和truncate的区别和联系.md)
+  * [语法笔记二：having与where](mysql/语法笔记二：having与where.md)
+  * [语法笔记三：pluck](mysql/语法笔记三：pluck.md)
+  * [语法笔记四：first](mysql/语法笔记四：first.md)
+  * [语法笔记五：references](mysql/语法笔记五：references.md)
+  * [语法笔记六：where1](mysql/语法笔记六：where1.md)
