@@ -13,8 +13,9 @@
   * [egg基于egg-validate的定制化升级](node/egg基于egg-validate的定制化升级.md)
   * [egg中cookie与Session的使用笔记](node/egg中cookie与Session的使用笔记.md)
   * [ORM框架选型](node/ORM框架选型.md)
-  * [Knexjs笔记](Knexjs笔记.md)
-  * [bookshelf笔记](bookshelf笔记.md)
+  * [Knexjs笔记](node/Knexjs笔记.md)
+  * [bookshelf笔记](node/bookshelf笔记.md)
+  * [egg-bin源码解析笔记](node/egg-bin源码解析笔记.md)
 
 * [工具](tools/README.md)
   * [Mac安装mongodb](tools/Mac安装mongodb.md)
