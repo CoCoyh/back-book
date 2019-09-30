@@ -15,6 +15,7 @@
   * [ORM框架选型](node/ORM框架选型.md)
   * [Knexjs笔记](Knexjs笔记.md)
   * [bookshelf笔记](bookshelf笔记.md)
+  * [VScode调试Egg](VScode调试Egg.md)
 
 * [工具](tools/README.md)
   * [Mac安装mongodb](tools/Mac安装mongodb.md)
