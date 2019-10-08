@@ -1,0 +1,7 @@
+  * [Mac安装mongodb](tools/Mac安装mongodb.md)
+  * [Docker与Kubernetes在Mac本地环境搭建与应用部署](tools/Docker与Kubernetes在Mac本地环境搭建与应用部署.md)
+  * [Docker使用](tools/Docker使用.md)
+  * [centos7下yum安装和配置Nginx](tools/centos7下yum安装和配置Nginx.md)
+  * [使用kubectl连接远程k8s集群](tools/使用kubectl连接远程k8s集群.md)
+  * [MacOS上安装DockerDesktop和Kubernetes](tools/MacOS上安装DockerDesktop和Kubernetes.md)
+  * [alinode使用](tools/alinode.md)

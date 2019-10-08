@@ -1,0 +1,6 @@
+* [语法笔记一：delete和truncate的区别和联系](mysql/语法笔记一：delete和truncate的区别和联系.md)
+* [语法笔记二：having与where](mysql/语法笔记二：having与where.md)
+* [语法笔记三：pluck](mysql/语法笔记三：pluck.md)
+* [语法笔记四：first](mysql/语法笔记四：first.md)
+* [语法笔记五：references](mysql/语法笔记五：references.md)
+* [语法笔记六：where1](mysql/语法笔记六：where1.md)

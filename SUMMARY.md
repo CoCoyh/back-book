@@ -44,9 +44,9 @@
 
 
 * [yarn](yarn/README.md)
-* [package.json中的workspaces](yarn/package.json中的workspaces.md)
-* [项目开发中的规范](yarn/项目开发中的规范.md)
-* [npm库：AJV，JSON模式验证](yarn/npm库：AJV，JSON模式验证.md)
+  * [package.json中的workspaces](yarn/package.json中的workspaces.md)
+  * [项目开发中的规范](yarn/项目开发中的规范.md)
+  * [npm库：AJV，JSON模式验证](yarn/npm库：AJV，JSON模式验证.md)
 
 * [浏览器](browser/README.md)
   * [SEO小技巧](browser/SEO小技巧.md)
@@ -55,6 +55,7 @@
 
 
 * [设计](design/README.md)
+  * [javaScript设计模式笔记一](javaScript设计模式笔记一.md)
 
 * [Mysql](mysql/README.md)
   * [语法笔记一：delete和truncate的区别和联系](mysql/语法笔记一：delete和truncate的区别和联系.md)
