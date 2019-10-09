@@ -18,6 +18,9 @@
   * [VScode调试Egg](VScode调试Egg.md)
   * [bookshelf笔记](node/bookshelf笔记.md)
   * [egg-bin源码解析笔记](node/egg-bin源码解析笔记.md)
+  * [egg框架与nest框架的对比](egg框架与nest框架的对比.md)
+  * [node版本管理工具](node版本管理工具.md)
+  * [egg常见问题笔记](egg常见问题笔.md)
 
 * [工具](tools/README.md)
   * [Mac安装mongodb](tools/Mac安装mongodb.md)
