@@ -61,7 +61,7 @@
   * [javaScript设计模式笔记一](design/javaScript设计模式笔记一.md)
   * [javaScript设计模式笔记二](design/javaScript设计模式笔记二.md)
 
-
+  * [javaScript设计模式笔记三](design/javaScript设计模式笔记三.md)
 * [Mysql](mysql/README.md)
   * [语法笔记一：delete和truncate的区别和联系](mysql/语法笔记一：delete和truncate的区别和联系.md)
   * [语法笔记二：having与where](mysql/语法笔记二：having与where.md)
