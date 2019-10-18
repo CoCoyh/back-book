@@ -41,7 +41,7 @@
   * [怎样修改CentOS 7 SSH端口](linux/怎样修改CentOS7SSH端口.md)
 
 
-* [deploy](deploy/README.md)
+* [部署](deploy/README.md)
   * [使用AppVeyor和Travis，自动构建和发布Electron应用](deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.md)
   * [跨平台桌面应用Electron](deploy/跨平台桌面应用Electron.md)
 
