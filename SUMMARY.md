@@ -60,8 +60,14 @@
 * [设计](design/README.md)
   * [javaScript设计模式笔记一](design/javaScript设计模式笔记一.md)
   * [javaScript设计模式笔记二](design/javaScript设计模式笔记二.md)
-
   * [javaScript设计模式笔记三](design/javaScript设计模式笔记三.md)
+  * [javaScript设计模式笔记四](design/javaScript设计模式笔记四.md)
+  * [javascript设计模式笔记五](design/javascript设计模式笔记五.md)
+  * [javaScript设计模式笔记六](design/javaScript设计模式笔记六.md)
+  * [javaScript设计模式笔记七](design/javaScript设计模式笔记七.md)
+  * [javaScript设计模式笔记八](design/javaScript设计模式笔记八.md)
+  * [javaScript设计模式笔记九](design/javaScript设计模式笔记九.md)
+
 * [Mysql](mysql/README.md)
   * [语法笔记一：delete和truncate的区别和联系](mysql/语法笔记一：delete和truncate的区别和联系.md)
   * [语法笔记二：having与where](mysql/语法笔记二：having与where.md)
