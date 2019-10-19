@@ -30,6 +30,8 @@
   * [使用kubectl连接远程k8s集群](tools/使用kubectl连接远程k8s集群.md)
   * [MacOS上安装DockerDesktop和Kubernetes](tools/MacOS上安装DockerDesktop和Kubernetes.md)
   * [alinode使用](tools/alinode.md)
+  * [iPic-Markdown图床、文件上传工具](tools/iPic-Markdown图床、文件上传工具.md)
+  * [图片搬家神奇：iPic Mover](图片搬家神奇：iPic Mover.md)
 
 * [Git以及代码规范](git/README.md)
   * [Mac下配置多个Git账户](git/Mac下配置多个Git账户.md)
@@ -57,7 +59,7 @@
   * [深入理解Session和Cookie](browser/深入理解Session和Cookie.md)
 
 
-* [设计](design/README.md)
+* [设计模式](design/README.md)
   * [javaScript设计模式笔记一](design/javaScript设计模式笔记一.md)
   * [javaScript设计模式笔记二](design/javaScript设计模式笔记二.md)
   * [javaScript设计模式笔记三](design/javaScript设计模式笔记三.md)
