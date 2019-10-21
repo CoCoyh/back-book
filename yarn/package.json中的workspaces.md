@@ -1,4 +1,4 @@
-# package.json中的workspace(yarn)
+# package.json中的workspaces
 
 [官网](https://yarnpkg.com/lang/en/docs/workspaces/)
 https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/
