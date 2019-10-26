@@ -21,15 +21,11 @@
     * [egg框架与nest框架的对比](node/egg框架与nest框架的对比.md)
     * [node版本管理工具](node/node版本管理工具.md)
     * [egg常见问题笔记](node/egg常见问题笔.md)
-<<<<<<< HEAD
 * [chair](chair/README.md)
     * [基于NodeWeb框架Chair](chair/基于NodeWeb框架Chair.md)
-
------
-=======
->>>>>>> 95a1edf26d705b88bada1f77cff810af25773b5b
 * [工具](tools/README.md)
     * [Mac安装mongodb](tools/Mac安装mongodb.md)
+    * [mac上redis环境搭建](tools/mac上redis环境搭建.md)
     * [Docker与Kubernetes在Mac本地环境搭建与应用部署](tools/Docker与Kubernetes在Mac本地环境搭建与应用部署.md)
     * [Docker使用](tools/Docker使用.md)
     * [centos7下yum安装和配置Nginx](tools/centos7下yum安装和配置Nginx.md)
@@ -38,58 +34,28 @@
     * [alinode使用](tools/alinode.md)
     * [iPic-Markdown图床、文件上传工具](tools/iPic-Markdown图床、文件上传工具.md)
     * [图片搬家神奇：iPic Mover](tools/图片搬家神奇：iPicMover.md)
-<<<<<<< HEAD
-
------
 * [Git以及代码规范](git/README.md)
     * [Mac下配置多个Git账户](git/Mac下配置多个Git账户.md)
     * [Git删除远程仓库的某次错误提交](git/删除远程仓库的某次错误提交.md)
     * [使用Github Actions进行版本发布](git/使用GithubActions进行版本发布.md)
     * [使用Github Actions进行版本发布(一)](git/使用GithubActions进行版本发布（一）.md)
     * [git subtree教程](git/gitsubtree教程.md)
-
------
-=======
-    * [mac上redis环境搭建](tools/mac上redis环境搭建.md)
-* [Git以及代码规范](git/README.md)
-    * [Mac下配置多个Git账户](git/Mac下配置多个Git账户.md)
-    * [Git删除远程仓库的某次错误提交](git/删除远程仓库的某次错误提交.md)
->>>>>>> 95a1edf26d705b88bada1f77cff810af25773b5b
+    * [git分支开发规范](git/git分支开发规范.md)
 * [Linux](linux/README.md)
     * [Linux上部署Node服务-外网无法访问](linux/Linux上部署Node服务-外网无法访问.md)
     * [服务器中启动服务的时候的IP选择](linux/服务器中启动服务的时候的IP选择.md)
     * [怎样修改CentOS 7 SSH端口](linux/怎样修改CentOS7SSH端口.md)
-<<<<<<< HEAD
-
------
 * [部署](deploy/README.md)
     * [使用AppVeyor和Travis，自动构建和发布Electron应用](deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.md)
     * [跨平台桌面应用Electron](deploy/跨平台桌面应用Electron.md)
-
------
-=======
-* [部署](deploy/README.md)
-    * [使用AppVeyor和Travis，自动构建和发布Electron应用](deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.md)
-    * [跨平台桌面应用Electron](deploy/跨平台桌面应用Electron.md)
->>>>>>> 95a1edf26d705b88bada1f77cff810af25773b5b
 * [yarn](yarn/README.md)
     * [package.json中的workspaces](yarn/package.json中的workspaces.md)
     * [项目开发中的规范](yarn/项目开发中的规范.md)
     * [npm库：AJV，JSON模式验证](yarn/npm库：AJV，JSON模式验证.md)
-<<<<<<< HEAD
-
------
-=======
->>>>>>> 95a1edf26d705b88bada1f77cff810af25773b5b
 * [浏览器](browser/README.md)
     * [SEO小技巧](browser/SEO小技巧.md)
     * [URL的最大长度是多少？](browser/URL的最大长度是多少？.md)
-    * [深入理解Session和Cookie](browser/深入理解Session和Cookie.md)
-<<<<<<< HEAD
-
------
-=======
->>>>>>> 95a1edf26d705b88bada1f77cff810af25773b5b
+    * [深入理解Session和Cookie](browser/深入理解Session和Cookie.md
 * [设计模式](design/README.md)
     * [javaScript设计模式笔记一](design/javaScript设计模式笔记一.md)
     * [javaScript设计模式笔记二](design/javaScript设计模式笔记二.md)
@@ -100,11 +66,6 @@
     * [javaScript设计模式笔记七](design/javaScript设计模式笔记七.md)
     * [javaScript设计模式笔记八](design/javaScript设计模式笔记八.md)
     * [javaScript设计模式笔记九](design/javaScript设计模式笔记九.md)
-<<<<<<< HEAD
-
------
-=======
->>>>>>> 95a1edf26d705b88bada1f77cff810af25773b5b
 * [Mysql](mysql/README.md)
     * [语法笔记一：delete和truncate的区别和联系](mysql/语法笔记一：delete和truncate的区别和联系.md)
     * [语法笔记二：having与where](mysql/语法笔记二：having与where.md)
@@ -112,11 +73,6 @@
     * [语法笔记四：first](mysql/语法笔记四：first.md)
     * [语法笔记五：references](mysql/语法笔记五：references.md)
     * [语法笔记六：where1](mysql/语法笔记六：where1.md)
-<<<<<<< HEAD
     * [语法笔记七：in和exists二者之间的区别和性能影响](mysql/语法笔记七：in和exists二者之间的区别和性能影响.md)
-
------
-=======
->>>>>>> 95a1edf26d705b88bada1f77cff810af25773b5b
 * [微服务](mservice/README.md)
 
