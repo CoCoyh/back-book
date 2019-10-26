@@ -1,5 +1,7 @@
 # 图片搬家神奇：iPic Mover
 
+# 图片搬家神奇：iPic Mover
+
 在 Markdown 中插图很麻烦；还好，iPic 解决了这个问题。
 
 可是，已有 Markdown 文件中的图片该如何迁移呢？
