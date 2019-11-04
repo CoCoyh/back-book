@@ -48,6 +48,7 @@
 * [部署](deploy/README.md)
     * [使用AppVeyor和Travis，自动构建和发布Electron应用](deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.md)
     * [跨平台桌面应用Electron](deploy/跨平台桌面应用Electron.md)
+    * [企业级分布式，EDAS模式](deploy/企业级分布式，EDAS模式.md)
 * [yarn](yarn/README.md)
     * [package.json中的workspaces](yarn/package.json中的workspaces.md)
     * [项目开发中的规范](yarn/项目开发中的规范.md)
@@ -75,4 +76,10 @@
     * [语法笔记六：where1](mysql/语法笔记六：where1.md)
     * [语法笔记七：in和exists二者之间的区别和性能影响](mysql/语法笔记七：in和exists二者之间的区别和性能影响.md)
 * [微服务](mservice/README.md)
+* [ts](ts/README.md)
+    * [基础笔记一](ts/基础笔记一.md)
+    * [基础笔记二](ts/基础笔记二.md)
+    * [函数笔记](ts/函数笔记.md)
+    * [泛型笔记](ts/泛型笔记.md)
+    * [枚举笔记](ts/枚举笔记.md)
 
