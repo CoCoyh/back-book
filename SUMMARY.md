@@ -35,6 +35,7 @@
     * [iPic-Markdown图床、文件上传工具](tools/iPic-Markdown图床、文件上传工具.md)
     * [图片搬家神奇：iPic Mover](tools/图片搬家神奇：iPicMover.md)
     * [ffmpeg音视频处理](tools/ffmpeg音视频处理.md)
+    * [ffmpeg音视频处理需求升级版](tools/ffmpeg音视频处理需求升级版.md)
 * [Git以及代码规范](git/README.md)
     * [Mac下配置多个Git账户](git/Mac下配置多个Git账户.md)
     * [Git删除远程仓库的某次错误提交](git/删除远程仓库的某次错误提交.md)

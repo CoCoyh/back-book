@@ -18,7 +18,7 @@ mpg拼接（问题：拼接成功但只显示第一个）
 ffmpeg -i "concat:video1.mpg|video2.mpg" -c copy output.mpg
 ```
 
-.mp4格式，需要转码
+拼接视频不一致的格式时，需要转码
 
 例子：
 ```
@@ -29,7 +29,14 @@ ffmpeg -i out11.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate1.ts
  ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
 ```
 
+# 截取音频
+
+```
+ffmpeg -i out.mp4 -ss 00:10 -t 00:40 -acodec copy out1.mp4
+```
+
 ## 将图片转换成视频
+1. 生成.mpg
 ```
 ffmpeg -i image%3d.jpeg output.mpg
 ```
@@ -37,6 +44,39 @@ ffmpeg -i image%3d.jpeg output.mpg
 ```
 ffmpeg -f image2 -i image00%d.jpeg video.mpg
 ```
+2. 生成.mp4
+
+简单的生成
+```
+ffmpeg -i image%3d.jpeg -pix_fmt yuv420p a.mp4
+```
+-pix_fmt yuv420p
+
+
+设定参数
+```
+ffmpeg -r 25 -loop 1 -i image%3d.jpeg -pix_fmt yuv420p -vcodec libx264 -b:v 600k -r:v 25 -preset medium -crf 30 -s 720x576 -vframes 250 -r 25 -t 3 a.mp4
+```
+
+# 将多张图片合成视频
+
+1. 带音频合成：
+
+```
+ffmpeg -threads 2 -y -r 1 -i image%3d.jpeg  -i audio.wav -pix_fmt yuv420p image.mp4
+```
+
+- -threads 2: 以两个县城进行运行，加快处理的速度
+- -y: 对输出文件进行覆盖
+- -r 10: fps设置为10帧/妙
+- -absf aac_adtstoasc：编码音频格式，使之能在一些设备上能播放
+1. 不带音频合成
+
+```
+ffmpeg -loop 1 -f image2 -i image%3d.jpeg -pix_fmt yuv420p -vcodec libx264 -r 10 -t 10 output.mp4
+```
+
+
 ## 将一张图片做成视频封面
 ```
 ffmpeg -i 2.mp4 -i image1.png -map 0 -map 1 -c copy -c:v:1 png -disposition:v:1 attached_pic output_video.mp4
@@ -99,11 +139,34 @@ ffmpeg -i dv12.mp4 -i image1.png -map 0 -map 1 -c copy -c:v:1 png -disposition:v
 ```
 ffmpeg -i idv12.mp4  -i audio.wav \-c:v copy -c:a aac -strict experimental chen.mp4
 ```
+## 管道pipe
+
+```
+ffmpeg -f image2 -loop 1 -i img.jpg \
+       -f s16le -ac 1 -ar 16k -i wd.pcm -t 6 \
+       -f nut pipe: | \
+ffmpeg -i audio.mp3 \
+       -i pipe: -i 1.mp4 \
+       -i 2.mp4 -i 3.mp4 \
+       -i 4.mp4 \
+	-filter_complex '[1:v]scale=720:1280[in1];
+                   [2:v]scale=720:1280[in2];
+                   [3:v]scale=720:1280[in3];
+                   [4:v]scale=720:1280[in4];
+                   [5:v]scale=720:1280[in5];
+                   [in1][in2][in3][in4][in5] concat=n=5:v=1:a=0 [v];
+                   [0:a][1:a] amix=inputs=2 [a]' \
+	-map '[v]' -map '[a]' -c:v libx264 -t 30 -f nut pipe: | \
+ffmpeg -i pipe: -i f.jpg \
+       -map 0 -map 1 -c:v libx264 -c:a aac -c:v:1 png -disposition:v:1 attached_pic result.mp4
+
+```
 
 
 相关资料：
 ![官网](http://ffmpeg.org/ffmpeg-all.html#Expression-Evaluation)
 ![https://vimsky.com/article/3687.html](https://vimsky.com/article/3687.html)
+![https://www.longqi.cf/tools/2015/02/13/ffmpegcn/](https://www.longqi.cf/tools/2015/02/13/ffmpegcn/)
 ![http://einverne.github.io/post/2015/12/ffmpeg-first.html#ffmpeg-usage](http://einverne.github.io/post/2015/12/ffmpeg-first.html#ffmpeg-usage)
 ![https://www.twblogs.net/a/5c9a26bfbd9eee434fc6c81b/zh-cn](https://www.twblogs.net/a/5c9a26bfbd9eee434fc6c81b/zh-cn)
 ![https://wklchris.github.io/FFmpeg.html#%E8%A7%86%E9%A2%91%E5%8F%82%E6%95%B0](https://wklchris.github.io/FFmpeg.html#%E8%A7%86%E9%A2%91%E5%8F%82%E6%95%B0)
