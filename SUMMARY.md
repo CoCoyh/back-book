@@ -21,6 +21,7 @@
     * [egg框架与nest框架的对比](node/egg框架与nest框架的对比.md)
     * [node版本管理工具](node/node版本管理工具.md)
     * [egg常见问题笔记](node/egg常见问题笔.md)
+    * [使用node-clinic快速定位性能问题](node/clinic快速定位性能问题.md)
 * [chair](chair/README.md)
     * [基于NodeWeb框架Chair](chair/基于NodeWeb框架Chair.md)
 * [工具](tools/README.md)

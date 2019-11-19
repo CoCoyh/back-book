@@ -174,4 +174,5 @@ ffmpeg -i pipe: -i f.jpg \
 ![https://www.ancii.com/arzmnzdzz/](https://www.ancii.com/arzmnzdzz/)
 ![https://www.jianshu.com/p/d6480c6ea6bd](https://www.jianshu.com/p/d6480c6ea6bd)
 ![http://trac.ffmpeg.org/wiki/Concatenate](http://trac.ffmpeg.org/wiki/Concatenate)
+![https://www.linmao.dev/joy/868/#i-3](https://www.linmao.dev/joy/868/#i-3)
 
