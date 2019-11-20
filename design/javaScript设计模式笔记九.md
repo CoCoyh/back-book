@@ -29,7 +29,7 @@ paper 对象也可以提供 unsubscribe()方法，它可以将订阅者从数组
 
 下面是这些发布者通用功能的一个示例实现，它定义了上面列出来的所有成 员，还有一个辅助的 visitSubscribers()方法:
 
-```
+```js
 var publisher = {
        subscribers: {
           any: [] // event type: subscribers
@@ -70,7 +70,7 @@ type);
 下面这个函数接受一个对象作为参数，并通过复制通用的发布者的方法将这
 个对象墨迹成发布者:
 
-```
+```js
  function makePublisher(o) {
        var i;
        for (i in publisher) {
@@ -87,7 +87,7 @@ type);
 
 现在我们来实现 paper 对象，它能做的事情就是发布日报和月刊:
 
-```
+```js
 var paper = {
        daily: function () {
           this.publish("big news today");
@@ -100,8 +100,8 @@ makePublisher(paper);
 ```
 现在我们有了一个发布者，让我们再来看一下订阅者对象 joe，它有两个方 法:
 
-```
-var joe = { 
+```js
+var joe = {
 drinkCoffee: function (paper) {
           console.log('Just read ' + paper);
        },
@@ -112,14 +112,14 @@ monthly);
 ```
 现在让 joe 来订阅 paper:
 
-```
+```js
 paper.subscribe(joe.drinkCoffee);
    paper.subscribe(joe.sundayPreNap, 'monthly');
 ```
 
 如你所见，joe 提供了一个当默认的 any 事件发生时被调用的方法，还提供 了另一个当 monthly 事件发生时被调用的方法。现在让我们来触发一些事件
 
-```
+```js
 paper.daily();
 paper.daily();
 paper.daily();
@@ -127,7 +127,7 @@ paper.monthly();
 ```
 这些发布行为都会调用 joe 的对应方法，控制台中输出的结果是:
 
-```
+```js
 Just read big news today
 Just read big news today
 Just read big news today
@@ -139,7 +139,7 @@ About to fall asleep reading this interesting analysis
 
 让我们更进一步，将joe也编程一个发布者。（毕竟，在博客和微博上，任何人可以是发布者。）这样，joe变成发布者之后就可以在Twitter上更新状态：
 
-```
+```js
 makePublisher(joe);
 joe.tweet = function(msg) {
   this.publish(msg);
@@ -148,9 +148,9 @@ joe.tweet = function(msg) {
 
 现在假设paper的公共部门准备通过Twitter收集读者反馈，于是它订阅了joe,提供了一个方法readTweets():
 
-```
+```js
 paper.readTweets = function(tweet) {
-  alert('Call big meeting! Someone ' + tweet); 
+  alert('Call big meeting! Someone ' + tweet);
 };
 
 joe.subscribe("hated the paper today");
@@ -158,7 +158,7 @@ joe.subscribe("hated the paper today");
 
 这样每当joe发出消息时，paper就会弹出警告窗口：
 
-```
+```js
  joe.tweet("hated the paper today");
 ```
 
@@ -178,7 +178,7 @@ joe.subscribe("hated the paper today");
 this.subscribers[type] = [];
 自己所属的对象
 新的 publisher 对象是这样:
-```
+```js
    var publisher = {
        subscribers: {
 any: [] },
@@ -220,7 +220,7 @@ subscribers[i].context === context) {
 
 新的Player()构造函数是这样：
 
-```
+```js
 function Player(name, key) {
   this.points = 0;
   this.name = name;
@@ -240,7 +240,7 @@ scoreboard对象和原来一样，它只是简单地将当前分数显示出来�
 
 game对象会关注所有的玩家，这样它九可以给出分数并且触发scorechange事件。它也会订阅浏览中所有的keypress事件，这样它聚会知道按钮对应的玩家：
 
-```
+```js
 const game = {
   key: {},
   addPlayer: function(player) {
@@ -270,14 +270,14 @@ const game = {
 
 用于将任意对象转变为订阅者的makePublisher()还是和之前一样。game对象会变成发布者（这样它才可以触发scorechange事件），Player.prototype也会变成发布者，以使得每个玩家对象可以触发play和newplayer事件：
 
-```
+```js
 makePublisher(Player.prototype);
 makePublisher(game);
 ```
 
 game对象订阅play和newplayer事件（以及浏览器的keypress事件），scoreboard订阅scorechange事件：
 
-```
+```js
 Player.prototype.on("newplayer", "addPlayer", game);
 Player.prototype.on("play", "handlePlay", game);
 game.on("scorechange", scoreboard.update, scoreboard);
@@ -288,17 +288,17 @@ window.onkeypress = game.handleKeypres;
 
 初始化的最后一点工作就是动态地创建玩家对象（以及他们对象的按键），用户想要多少个就可以创建多少个：
 
-```
+```js
 var playername, key;
   while (1) {
     playername = prompt("Add player (name)");
     if (!playername) {
-      break; 
+      break;
     }
     while (1) {
       key = prompt("Key for " + playername + "?");
     if (key) {
-      break; 
+      break;
     }
   }
   new Player(playername, key);

@@ -14,7 +14,7 @@ JavaScript作为一种基于原型的弱类型动态语言，是的有些时候�
 
 这如何应用到JavaScript中呢？在JavaScript中没有类，只有对象。当你创建一个对象时，事实上根本没有另一个对象和它一样，这个对象其实已经是一个单例。使用对象字面量创建一个简单的对象也是一种单例的例子：
 
-```
+```js
 const  obj = {
   myprop: 'my value'
 }
@@ -22,13 +22,13 @@ const  obj = {
 
 在JavaScript中，对象永远不会相等，除非它们是同一个对象，所以即使你创建一个看起来完全一样的对象，它也不会和前面的对象相等：
 
-```
+```js
 const obj2 = {
   myprop: 'my value'
 }
 
 obj === obj2; // false
-obj == obj2; // false 
+obj == obj2; // false
 ```
 
 所以你可以说当你每次使用对象字面量创建一个对象的时候就是在创建 一个单例，并没有特别的预发牵涉进来。
@@ -44,7 +44,7 @@ JavaScript没有类，所以一字一句地说单例的定义并没有什么意�
 
 下面的代码片段展示了期望的结果（假设你忽略了多元宇宙的设想，接受了只有一个宇宙的观点）：
 
-```
+```js
 const uni = new Universe();
 const uni2 = new Universe();
 uni === uni2; // true
@@ -66,7 +66,7 @@ uni === uni2; // true
 
 下面是将唯一的实例放入Universe构造函数的一个静态属性中的例子：
 
-```
+```js
 function Universe() {
   // do we hanve an existing instance?
   if (typeof Universe.instance === 'object') {
@@ -97,7 +97,7 @@ uni === uni2; // true
 
 另一种实现基于类的单例模式的方法是使用一个闭包来保护这个唯一的实例。你可以通过第五章讨论过的”私有静态成员模式“来实现。唯一的秘密就是重写构造函数：
 
-```
+```js
 function Universe() {
 
   // the chched instance
@@ -126,7 +126,7 @@ uni === uni2; // true
 
 下面我们通过一些测试来展示这个问题：
 
-```
+```js
 // adding to the prototype
 Universe.prototype.noting = true;
 
@@ -157,7 +157,7 @@ uni.constructor不再和Universe（）相同的原因是uni.constructor仍然是
 
 如果一定被要求让prototype和constructor的指向像我们期望的那样，可以通过一些调整来做到：
 
-```
+```js
 function Universe() {
   // the cached instance
   let instance;
@@ -186,7 +186,7 @@ function Universe() {
 
 现在所有的测试结果都可以像我们期望的那样了：
 
-```
+```js
 // update prototype and create instance
 Universe.prototype.noting = true; // true
 const uni = new Universe();
@@ -210,7 +210,7 @@ uni.constuctor === Universe; // true
 
 另一种可选的解决发难是将构造函数和实例包在一个立即执行的函数中。当构造函数第一次被调用的时候，它返回一个对象并且将私有的instance指向它。在后续调用时，构造函数是指简单地返回这个私有变量。在这种新的实现下，前面所有的测试代码也会和期望的一样：
 
-```
+```js
 let Universe
 
 (function () {

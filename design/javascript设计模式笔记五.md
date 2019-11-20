@@ -11,7 +11,7 @@
 
 假设你有一个下面这样的数据，它可能来自页面上的一个表单，你希望验证它是不是有效的数据：
 
-```
+```js
 const data = {
   first_name: "Super",
   last_name: "Man",
@@ -26,7 +26,7 @@ const data = {
 
 假设你不需要姓，名字可以接收任何内容，但要求年龄是一个数字，并且用户名只允许包含字母和数字，配置可能是这样的：
 
-```
+```js
 validator.config = {
   first_name: 'isNonEmpty',
   age: 'isNumber',
@@ -36,7 +36,7 @@ validator.config = {
 
 现在validator对象已经有了用来处理数据的配置，你可以调用validate（）方法，然后将任何验证错误打印到控制台上。
 
-```
+```js
 validator.validate(data);
 if (validator.hasError()) {
   console.log(validator.messages.join("\n"));
@@ -51,7 +51,7 @@ Invalid value for *username*, the value can only contain characters and numbers,
 
 现在我们来看一下这个validator是如何实现的。所有可用的用来检查的逻辑都是拥有一个validate（）方法的对象，他们还有一行辅助信息用来显示错误信息：
 
-```
+```js
 // checks for non-empty values
 validator.types.isNonEmpty = {
   validate: function(value) {
@@ -79,7 +79,7 @@ validator.types.isAlphaNum = {
 
 最后，validator对象的核心是这样的：
 
-```
+```js
 const validator = {
   // all avaliable checks
   types: {},

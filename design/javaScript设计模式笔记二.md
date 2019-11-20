@@ -16,7 +16,7 @@
 
 我们来看一下已经完成的实现会怎么被使用：
 
-```
+```js
 const corolla = CarMaker.factory('Compact');
 const solstice = CarMaker.factory('Convertile');
 const cherokee = CarMaker.factory('SUV');
@@ -28,7 +28,7 @@ cherokee.drive(); // "Vroom, I have 17 doors"
 
 这一段：
 
-```
+```js
 const corolla = CarMaker.factory('Compact');
 ```
 
@@ -36,7 +36,7 @@ const corolla = CarMaker.factory('Compact');
 
 这里是一个工厂模式的示例实现，它能让上面的代码片段工作：
 
-```
+```js
 // parent constructor
 function CarMaker() {}
 
@@ -92,7 +92,7 @@ CarMaker.SUV = function () {
 
 下面是这种行为的例子和测试。注意Object调用时可以不用加new：
 
-```
+```js
 const  o = new Object(),
        n = new Object(1),
        s = Object('1'),

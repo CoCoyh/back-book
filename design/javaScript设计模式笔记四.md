@@ -8,7 +8,7 @@
 
 我们来看一下这个模式的示例用法。假设你正在做一个买东西的web应用，每个新交易是一个新的sale对象。这个对象“知道”交易的价格并且可以通过调用sale.getPrice（）方法返回。根据环境的不同，你可以开始用一些额外的功能来装饰这个对象。假设一个场景是这笔交易是发生在加拿大的一个省Quebec，在这种情况下，购买者需要付联邦税和Quebec省税。根据装饰器模式的用法，你需要指明使用联邦税装饰器和Quebec省税装饰器来装饰这个对象。然后你还可以给这个对象装饰一些价格式的功能。这个场景的使用凡事可能是这样：
 
-```
+```js
 const sale = new Sale(100);  // the price is  100 dollars
 sale = sale.decorate('fedtax);  // add federal tax
 sale = sale.decorate('quebec');   // add provincial tax
@@ -18,7 +18,7 @@ sale.getPrice();  // "$112.88"
 
 在另一种场景下，购买者在一个不需要交省税的省，并且你想用加拿大元的格式来显示价格，你可以这样做：
 
-```
+```js
 const sale = new Sale(100); // the price is 100 dollars
 sale = sale.decorate('fedtax'); // add federal tax
 sale = sale.decorate('cdn'); // format using CDN
@@ -39,7 +39,7 @@ sale.getPrice(); // "CDN$105.00"
 
 这个实现可以以一个构造函数和一个原型方法开始：
 
-```
+```js
 function Sale(price) {
   this.price = price || 100;
 }
@@ -57,7 +57,7 @@ Sale.decorators = {};
 
 我们来看一个装饰器的例子。这是一个对象，实现了一个自定义的getPrice()方法。注意这个方法首先从父对象的方法中取值然后修改这个值：
 
-```
+```js
 Sale.decorators.festax = {
   getPrice: function() {
     let price = this.uber.getPrice();
@@ -69,7 +69,7 @@ Sale.decorators.festax = {
 
 使用类似的方法我们可以实现任意多个需要的其他装饰器。他们的实现方式像插件一样来扩展核心的Sale（）的功能。他们甚至可以被放到额外的文件中，被第三方的开发者来开发和共享：
 
-```
+```js
 Sale.decorators.quebec = {
        getPrice: function () {
           var price = this.uber.getPrice();
@@ -90,13 +90,13 @@ Sale.decorators.cdn = {
 
 最后我们来看decorate()这个神奇的方法，它把所有上面说的片段都串起来了。记得它是这样被调用的：
 
-```
+```js
 sale = sale.decorate('fedtax');
 ```
 
 字符串‘fedtax’对应在Sale.decorators.fedtax中实现的对象。被装饰过的最新的对象newobj将从现有的对象（也就是this对象，它要么是原始的对象，要么是经过最后一个装饰器装饰过的对象）中继承。实现这一部分需要用到前面张杰中提到的临时构造函数模式，我们也设置一个uber属性给newObj以便自对象可以访问到父对象。然后我们从装饰器种肤质所有额外的属性到被装饰的对象newobj中。最后，在我们的例子中，newobj被返回并且成为被更新过的sale对象。
 
-```
+```js
 Sale.prototype.decorate = function(decorator) {
   let F = function() {},
   overrides = this.constructor.decorators[decorator], i, newobj;
@@ -120,7 +120,7 @@ Sale.prototype.decorate = function(decorator) {
 
 用法示例也会迷宫内出现简单一些，因为我们不需要将decorate（）的返回值赋值给对象。在这个实现中，decorator不对对象做任何事情，它只是简单地将装饰器加入到一个列表中：
 
-```
+```js
 var sale = new Sale(100); // the price is 100 dollars
 sale.decorate('fedtax'); // add federal tax
 sale.decorate('quebec'); // add provincial tax
@@ -130,7 +130,7 @@ sale.getPrice(); // "$112.88"
 
 Sale()构造函数现在有了一个作为自己属性的装饰器列表：
 
-```
+```js
 function Sale(price) {
   this.price = (price > 0) || 100;
   this.decorators_list = [];
@@ -139,7 +139,7 @@ function Sale(price) {
 
 可用的装饰器荏苒被实现为Sale.decorators的属性。注意getPrice()方法现在更简单了，因为他们不需要调用父对象的getPrice()来获取结果，结果已经作为参数传递给它们了：
 
-```
+```js
 Sale.decorators = {};
 Sale.decorators.fedtax = {
   getPrice: function (price) {
@@ -161,7 +161,7 @@ Sale.decorators.money = {
 最有趣的部分发生在父对象的decorate()会让getPrice()。在前一种实现方式中，decorate()还是多少有些复杂，而getPrice()十分简单。在这种实现方式中事情反过来了： decorate()只需要往列表中添加条目而getPrice()做了所有的工作。这些工作包括遍历现在添加的装饰器的列表，然后调用他们的getPrice()方法，并将结果传递给前一个：
 
 
-```
+```js
 Sale.prototype.decorate = function (decorator) {
   this.decorators_list.push(decorator);
 };

@@ -71,14 +71,14 @@ HTML代码仅仅是一个链接列表：
 
 ## 事件处理
 现在我们来看一下事件处理的逻辑。首先我们定义一个方便的快捷函数$:
-```
+```js
  var $ = function (id) {
        return document.getElementById(id);
    };
 ```
 
 使用事件代理，我们将所有id ="vids"的条目是那个的点击事件同意放到一个函数中处理：
-```
+```js
 $('vids').onclick = function (e) {
        var src, id;
        e = e || window.event;
@@ -115,7 +115,7 @@ videos对象有三个方法：
 
 下面是这个对象的代码片段：
 
-```
+```js
 var videos = {
        getPlayer: function (id) {...},
        updateList: function (data) {...},
@@ -136,7 +136,7 @@ return; }
 
 http对象只有一个方法，它像Yahoo！的YQL服务发起一个JSONP请求：
 
-```
+```js
  var http = {
        makeRequest: function (ids, callback) {
           var url =
@@ -184,7 +184,7 @@ proxy对象创建了一个队列来收集50ms之内接收到的视频ID，然后
 
 下面是proxy对象的代码：
 
-```
+```js
  var proxy = {
        ids: [],
        delay: 50,

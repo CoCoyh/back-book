@@ -6,7 +6,7 @@
 
 假设你的对象叫agg，你可以通过简单地在循环中调用next（）来访问每个数据元素，像这样：
 
-```
+```js
 const element;
 while(element = agg.next()) {
   // do someting with the element...
@@ -16,7 +16,7 @@ while(element = agg.next()) {
 
 在迭代器模式中，聚合对象通常也会提供一个方便的方法hasNext()，这样对象的使用者就可以知道他们已经获取到你数据的最后一个元素。当使用另一种方法--hasNext()--来按顺序访问所有元素时，是像这样的：
 
-```
+```js
 while(agg.hasNext()) {
   // do something with the next element...
   console.log(agg.next());
