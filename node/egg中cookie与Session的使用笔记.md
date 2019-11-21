@@ -6,17 +6,17 @@
 
 Cookie 设置语法：`ctx.cookies.set(key, value, options)`
 
-```
+```js
 this.ctx.cookies.set('name','Andy');
 ```
 
 Cookie 获取语法：ctx.cookies.get(key, options)
 
-```
+```js
 this.ctx.cookies.get('name');
 ```
 在响应某一个 HTML 页面时，设置 Cookies：
-```
+```js
 'use strict';
 
 const Controller = require('egg').Controller;
@@ -52,7 +52,7 @@ module.exports = HomeController;
 
 然后打开其他页面时，可以获取这个页面中设置的 Cookies：
 
-```
+```js
 'use strict';
 
 const Controller = require('egg').Controller;
@@ -106,7 +106,7 @@ module.exports = NewsController;
 **示例代码：**
 设置Session：
 
-```
+```js
 'use strict';
 
 const Controller = require('egg').Controller;
@@ -129,7 +129,7 @@ module.exports = HomeController;
 
 获取 Session：
 
-```
+```js
 'use strict';
 
 const Controller = require('egg').Controller;
@@ -156,7 +156,7 @@ module.exports = NewsController;
 
 方法一：
 
-```
+```js
 'use strict';
 
 const Controller = require('egg').Controller;
@@ -187,7 +187,7 @@ module.exports = HomeController;
 
 因为 Session 是基于 Cookies 的，所以 Session 的配置和 Cookies 基本是一样的，可以使用 Cookies 里面的配置：
 
-```
+```js
   // 配置 Session
   config.session = {
     key: 'SESSION_ID', // 设置 Session cookies 里面的 key

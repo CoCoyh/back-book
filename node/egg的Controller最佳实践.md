@@ -8,7 +8,7 @@ router描述了URL与Controller的对应关系。egg约定所有的路由都需�
 
 得益于JavaScript加入的decorator特性，可以是我们跟Java/C#一样，更加直观自然的做面向切面编程。
 
-```
+```js
 
 // 基础版
 @route('/intro')
@@ -28,7 +28,7 @@ async intro() { }
 
 ```
 
-## 为什额么是这样的方案
+## 为什么是这样的方案
 
 > 为什么如此复杂的功能，是不是在滥用`Decorator`?
 
@@ -48,7 +48,7 @@ router.verb('router-name', 'path-match', middleware1, ..., middlewareN, app.cont
 
 ## 参数校验
 
-```
+```js
 class PostController extends Controller {
     async create() {
         const ctx = this.ctx;
@@ -83,7 +83,7 @@ class PostController extends Controller {
 
 - Controller 也需要申明入参
 
-```
+```js
 class UserController extends Controller {
     @route('/api/user', { method: 'post' })
     async updateUser(username) {
@@ -103,7 +103,7 @@ class UserController extends Controller {
 
 - JS
 
-```
+```js
 @route('/api/user', {
     method: 'post',
     rule: {
@@ -118,7 +118,7 @@ async updateUser(username) {
 
 - TypeScript
 
-```
+```ts
 @route('/api/user', {
     method: 'post'
 })
@@ -133,7 +133,7 @@ async updateUser(username: R<{ type: string, max: 20 }>) {
 
 传统的前后端开发协作方式中，后端提供 Api 给前端调用，代码类似这样：
 
-```
+```js
 function updateUser() {
     request
         .post(`/api/user`, { username })
@@ -148,7 +148,7 @@ function updateUser() {
 
 - Controller 代码：
 
-```
+```js
 export class UserController {
 
   @route({ url: '/api/user' })
@@ -160,7 +160,7 @@ export class UserController {
 
 - 生成Service
 
-```
+```js
 export class UserService extends Base {
   /** 首页  */
   async getUserInfo(id: number) {
@@ -181,13 +181,13 @@ export default new UserService();
 
 - 前台使用
 
-```
+```js
 import { userService } from 'service/user';
 
 const userInfo = await userService.getUserInfo(id);
 ```
 对比原来的写法：
-```
+```js
 function updateUser() {
     return new Promise((resolve, reject) => {
         request
@@ -216,7 +216,7 @@ npm i egg-controller
 
 打开 config/plugin.js，增加以下配置
 
-```
+```js
 aop: {
     enable: true,
     package: 'egg-aop',

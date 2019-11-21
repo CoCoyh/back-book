@@ -24,9 +24,9 @@ ffmpeg -i "concat:video1.mpg|video2.mpg" -c copy output.mpg
 ```
 ffmpeg -i out11.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate1.ts
 
- ffmpeg -i 2.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate2.ts
+ffmpeg -i 2.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate2.ts
 
- ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
+ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
 ```
 
 # 截取音频
@@ -107,18 +107,20 @@ ffmpeg -i output1.mp4 -i out.mp4  \-c:v copy -c:a aac -strict experimental \-map
 ffmpeg -i out.mp4 -i 2.mp4 \-c:v copy -c:a aac -strict experimental output.mp4
 ```
 
-## 实例：
+## 实例
 1. 视频去除音频
+
 ```
 ffmpeg -i v4.mp4 -vcodec copy -an dv2.mp4
 
 ffmpeg -i v3.mp4 -vcodec copy -an dv1.mp4
 ```
--i : filename输入文件
--vcodec：vcodec是 -codec:v的一个别称，强制使用codec 编解码方式，未设定时使用与输入流相同的编码器。如果用copy表示原始编解码数据必须被拷贝
--an: 不使用音频记录
+- -i : filename输入文件
+- -vcodec：vcodec是 -codec:v的一个别称，强制使用codec 编解码方式，未设定时使用与输入流相同的编码器。如果用copy表示原始编解码数据必须被拷贝
+- -an: 不使用音频记录
 
-2. 拼接视频
+1. 拼接视频
+
 ```
 ffmpeg -i dv1.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate1.ts
 
@@ -129,16 +131,20 @@ ffmpeg -i dv2.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate2.ts
 ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c:a copy -bsf:a aac_adtstoasc dv12.mp4
 ```
 
--c[:stream_specifier] codec (input/output, per-stream)
+- -c[:stream_specifier] codec (input/output, per-stream)
 
 3. 插入封面图片
+
 ```
 ffmpeg -i dv12.mp4 -i image1.png -map 0 -map 1 -c copy -c:v:1 png -disposition:v:1 attached_pic idv12.mp4
 ```
+
 4. 合成音频
+
 ```
 ffmpeg -i idv12.mp4  -i audio.wav \-c:v copy -c:a aac -strict experimental chen.mp4
 ```
+
 ## 管道pipe
 
 ```
@@ -164,15 +170,15 @@ ffmpeg -i pipe: -i f.jpg \
 
 
 相关资料：
-![官网](http://ffmpeg.org/ffmpeg-all.html#Expression-Evaluation)
-![https://vimsky.com/article/3687.html](https://vimsky.com/article/3687.html)
-![https://www.longqi.cf/tools/2015/02/13/ffmpegcn/](https://www.longqi.cf/tools/2015/02/13/ffmpegcn/)
-![http://einverne.github.io/post/2015/12/ffmpeg-first.html#ffmpeg-usage](http://einverne.github.io/post/2015/12/ffmpeg-first.html#ffmpeg-usage)
-![https://www.twblogs.net/a/5c9a26bfbd9eee434fc6c81b/zh-cn](https://www.twblogs.net/a/5c9a26bfbd9eee434fc6c81b/zh-cn)
-![https://wklchris.github.io/FFmpeg.html#%E8%A7%86%E9%A2%91%E5%8F%82%E6%95%B0](https://wklchris.github.io/FFmpeg.html#%E8%A7%86%E9%A2%91%E5%8F%82%E6%95%B0)
-![https://github.com/tonydeng/fmj/blob/master/ffmpeg.md#%e6%b7%bb%e5%8a%a0%e5%ad%97%e5%b9%95](https://github.com/tonydeng/fmj/blob/master/ffmpeg.md#%e6%b7%bb%e5%8a%a0%e5%ad%97%e5%b9%95)
-![https://www.ancii.com/arzmnzdzz/](https://www.ancii.com/arzmnzdzz/)
-![https://www.jianshu.com/p/d6480c6ea6bd](https://www.jianshu.com/p/d6480c6ea6bd)
-![http://trac.ffmpeg.org/wiki/Concatenate](http://trac.ffmpeg.org/wiki/Concatenate)
-![https://www.linmao.dev/joy/868/#i-3](https://www.linmao.dev/joy/868/#i-3)
+- [官网](http://ffmpeg.org/ffmpeg-all.html#Expression-Evaluation)
+- [https://vimsky.com/article/3687.html](https://vimsky.com/article/3687.html)
+- [https://www.longqi.cf/tools/2015/02/13/ffmpegcn/](https://www.longqi.cf/tools/2015/02/13/ffmpegcn/)
+- [http://einverne.github.io/post/2015/12/ffmpeg-first.html#ffmpeg-usage](http://einverne.github.io/post/2015/12/ffmpeg-first.html#ffmpeg-usage)
+- [https://www.twblogs.net/a/5c9a26bfbd9eee434fc6c81b/zh-cn](https://www.twblogs.net/a/5c9a26bfbd9eee434fc6c81b/zh-cn)
+- [https://wklchris.github.io/FFmpeg.html#%E8%A7%86%E9%A2%91%E5%8F%82%E6%95%B0](https://wklchris.github.io/FFmpeg.html#%E8%A7%86%E9%A2%91%E5%8F%82%E6%95%B0)
+- [https://github.com/tonydeng/fmj/blob/master/ffmpeg.md#%e6%b7%bb%e5%8a%a0%e5%ad%97%e5%b9%95](https://github.com/tonydeng/fmj/blob/master/ffmpeg.md#%e6%b7%bb%e5%8a%a0%e5%ad%97%e5%b9%95)
+- [https://www.ancii.com/arzmnzdzz/](https://www.ancii.com/arzmnzdzz/)
+- [https://www.jianshu.com/p/d6480c6ea6bd](https://www.jianshu.com/p/d6480c6ea6bd)
+- [http://trac.ffmpeg.org/wiki/Concatenate](http://trac.ffmpeg.org/wiki/Concatenate)
+- [https://www.linmao.dev/joy/868/#i-3](https://www.linmao.dev/joy/868/#i-3)
 

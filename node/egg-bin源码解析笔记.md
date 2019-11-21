@@ -27,7 +27,7 @@ new Command().start();
 
 进入`index.js`文件源代码，该文件至少定义了`EggBin`这个对象，并且将一些`sub command`挂载到`EggBin`这个导出对象中，有如下几个自命令：
 
-```
+```js
 // load directory
 this.load(path.join(__dirname, 'lib/cmd'));
 ```
@@ -41,7 +41,7 @@ this.load(path.join(__dirname, 'lib/cmd'));
 
 接着就是执行`bin/egg-bin.js`文件中的`new Command().start()`这一行，首先会先去执行`EggBin`构造函数中的内容：
 
-```
+```js
 class EggBin extends Command {
   constructor(rawArgv) {
     // 获取用户输入的options
@@ -57,7 +57,7 @@ class EggBin extends Command {
 ## 获取命令参数
 
 由于上面的继承关系，第一行就会直接执行到`Command-bin/lib/command.js`中的第一行
-```
+```js
 /**
   * original argument
   * @type {Array}
@@ -76,7 +76,7 @@ this.rawArgv = rawArgv || process.argv.slice(2);
 
 获取到这个参数之后就会直接将该参数传给`yargs`并将y`yargs`对象赋给自己的一个`yargs`属性
 
-```
+```js
 /**
   * yargs
   * @type {Object}
@@ -86,7 +86,7 @@ this.yargs = yargs(this.rawArgv);
 
 然后就开始`load`命令行文件了，通过追踪，也可以发现最后执行的也是`common-bin`中的`load`命令`common-bin`中的`load`成员函数，该函数要求参数是所需要获取的命令文件的绝对路径，其中`common-bin/command.js`中的`load`源码如下：
 
-```
+```js
 load(fullPath) {
     // 省略对参数的校验
     // load entire directory
@@ -113,7 +113,7 @@ load(fullPath) {
 ```
 
 然后将files进行遍历，执行下面的add的操作:
-```
+```js
   /**
    * add sub command
    * @param {String} name - a command name
@@ -140,7 +140,7 @@ load(fullPath) {
 ## 执行start()
 
 最重要的`start`操作，追根溯源也是执行的`common-bin`里面的`start()`, `start()`里面主要使用`co`包了一个`generator`函数，并且在`genertor`函数中执行了`this[DISPATCH]`,然后，重头戏来了，`this[DISPATCH]`的源码如下：
-```
+```js
   /**
    * dispatch command, either `subCommand.exec` or `this.run`
    * @param {Object} context - context object
@@ -215,7 +215,7 @@ load(fullPath) {
 **dev.js**
 
 作为在`egg`项目中本地开发最为重要的开发命令，`dev.js`无疑肩负着比较重要的指责。在`dev.js`中，主要是定义了一些默认的端口号，以及入口命令等。`*run`的源码如下：
-```
+```js
   * run(context) {
     const devArgs = yield this.formatArgs(context);
     const env = {
@@ -236,7 +236,7 @@ load(fullPath) {
 **debug.js**
 
 有上分析可知，`DebugCommand`继承于`DevCommand`，所以在`constructor`的时候就会去执行`dev`中的一些`options`，而且在`debug.js`中的`*run`函数中直接调用的是`dev.js`中的`formatArgs()`参数处理。关键源码（有删减）如下：
-```
+```js
  * run(context) {
     const proxyPort = context.argv.proxy;
     context.argv.proxy = undefined;
@@ -270,7 +270,7 @@ load(fullPath) {
 **test.js**
 
 这个命令主要是用来运行`egg`项目中的`test`文件的，也就是跑我们自己写的测试用例，关于如何写单元测试，可以异步[单元测试](https://eggjs.org/zh-cn/core/unittest.html),在这个文件，`*run`形式也和上面类似，然后调用`this.formatTestArgs()，formatTestArgs`源码如下（有删减）：
-```
+```js
   /**
    * format test args then change it to array style
    * @param {Object} context - { cwd, argv, ...}

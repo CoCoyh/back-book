@@ -20,7 +20,7 @@
 然后直接F5进入debug
 **简析**
 
-```
+```js
 // .vscode/launch.json
 {
   "version": "0.2.0",
@@ -49,7 +49,7 @@
 ```
 
 **其他**
-```
+```js
 {
   "version": "0.2.0",
   "configurations": [
@@ -78,9 +78,9 @@ Egg 的调试，跟 Node 没啥区别，因此一定要了解 Node 的基础调�
 
 其中，--inspect-brk 是指在进程第一行就暂停，等待 attach，因此：
 
-- master 先启动，在第一行会停住，需要你 attach master，才会往下走
-- 接着 master 启动 agent，也是在第一行停住，需要 attach agent 才会往下走
-- 最后 agent 启动完成后，worker 才开始启动，一样也是在第一行停住，需要 attach agent 才会往下走
+- `master` 先启动，在第一行会停住，需要你 `attach master`，才会往下走
+- 接着 `master` 启动 `agent`，也是在第一行停住，需要 `attach agent` 才会往下走
+- 最后 agent 启动完成后，`worker` 才开始启动，一样也是在第一行停住，需要 `attach agent` 才会往下走
 
-上面这几个 attach，由于上面我们提到的 VSCode 的支持，只需要开启配置，即可无感知的一键 attach。
-虽然如此，但作为开发者，大家还是需要理解 Node 的调试原理。
+上面这几个 `attach`，由于上面我们提到的 VSCode 的支持，只需要开启配置，即可无感知的一键 attach。
+虽然如此，但作为开发者，大家还是需要理解 `Node` 的调试原理。

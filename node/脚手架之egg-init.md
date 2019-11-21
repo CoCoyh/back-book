@@ -17,7 +17,7 @@
 # 如何开发脚手架
 - npm bin
 需要在`package.json`中声明`bin`字段的命令
-```
+```js
 "bin": {
     "init": "bin/init.js"
  },
@@ -69,7 +69,7 @@
 
 对于`app,config,test`这些文件，就不说了，基本上也是初始化了`egg`的一些示例文件。
 `eslintrc`里面声明了如下扩展:
-```
+```js
 {
   "extends": "eslint-config-egg"
 }

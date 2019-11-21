@@ -8,7 +8,7 @@ node -v
 有输出版本号，说明已安装
 首先在[npm](https://www.npmjs.com/)网站上注册一个账号，这个账号会在之后用到
 
-# pixiv-login
+## pixiv-login
 
 pixiv-login的功能就是模拟用户登陆网站pixiv，获取cookie，安装
 [源码](https://github.com/CoCoyh/npm-test)
@@ -18,7 +18,7 @@ npm install --save pixiv-login
 ```
 
 使用：
-```
+```js
 const pixivLogin = require('pixiv-login');
 
 pixivLogin({
@@ -31,10 +31,10 @@ pixivLogin({
 });
 ```
 
-# 开发工具
+## 开发工具
 Mac平台 使用的vscode
 
-# 初始化项目
+## 初始化项目
 
 ```
 mkdir npm-test
@@ -43,7 +43,7 @@ npm init
 ```
 一路回车就好
 
-# 安装依赖
+## 安装依赖
 
 要模拟登陆，我们就需要一个http库，这里我选择了[axios](https://github.com/axios/axios)，同时获取的html字符串我们需要解析，[cheerio](https://github.com/cheeriojs/cheerio)就是首选了
 
@@ -52,7 +52,7 @@ npm i axios cheerio --save
 ```
 现在便携index.js文件
 
-```
+```js
 const axios = require('axios');
 const cheerio = require('cheerio');
 
@@ -74,16 +74,16 @@ axios.get('https://www.pixiv.net')
 
 进入[登陆页面](https://www.pixiv.net/)，我们先登陆一次，看看前端向后端发送了那些数据。
 
-![loginhtml.png](https://upload-images.jianshu.io/upload_images/9403248-d41e1e7fccfbd68e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![loginhtml.png](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-a0cab64f76e3bae3ee485f9b78c477e2_r.jpg)
 
 这里需要注意的是，我们要勾选**preserve log**，这样，即使页面刷新跳转了，http请求记录仍然回记录下来
 
-![prelogin.png](https://upload-images.jianshu.io/upload_images/9403248-2feb873b7b5844c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![prelogin.png](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-cd50d59bb9c3d53524ef7c445c7925d6_r.jpg)
 
 
-![prelogin1.png](https://upload-images.jianshu.io/upload_images/9403248-78da3f9e3d2862e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![prelogin1.png](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-80f7c3c346aff774a7f4809af1474cd6_hd.png)
 
-![prelogin2.png](https://upload-images.jianshu.io/upload_images/9403248-9d1c85a3fcb3b499.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![prelogin2.png](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-1dc91ae74dc3bec22d4144b407c4514d_hd.png)
 
 可以看到，**post_key**是登陆的关键点，p站使用了该值来防止CSRF
 
@@ -97,12 +97,12 @@ post_key怎么获取呢？
 
 可以清除看到，post_key已经写出来了，我们只需要用cheerio解析出该input的值就OK了
 
-```
+```js
 const post_key = $('input[name="post_key"]').val();
 ```
 获取post_key
 
-```
+```js
 const axios = require('axios');
 const cheerio = require('cheerio');
 
@@ -139,7 +139,7 @@ getKey.then(({ post_key, cookie }) => {
 
 获取到了post_key，cookie，我们就可以愉快的把登陆数据发送给后台接口了
 
-```
+```js
 const querystring = require('querystring');
 getKey.then(({ post_key, cookie }) => {
     axios({
@@ -178,7 +178,7 @@ getKey.then(({ post_key, cookie }) => {
 ```
 
 注意其中这段代码：
-```
+```js
 data: querystring.stringify({
       pixiv_id: '你的用户名',
       password: '你的密码',
@@ -190,20 +190,20 @@ data: querystring.stringify({
       return_to: 'http://www.pixiv.net/'
   })
 ```
-⚠️注意：axios默认数据格式是json，如果你想发送**application/x-www-form-urlencoded**的数据，就需要使用**querystring模块**
+注意：axios默认数据格式是json，如果你想发送**application/x-www-form-urlencoded**的数据，就需要使用**querystring模块**
 
 如果一切正常，那么效果如下：
 
-![loginres.png](https://upload-images.jianshu.io/upload_images/9403248-1b7a400337d57c56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![loginres.png](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-6acb3953cd13d6ae3404a7951f002c25_hd.png)
 
 其中，的PHPESSID和device_token就是服务器端返回的登陆标识，说明我们登陆成功了
 程序运行的同时，你也很可能收到P站的登陆邮件
 好了，目前为止，我们已经成功获取到了cookie，实现了最基本的功能
 
-# 特别注意⚠️
+# 特别注意
 
 程序不要运行太多次，因为每次运行，你就登陆一次P站，如果被P栈监测到频繁登陆，它会开启验证码登陆模式，这时，你除了需要发送用户名和密码，还需要向后台发送验证码值
-```
+```js
 data: querystring.stringify({
           pixiv_id: '你的用户名',
           password: '你的密码',
@@ -219,7 +219,7 @@ data: querystring.stringify({
 
 基本功能的完整代码
 
-```
+```js
 const axios = require('axios');
 const cheerio = require('cheerio');
 const querystring = require('querystring');
@@ -290,30 +290,31 @@ getKey.then(({ post_key, cookie }) => {
 登陆P站获取cookie这个功能，如果我们想让其他开发者也能方便调用，就可以考虑其封装为一个npm包发布出去
 
 目录结构：
-![workspace  .png](https://upload-images.jianshu.io/upload_images/9403248-0f209f40efd7124f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![workspace.png](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-29429f58d8c565af4e1433911e9b8d25_hd.png)
 
 # 发布npm包
 
 ## README.md
 每个npm包，一般都需要配一段介绍文字，来告诉使用者如何安装使用，比如lodash的首页
 新建一个README.md，填写相关信息
-![npm -readme](https://upload-images.jianshu.io/upload_images/9403248-25766f0fdac5b968.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![npm -readme](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-b32b622ecb8238869bd4f8fbca533f9a_hd.png)
 
 有时，我们会看到一些npm包有很漂亮的版本号图标：
 
-![npml-label.png](https://upload-images.jianshu.io/upload_images/9403248-9fa974ce1b72ea55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![npml-label.png](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-a16823a30204c619b171f84d4958894f_hd.png)
 
 这些图标[shieds](https://shields.io/)上制作
 登陆该网站，下拉到最下面
-![label1.jpg](https://upload-images.jianshu.io/upload_images/9403248-c36b32075c68118f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![label1.jpg](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-e23fda34b8937ed3b606ac8dda4789bc_hd.jpg)
 
 输入你想要的文字，版本号，颜色，然后点击按钮
 
-![label2.jpg](https://upload-images.jianshu.io/upload_images/9403248-25a5261f82d06fd1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![label2.jpg](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-7d4fab4310d8690f676d51683a01a9e5_hd%20-1-.jpg)
 
 就可以得到图片的访问地址了
 
-![label3.png](https://upload-images.jianshu.io/upload_images/9403248-3a9938efd6838f1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![label3.png](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-21-v2-0e18ad152f419c403101af1b501a35b3_hd.png)
 
 修改刚才的README.md，加上我们的版本号
 
@@ -333,6 +334,7 @@ npm adduser
 ```
 
 输入用户名，密码，邮箱即可登陆成功
+
 **这里还有一个坑！**
 
 如果你的npm使用的是淘宝镜像，那么是无法登陆成功的
@@ -350,7 +352,7 @@ npm whoami
 ```
 如果出现了你的用户名，说明你已经成功登陆了
 
-特别⚠️
+特别
 
 因为包名字唯一，否则发布不了
 

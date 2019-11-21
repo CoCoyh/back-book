@@ -29,7 +29,7 @@ $ open localhost:7001
 
 查看`egg-init`脚手架生成的项目文件，可以看到整个项目文件是没有严格意义上的入口文件的，根据`package.json`中的`script`命令，可以看到执行的直接是`egg-bin dev`的命令。找到`egg-bin`文件夹中的`dev.js`,会看到里面会去执行`start-cluster`文件：
 
-```
+```js
 //dev.js构造函数中
 this.serverBin = path.join(__dirname, '../start-cluster');
 // run成员函数
@@ -40,7 +40,7 @@ this.serverBin = path.join(__dirname, '../start-cluster');
 ```
 移步到start-cluster.js文件，可以看到关键的一行代码：
 
-```
+```js
 require(options.framework).startCluster(options);
 ```
 其中`options.framework`打印信息为:
@@ -49,7 +49,7 @@ require(options.framework).startCluster(options);
 
 找到对应的`egg`目录中的`index.js`文件：
 
-```
+```js
 exports.startCluster = require('egg-cluster').startCluster;
 ```
 继续追踪可以看到最后运行的其实就是`egg-cluster`中的`startCluster`,并且会`fork`出`agentWorker`和`appWorks`，官方文档对于不同进程的`fork`顺序以及不同进程之间的`IPC`有比较清晰的说明,
@@ -62,7 +62,7 @@ exports.startCluster = require('egg-cluster').startCluster;
 - 所有的进程初始化成功后，Master 通知 Agent 和 Worker 应用启动成功
 通过代码逻辑也可以看出它的顺序:
 
-```
+```js
 //在egg-ready状态的时候就会执行进程之间的通信
 this.ready(() => {
   //省略代码
@@ -88,7 +88,7 @@ this.once('agent-start', this.forkAppWorkers.bind(this));
 - master ---> app
 `fork`出了`appWorker`之后，每一个进程就开始干活了，在`app_worker.js`文件中，可以看到进程启动了服务，具体代码：
 
-```
+```js
 //省略代码
 function startServer() {
   let server;
@@ -107,13 +107,13 @@ function startServer() {
 
 除此之外，每一个appWorker还实例化了一个Application：
 
-```
+```js
 const Application = require(options.framework).Application;
 const app = new Application(options);
 ```
 在实例化`application(options)`时，就会去执行`node_modules->egg`模块下面loader目录下面的逻辑，也就是`agentWorker`进程和多个`appWorkers`进程要去执行的加载逻辑，具体可以看到`app_worker_loader.js`文件中的`load():`
 
-```
+```js
 load() {
     // app > plugin > core
     this.loadApplicationExtend();
@@ -155,7 +155,8 @@ load() {
 - jsonp jsonp 支持
 - view 模板引擎
 加载插件的逻辑是在egg-core里面的plugin.js文件，先看代码：
-```
+
+```js
 loadPlugin() {
 
     //省略代码
@@ -197,7 +198,7 @@ loadPlugin() {
 - Helper
 通过阅读`extend.js`文件可以知道，其实最后每个对象的扩展都是直接调用的`loadExtends`这个函数。拿`Application`这个内置对象进行举例：
 
-```
+```js
 loadExtend(name, proto) {
     // All extend files
     const filepaths = this.getExtendFilePaths(name);
@@ -268,7 +269,7 @@ loadExtend(name, proto) {
 插件没有独立的 `router` 和 `controller`
 
 所以在加载`controller`的时候，主要是load应用里面的`controller`即可。详见代码;
-```
+```js
 loadController(opt) {
     opt = Object.assign({
       caseStyle: 'lower',
@@ -305,7 +306,7 @@ loadController(opt) {
 
 加载`service`
 加载`service`的逻辑是`egg-core`中的`service.js,service.js`这个文件比较简单，代码如下:
-```
+```js
 loadService(opt) {
     // 载入到 app.serviceClasses
     opt = Object.assign({
@@ -324,7 +325,7 @@ loadService(opt) {
 通过查看`load()`代码可以发现里面的逻辑也是将属性添加到上下文(`ctx`)对象中的。也就是说加载`context`对象是在加载`service`的时候完成的。
 
 而且值得一提的是：在每次刷新页面重新加载或者有新的请求的时候，都会去执行`context_loader.js`里面的逻辑，也就是说`ctx`上下文对象的内容会随着每次请求而发生改变，而且`service`对象是挂载在`ctx`对象下面的，对于`service`的更新，这里有一段代码：
-```
+```js
 // define ctx.service
 Object.defineProperty(app.context, property, {
   get() {

@@ -27,7 +27,7 @@ app.js 里做了一些初始化的定时任务的逻辑，没有使用官方的s
 
 nginx配置
 
-```
+```js
 location / {
   proxy_set_header Host $host;
   proxy_set_header Upgrade $http_upgrade;

@@ -11,7 +11,7 @@ npm install --save egg-validate
 
 启用
 
-```
+```js
 // config/plugin.js
 exports.validate = {
   enable: true,
@@ -21,7 +21,7 @@ exports.validate = {
 
 配置
 
-```
+```js
 // config/config.default.js
 exports.validate = {
   // convert: false,
@@ -30,12 +30,13 @@ exports.validate = {
 ```
 用途嘛，就是对参数进行检验。比如检验一个用户名是不是字符串，可以这么写，
 
-```
+```js
 ctx.validate({ userName: ‘string‘ });
 ```
 
-⚠️：默认就会`ctx.request.body`进行校验，你想校验`ctx.query`的话，那就`ctx.validate({ userName: 'string}, ctx.query)`, params就ctx.params。它会在校验失败时抛出一个异常，没有捕获的话，会返回一个422错误。
-```
+注意：默认就会`ctx.request.body`进行校验，你想校验`ctx.query`的话，那就`ctx.validate({ userName: 'string}, ctx.query)`, params就ctx.params。它会在校验失败时抛出一个异常，没有捕获的话，会返回一个422错误。
+
+```js
 let errs = app.validator.validate({ userName: ‘string‘ }, ctx.request.body);
 ```
 
@@ -48,7 +49,7 @@ let errs = app.validator.validate({ userName: ‘string‘ }, ctx.request.body);
 
 你想判断一个用户的信息是否正确可以这么写：
 
-```
+```js
 ctx.validate({
       userName: 'userName', // 自定义的校验规则
       password: 'password', // 自带的校验规则
@@ -61,9 +62,9 @@ ctx.validate({
     });
 ```
 
-⚠️：这里有个坑，年龄怎么 填都会报格式错误，这是因为 配置的时候默认把参数类型转型关了，配置回来就好：
+注意：这里有个坑，年龄怎么 填都会报格式错误，这是因为 配置的时候默认把参数类型转型关了，配置回来就好：
 
-```
+```js
 config.validate = {   // 配置参数校验器，基于parameter
     convert: true,    // 对参数可以使用convertType规则进行类型转换
     // validateRoot: false,   // 限制被验证值必须是一个对象。
@@ -76,7 +77,7 @@ config.validate = {   // 配置参数校验器，基于parameter
 
 password：‘password’，或者
 
-```
+```js
 password: {
   type: 'password',
   allowEmpty: true,
@@ -91,7 +92,7 @@ password: {
 
 通过app.validator.addRule添加：
 
-```
+```js
   // 校验用户名是否正确
   app.validator.addRule('userName', (rule, value)=>{        // value就是待检验的数据
     if (/^\d+$/.test(value)) {
@@ -109,7 +110,7 @@ password: {
 添加了这个规则就可以直接使用ctx.validate({userName: ‘userName‘});。
 或者
 
-```
+```js
 ctx.validate({userName:  {
     type: 'userName',
     isAdmin: true'
@@ -118,7 +119,7 @@ ctx.validate({userName:  {
 4. app.validator.addRule(‘userName‘, (rule, value)=>{里面这个rule
 
 像3、那样的规则就是把
-```
+```js
 {
     type: 'userName',
     isAdmin: true'
@@ -127,7 +128,7 @@ ctx.validate({userName:  {
 
 直接赋值给rule传过来
 
-```
+```js
 { type: ‘userName‘, isAdmin: true }
 ```
 
@@ -166,7 +167,7 @@ ctx.validate({userName:  {
 
 我们使用`Loader`来加载`validate`下面的所有文件:
 
-```
+```js
 const path = require('path');
 
 module.exports = app => {
@@ -183,7 +184,7 @@ module.exports = app => {
 
 建立app/validate/user.js文件
 
-```
+```js
 module.exports = app =>{
 
   let { validator } = app;

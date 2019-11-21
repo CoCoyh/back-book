@@ -9,7 +9,7 @@ mysql中的in语句是把外表和内表做hash连接，而exists语句是对外
 
 1. 情景一
 
-```
+```js
 // 效率低，用到了A表上cc列的索引；
 select * from A where cc in (select cc from B)
 
@@ -20,7 +20,7 @@ select * from A where exists(select cc from B where cc=A.cc)
 
 2. 情景二
 
-```
+```js
 // 效率高，用到了B表上cc列的索引
 select * from B where cc in (select cc from A)
 
@@ -33,7 +33,7 @@ select * from B where exists(select cc from A where cc=B.cc)
 
 3. in与=的区别
 
-```
+```js
 // 结果是相同的
 select name from student where name in ('zhang','wang','li','zhao');
 与

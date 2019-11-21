@@ -132,6 +132,6 @@ docker search 镜像名
 ```
 
 资料
-[阿里云镜像仓库](https://yq.aliyun.com/articles/708929?spm=a2c4e.11155472.0.0.35fd752dWuzVbf)
-[https://juejin.im/post/5b62d0356fb9a04fb87767f5#heading-3](https://juejin.im/post/5b62d0356fb9a04fb87767f5#heading-3)
-[https://yeasy.gitbooks.io/docker_practice/image/pull.html](https://yeasy.gitbooks.io/docker_practice/image/pull.html)
+- [阿里云镜像仓库](https://yq.aliyun.com/articles/708929?spm=a2c4e.11155472.0.0.35fd752dWuzVbf)
+- [https://juejin.im/post/5b62d0356fb9a04fb87767f5#heading-3](https://juejin.im/post/5b62d0356fb9a04fb87767f5#heading-3)
+- [https://yeasy.gitbooks.io/docker_practice/image/pull.html](https://yeasy.gitbooks.io/docker_practice/image/pull.html)

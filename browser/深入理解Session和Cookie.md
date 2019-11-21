@@ -59,7 +59,7 @@ Cookie就是这样的一种机制。它可以弥补HTTP协议无状态的不足�
 
 Cookie在客户端是由浏览器来管理的。 浏览器能够保证Google只会操作Google的Cookie而不会操作Baidu的Cookie，从而保证用户的隐私安全。 浏览器判断一个网站是否能操作另一个网站Cookie的依据是域名。 Google与Baidu的域名不一样，因此Google不能操作Baidu的Cookie。
 
-注意⚠️：
+注意：
 虽然网站images.google.com与网站google.com同属于Google， 但是域名不一样，二者同样不能互相操作彼此的Cookie。
 
 用户登录网站google.com之后会发现访问images.google.com时登录信息仍然有效，而普通的Cookie是做不到的。 这是因为Google做了特殊处理。
@@ -99,7 +99,7 @@ Session的超时时间也可以在web.xml中修改。 另外，通过调用Sessi
 
 ## 实现会话跟踪的技术
 
-1. Cookie
+### 1. Cookie
 
 向客户端发送Cookie
 ```
@@ -113,14 +113,14 @@ response.addCookie(c); //把Cookie放入到HTTP响应中
 优点： 数据可以持久保存，不需要服务器资源，简单，基于文本的key-value
 缺点：大小受到限制，用户可以警用Cookie功能，由于保存在本地，有一定的安全风险。
 
-2. URL重写
+### 2. URL重写
 
 在URL中添加用户会话的信息作为请求的参数，或者将唯一的会话ID添加到URL结尾一标识一个会话
 
 优点：在Cookie被禁用的时候依然可以使用
 缺点：必须对网站的URL进行编码，所有页面必须动态生成，不能用预先记录下来的URL进行访问。
 
-3. 隐藏的表单域
+### 3. 隐藏的表单域
 
 ```
 <input type="hidden" name ="session" value="..."/>
@@ -129,7 +129,7 @@ response.addCookie(c); //把Cookie放入到HTTP响应中
 优点：Cookie被禁止时可以使用
 缺点：所有页面必须是表单提交之后的结果
 
-4. Session
+### 4. Session
 
 当一个用户第一次访问某个网站时会自动创建HttpSession，每个用户可以访问它自己的HttpSession。
 

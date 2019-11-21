@@ -26,7 +26,7 @@ Nginx可以作为一个HTTP服务器进行网站的发布处理，另外Nginx可
 http://tengine.taobao.org/
 ```
 
-![](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-05-6cd3eb9ca7febbcc10ee3d485dcecb68.jpg?Expires=1572956821&OSSAccessKeyId=TMP.heMaox1Wv1nBfSWj3ehRJZRjnhzYmLct8zvu389tcMdSQVe647wdpTmymKPhegSVKQtf9zigrxPT7GGzYuBsms3stBApLfCXNWxGDmEdgZF1sF4WkMNJWqQux9Tc96.tmp&Signature=KWA6aWx9EuaYtT43A%2BmCRc6qI4Q%3D)
+![](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-05-6cd3eb9ca7febbcc10ee3d485dcecb68.jpg)
 
 客户端是无感知代理的存在的，反向代理对外都是透明的，访问者并不知道自己访问的是一个代理。因为客户端不需要任何配置就可以访问。
 
@@ -39,7 +39,7 @@ http://tengine.taobao.org/
 通常情况下，我们在实际项目操作时，正向代理和反向代理很有可能会存在同一个应用场景中，正向代理代理客户端的请求去访问目标服务器，目标服务器是一个反向单利服务器，反向代理了多台真实的业务处理服务器。
 
 
-![](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-05-a8552f1c0e53a5a813083fc8a5a80c16.jpg?Expires=1572957005&OSSAccessKeyId=TMP.heMaox1Wv1nBfSWj3ehRJZRjnhzYmLct8zvu389tcMdSQVe647wdpTmymKPhegSVKQtf9zigrxPT7GGzYuBsms3stBApLfCXNWxGDmEdgZF1sF4WkMNJWqQux9Tc96.tmp&Signature=QzzFukEfhnp%2FLWTjyMLWxzQYJOs%3D)
+![](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-05-a8552f1c0e53a5a813083fc8a5a80c16.jpg)
 
 **负载均衡**
 
@@ -77,4 +77,4 @@ http://tengine.taobao.org/
 **Web 服务器对比**
 
 
-![](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-05-3d38228ddfee5a9c877f8b14d5d3f602.jpg?Expires=1572959225&OSSAccessKeyId=TMP.heMaox1Wv1nBfSWj3ehRJZRjnhzYmLct8zvu389tcMdSQVe647wdpTmymKPhegSVKQtf9zigrxPT7GGzYuBsms3stBApLfCXNWxGDmEdgZF1sF4WkMNJWqQux9Tc96.tmp&Signature=pWBQzBoHUNWCIkeK%2BOS2Rh0So4o%3D)
+![](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-11-05-3d38228ddfee5a9c877f8b14d5d3f602.jpg)

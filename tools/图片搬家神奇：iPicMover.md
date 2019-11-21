@@ -1,6 +1,6 @@
 # 图片搬家神奇：iPic Mover
 
-# 图片搬家神奇：iPic Mover
+## 图片搬家神奇：iPic Mover
 
 在 Markdown 中插图很麻烦；还好，iPic 解决了这个问题。
 
@@ -8,14 +8,16 @@
 
 不怕，现在有了 iPic Mover :)
 
-# iPic Mover 是什么？我需要吗？
+![]()
+
+## iPic Mover 是什么？我需要吗？
 
 先来看看看几个场景，你有没有遇到过？
 
 1. 批量将本地图片上传至图床，并更新链接、删除本地图片
 
 - 很多Markdown都支持本地图片，但很少支持上传图片至图床。
-- ![Typora](https://www.typora.io/)除外，因为它继承了iPicUploader，在插入本地图片时，可以调用iPic上传。
+- [Typora](https://www.typora.io/)除外，因为它继承了iPicUploader，在插入本地图片时，可以调用iPic上传。
 
 2. 更换图床
 
@@ -39,7 +41,7 @@
 二话不说先上图：
 
 
-![](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-10-18-006y8lVagw1fajaszqardg30ia0bc4cp-1.gif?Expires=1571410999&OSSAccessKeyId=TMP.hc4X2hogo3ppFuzk6mT3N8Gc1cfki6J2UkrprBT1JfN86PN46q41hrmkUNMSHCuKMgv3azmigLcQYaaqAuctHzefFyKcGtkrrNQBMxE4e6oBVrqAbWiaHDV51thHof.tmp&Signature=UXxZvZYuEpWVQ812MS3XnQNDyns%3D)
+![](https://gcc68.oss-cn-hangzhou.aliyuncs.com/2019-10-18-006y8lVagw1fajaszqardg30ia0bc4cp-1.gif)
 
 
 可以看出，只要选择Markdown所在文件夹即可，iPic Mover自动帮你：

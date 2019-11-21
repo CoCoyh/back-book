@@ -54,7 +54,7 @@ ajv 是一个`JSON Schema`标准验证器的实现，除了ajv还有很多其他
 代码中的 `schema` 是使用 `JSON Schema `生成的模式描述对象
 代码中 `data` 是我们要进行检查的数据
 
-参考资料
-JSON Schema http://json-schema.org
+参考资料：
+- JSON Schema http://json-schema.org
 
-AJV https://github.com/epoberezki...
+- AJV https://github.com/epoberezki...

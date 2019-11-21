@@ -5,7 +5,7 @@
 
 ## 这可能不是最佳时间，但是人们有时会使用它来简化动态查询的构建
 
-```
+```js
 string sql = "SELECT * FROM mytable WHERE 1 ";
 if ( somecondition ) {
    sql += "AND somefield = somevalue ";

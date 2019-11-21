@@ -18,7 +18,7 @@ sudo npm install mysql --save
 
 knex初始化
 
-```
+```js
 const knex = require('knex')({
   client: 'mysql', //指明数据库类型，还可以是mysql，sqlite3等等
   connection: { //指明连接参数
@@ -64,7 +64,7 @@ Created .knexfile.js
 
 这个是创建knexfile.js里的默认内容。
 
-```
+```js
 // Update with your config settings.
 
 module.exports = {
@@ -115,7 +115,7 @@ module.exports = {
 
 这当中使用了lodash这个库，这个库就是一个工具库。其中有很多的函数可以直接用，很方便。
 
-```
+```js
 var config = require('./config');
 var _ = require('lodash');
 
@@ -152,7 +152,7 @@ Created Migration: /Users/project/demo/db/migrations/20191011122323_add_user.js
 
 - http://caniuse.com/#search=promise
 
-```
+```js
 exports.up = function(knex, Promise) {
   return Promise.all([
     // 创建表
