@@ -42,6 +42,7 @@
     * [ffmpeg音视频处理](Tools/ffmpeg音视频处理.md)
     * [ffmpeg音视频处理需求升级版](Tools/ffmpeg音视频处理需求升级版.md)
     * [七牛云存储中没有外链域名，无法下载的问题](Tools/七牛云存储中没有外链域名，无法下载的问题.md)
+    * [基于WebAssembly的H265播放](Tools/基于WebAssembly的H265播放.md)
 * [Git以及代码规范](Git/README.md)
     * [Mac下配置多个Git账户](Git/Mac下配置多个Git账户.md)
     * [删除远程仓库的某次错误提交](Git/删除远程仓库的某次错误提交.md)
