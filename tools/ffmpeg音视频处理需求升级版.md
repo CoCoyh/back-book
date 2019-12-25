@@ -198,6 +198,59 @@ ffmpeg -i "https://"
        -f mp4 rr.mp4
 ```
 
+## 添加水印
+
+### 图片水印
+
+```shell
+ffmpeg -i 4.mp4 \
+       -i sy.png \
+       -filter_complex "overlay=10:10" birds2.mp4
+```
+
+### 添加文字水印
+
+```shell
+ffmpeg -i 4.mp4 \
+   -vf "drawtext=fontfile=/Library/Fonts/AdobeHeitiStd-Regular.otf:text='watermark测试':x=30:y=h-30:enable='if(gte(t,3),0,1)':fontsize=24:fontcolor=white@0.7" output.mp4
+```
+
+### 添加水印后推流
+
+```shell
+
+ffmpeg -i f.jpg \
+       -i 1.mp4 \
+       -i long.mp4 \
+       -i audio.mp3 \
+       -i t.wav \
+       -i sy.png \
+       -filter_complex '[0]scale=720:1280,setpts=PTS+6/TB[in0];
+                        [1:v]scale=720:1280[in1];
+                        [2:v]scale=720:1280[in2];
+                        [in0][in1][in2] concat=n=3:v=1:a=0 [v];
+                        [3:a]adelay=30s|30s[a3];
+                        [4:a]adelay=60s|60s[a4];
+                        [a3][a4]amix[a];
+                        [v][5:v]overlay[out]' \
+       -map [out] \
+       -map [a] \
+       -pix_fmt yuv420p \
+       -c:v libx264 \
+       -c:a aac \
+       -t 300 \
+       -f flv "rtmp://...."
+```
+
+- overlay 添加水印
+- amix 混合音频 默认值为2
+- adelay 延迟播放时间
+- scale 分辨率大小 720:1280 手机屏的
+- setpts 图片持续时长
+- pix_fmt: yuv420p 像素格式 视频默认像素格式所有图片与视频拼接也需要转换
+- -c:v libx264视频编码
+- -c:a aac音频编码
+- -f flv 流媒体封装
 
 合并中，最重要的命令-filter_complex支持的参数
 
