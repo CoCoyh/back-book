@@ -7,16 +7,22 @@
 
 ## 图片转视频加背景音乐
 
-```
-ffmpeg -f image2 -loop 1 -i img.jpg \
-       -f s16le -ac 1 -ar 16k -i wd.pcm \
-       -t 5 -vcodec mpeg4 output.mp4
+```shell
+ffmpeg -f image2 \
+       -loop 1 \
+       -i img.jpg \
+       -f s16le \
+       -ac 1 \
+       -ar 16k \
+       -i wd.pcm \
+       -t 5 \
+       -vcodec mpeg4 output.mp4
 ```
 
 
 ## 视频拼接
 
-```
+```shell
 ffmpeg -i v4.mp4 -i v2.mp4 \
    -filter_complex '[0:v]scale=720:1280[in1];
                     [1:v]scale=720:1280[in2];
@@ -29,7 +35,7 @@ ffmpeg -i v4.mp4 -i v2.mp4 \
 
 ## 视频拼接并去除声音
 
-```
+```shell
 ffmpeg -i v4.mp4 -i v2.mp4 \
    -filter_complex '[0:v]scale=720:1280[in1];
                     [1:v]scale=720:1280[in2];
@@ -39,7 +45,7 @@ ffmpeg -i v4.mp4 -i v2.mp4 \
 
 ## 视频（去除声音）拼接、音频合成
 
-```
+```shell
 ffmpeg -i v4.mp4 -i v2.mp4 -i audio.wav \
    -filter_complex '[0:v]scale=720:1280[in1];
                     [1:v]scale=720:1280[in2];
@@ -49,7 +55,7 @@ ffmpeg -i v4.mp4 -i v2.mp4 -i audio.wav \
 
 # 图片转视频封面、加背景音乐、拼接视频、加音频合成
 
-```
+```shell
 ffmpeg -i WechatIMG612.png \
        -i v4.mp4 \
        -i v2.mp4 \
@@ -75,7 +81,7 @@ ffmpeg -i WechatIMG612.png \
 
 **方案一：amerge：但音频会按最短音频输出**
 
-```
+```shell
 ffmpeg -i t.wav \
        -i audio.mp3 \
        -filter_complex '[0:a][1:a] amerge [a]' \
@@ -84,7 +90,7 @@ ffmpeg -i t.wav \
 
 **方案二：join,和merge同样的**
 
-```
+```shell
 
 ffmpeg -i t.wav \
        -i audio.mp3 \
@@ -94,7 +100,7 @@ ffmpeg -i t.wav \
 
 **方案三：-shortest：测试结果只支持 单音频时，可以这样实现**
 
-```
+```shell
 ffmpeg -i v1.mp4 \
        -i audio.mp3 \
        -filter_complex "[0:a][1:a]amerge=inputs=2[a]" \
@@ -103,7 +109,7 @@ ffmpeg -i v1.mp4 \
 
 **方案四：-t在最后指定播放总时长(目前只能使用这种方式)**
 
-```
+```shell
 ffmpeg -i WechatIMG612.png \
        -i v4.mp4 \
        -i v2.mp4 \
@@ -120,7 +126,7 @@ ffmpeg -i WechatIMG612.png \
 
 ## 图片转视频默认只有一帧，设定持续时长
 
-```
+```shell
 ffmpeg -i f.png \
        -i 1.mp4 \
        -i 2.mp4 \
@@ -141,7 +147,7 @@ ffmpeg -i f.png \
 
 ## 音频延迟播放
 
-```
+```shell
 ffmpeg -i f.png \
        -i 1.mp4 \
        -i 2.mp4 \
@@ -158,6 +164,39 @@ ffmpeg -i f.png \
 
 - setpts偏移时间-adelay时间=图片视频持续时间
 - adelay=1000|1000：两个音频延迟播放时间，单位为ms
+
+
+## 推流
+
+```shell
+ffmpeg -i f.jpg \
+       -i 1.mp4 \
+       -i long.mp4 \
+       -i audio.mp3 \
+       -i t.wav \
+       -filter_complex '[0]scale=720:1280,setpts=PTS+6/TB[in0];
+                        [1:v]scale=720:1280[in1];
+                        [2:v]scale=720:1280[in2];
+                        [in0][in1][in2] concat=n=3:v=1:a=0 [v];
+                        [3:a]adelay=30s|30s[a3];
+                        [4:a]adelay=60s|60s[a4];
+                        [a3][a4]amix[a]' \
+       -map [v] \
+       -map [a] \
+       -pix_fmt yuv420p \
+       -c:v libx264 \
+       -c:a aac \
+       -t 300 \
+       -f flv "rtmp://..."
+```
+
+## 本地拉流
+
+```shell
+ffmpeg -i "https://pili-live-hls.xinkuanvip.com/lab-live/0_6_20191223_-bNo42kNDv.m3u8?t=5e01af73&sign=8ddffe7984c71d1d5d05bc718a32e1ee"
+       -codec copy \
+       -f mp4 rr.mp4
+```
 
 
 合并中，最重要的命令-filter_complex支持的参数
