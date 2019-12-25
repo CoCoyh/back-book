@@ -193,7 +193,7 @@ ffmpeg -i f.jpg \
 ## 本地拉流
 
 ```shell
-ffmpeg -i "https://pili-live-hls.xinkuanvip.com/lab-live/0_6_20191223_-bNo42kNDv.m3u8?t=5e01af73&sign=8ddffe7984c71d1d5d05bc718a32e1ee"
+ffmpeg -i "https://"
        -codec copy \
        -f mp4 rr.mp4
 ```
