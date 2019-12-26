@@ -16,7 +16,7 @@
 备注：以上数据截止2019.9.25
 node-mysql与knex非ORM框架
 
-# sequeize
+## sequeize
 
 [https://github.com/sequelize/sequelize](https://github.com/sequelize/sequelize)
 
@@ -30,7 +30,7 @@ node-mysql与knex非ORM框架
 hooks/callbacks/lifecycle
 支持原生SQL连接池 事务 迁移CLI
 
-# node-orm2
+## node-orm2
 
 [https://github.com/dresende/node-orm2](https://github.com/dresende/node-orm2)
 
@@ -44,7 +44,7 @@ mongodb(beta版)
 
 项目近期更新少，与sequelize竞争完全处于劣势，放弃。
 
-# bookshelf
+## bookshelf
 
 [https://github.com/tgriesser/bookshelf]
 (https://github.com/tgriesser/bookshelf)
@@ -57,7 +57,7 @@ bookshelf是基于knex的ORM框架
 
 原生SQL语句
 
-# waterline
+## waterline
 
 [https://github.com/balderdashy/waterline](https://github.com/balderdashy/waterline)
 waterline是从Salis框架衍生出来的ORM框架
@@ -68,7 +68,7 @@ waterline是从Salis框架衍生出来的ORM框架
 
 [http://sailsjs.com/documentation/reference/waterline-orm](http://sailsjs.com/documentation/reference/waterline-orm) 文档不完善，放弃。
 
-# typeorm
+## typeorm
 
 基于Decorator的ORM框架，对TypeScript支持比较好，同时支持在JavaScript中通过手动声明使用，以及JSON方式的Entity配置声明
 
@@ -85,7 +85,7 @@ waterline是从Salis框架衍生出来的ORM框架
 热度： 周频更新， NPM周下载2.8w
 
 
-# 最终对比
+## 最终对比
 
 从以上分析，我们最终从sequelize和bookshelfl两者之间作出选择。项目数据对比
 [https://nodejs.libhunt.com/compare-sequelize-vs-bookshelf](https://nodejs.libhunt.com/compare-sequelize-vs-bookshelf)
