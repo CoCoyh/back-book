@@ -1,4 +1,16 @@
 # egg深入学习笔记
 
 * [egg体系](egg体系.md)
-
+* [egg应用自定义4xx和5xx的方案](egg应用自定义4xx和5xx的方案.md)
+* [egg的Http请求](egg的Http请求.md)
+* [怎么开发一个像egg-init的脚手架](怎么开发一个像egg-init的脚手架.md)
+* [结合源码揭秘egg运行原理](结合源码揭秘egg运行原理.md)
+* [脚手架之egg-init](脚手架之egg-init.md)
+* [egg框架中的参数校验](egg框架中的参数校验.md)
+* [egg的Controller最佳实践](egg的Controller最佳实践.md)
+* [egg基于egg-validate的定制化升级](egg基于egg-validate的定制化升级.md)
+* [egg中cookie与Session的使用笔记](egg中cookie与Session的使用笔记.md)
+* [egg-bin源码解析笔记](egg-bin源码解析笔记.md)
+* [egg框架与nest框架的对比](egg框架与nest框架的对比.md)
+* [egg常见问题笔记](egg常见问题笔.md)
+ * [VScode调试Egg](VScode调试Egg.md)
