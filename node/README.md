@@ -1,9 +1,5 @@
 # Node
 * [如何发布一个npm包](如何发布一个npm包.md)
-* [ORM框架选型](ORM框架选型.md)
-* [Knexjs笔记](Knexjs笔记.md)
-* [bookshelf笔记](bookshelf笔记.md)
-* [bookshelf笔记](bookshelf笔记.md)
 * [Node版本管理工具](node版本管理工具.md)
 * [使用node-clinic快速定位性能问题](clinic快速定位性能问题.md)
 * [cluster：扩展你的node应用](cluster：扩展你的node应用.md)
