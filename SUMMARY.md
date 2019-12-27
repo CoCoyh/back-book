@@ -96,6 +96,8 @@
     * [URL的最大长度是多少？](Browser/URL的最大长度是多少？.md)
     * [深入理解Session和Cookie](Browser/深入理解Session和Cookie.md)
     * [HTTP切面流程](Browser/HTTP切面流程.md)
+    * [Node与浏览器之间的区别](Browser/Node与浏览器之间的区别.md)
+    * [JavaScript如何在浏览器和Node中工作](Browser/JavaScript如何在浏览器和Node中工作.md)
 * [设计模式](Design/README.md)
     * [javaScript设计模式笔记一](Design/javaScript设计模式笔记一.md)
     * [javaScript设计模式笔记二](Design/javaScript设计模式笔记二.md)
@@ -117,4 +119,6 @@
     * [应用场景数据库选型](Framework/应用场景数据库选型.md)
 * [Elasticsearch](Elasticsearch/README.md)
     * [Mac上安装Elasticsearch，基本操作](Elasticsearch/Mac上安装Elasticsearch，基本操作.md)
+* [shell脚本](Shell/README.md)
+    * [shell入门](Shell/shell入门.md)
 
