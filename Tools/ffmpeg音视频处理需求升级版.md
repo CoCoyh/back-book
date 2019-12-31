@@ -242,6 +242,18 @@ ffmpeg -i f.jpg \
        -f flv "rtmp://...."
 ```
 
+### 循环推流
+
+```shell
+## 循环推流
+
+ffmpeg -re \
+       -stream_loop 4 \
+       -i 1.mp4 \
+       -c:v libx264 \
+       -f flv "rtmp://"
+```
+
 - overlay 添加水印
 - amix 混合音频 默认值为2
 - adelay 延迟播放时间
