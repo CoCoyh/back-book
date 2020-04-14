@@ -69,6 +69,7 @@
     * [七牛云存储中没有外链域名，无法下载的问题](Tools/七牛云存储中没有外链域名，无法下载的问题.md)
     * [基于WebAssembly的H265播放](Tools/基于WebAssembly的H265播放.md)
     * [ffprobe ffplay ffmpeg常用的命令](Tools/ffprobe ffplay ffmpeg常用的命令.md)
+    * [使用TravisCI构建Gitbook](Tools/使用TravisCI构建Gitbook.md)
     * [持续集成和travisCI](Tools/持续集成和travisCI.md)
 * [Git以及代码规范](Git/README.md)
     * [Mac下配置多个Git账户](Git/Mac下配置多个Git账户.md)
