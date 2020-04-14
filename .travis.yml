@@ -1,12 +1,30 @@
-sudo: false
 language: node_js
+
 node_js:
-  - '10'
+  - "8"
+
+cache:
+  directories:
+    - $HOME/.npm
+
 before_install:
-  - npm i npminstall -g
+  - export TZ='Asia/Shanghai'
+
 install:
-  - npminstall
+  - npm install gitbook-cli -g
+  - gitbook install
+
 script:
-  - npm run ci
-after_script:
-  - npminstall codecov && codecov
+  - gitbook build . ./build
+
+branches:
+  only:
+    - master
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master
