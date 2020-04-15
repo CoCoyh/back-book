@@ -1,0 +1,2102 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>怎样修改CentOS 7 SSH端口 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="guoyanhong">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Deploy/" />
+    
+    
+    <link rel="prev" href="服务器中启动服务的时候的IP选择.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">coco's blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    后端技术笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../JavaScript/">
+            
+                <a href="../JavaScript/">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../TypeScript/">
+            
+                <a href="../TypeScript/">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../TypeScript/基础笔记一.html">
+            
+                <a href="../TypeScript/基础笔记一.html">
+            
+                    
+                    基础笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../TypeScript/基础笔记二.html">
+            
+                <a href="../TypeScript/基础笔记二.html">
+            
+                    
+                    基础笔记二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../TypeScript/函数笔记.html">
+            
+                <a href="../TypeScript/函数笔记.html">
+            
+                    
+                    函数笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../TypeScript/泛型笔记.html">
+            
+                <a href="../TypeScript/泛型笔记.html">
+            
+                    
+                    泛型笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../TypeScript/枚举笔记.html">
+            
+                <a href="../TypeScript/枚举笔记.html">
+            
+                    
+                    枚举笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../TypeScript/类型兼容性笔记.html">
+            
+                <a href="../TypeScript/类型兼容性笔记.html">
+            
+                    
+                    类型兼容性笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../TypeScript/高级类型笔记.html">
+            
+                <a href="../TypeScript/高级类型笔记.html">
+            
+                    
+                    高级类型笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../TypeScript/.d.ts和源文件.ts有什么区别?.html">
+            
+                <a href="../TypeScript/.d.ts和源文件.ts有什么区别?.html">
+            
+                    
+                    .d.ts和源文件.ts有什么区别?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../TypeScript/使用TypeScript装饰器装饰你的代码.html">
+            
+                <a href="../TypeScript/使用TypeScript装饰器装饰你的代码.html">
+            
+                    
+                    使用TypeScript装饰器装饰你的代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Node/">
+            
+                <a href="../Node/">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Node/如何发布一个npm包.html">
+            
+                <a href="../Node/如何发布一个npm包.html">
+            
+                    
+                    如何发布一个npm包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Node/node版本管理工具.html">
+            
+                <a href="../Node/node版本管理工具.html">
+            
+                    
+                    Node版本管理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Node/clinic快速定位性能问题.html">
+            
+                <a href="../Node/clinic快速定位性能问题.html">
+            
+                    
+                    使用node-clinic快速定位性能问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Node/cluster：扩展你的node应用.html">
+            
+                <a href="../Node/cluster：扩展你的node应用.html">
+            
+                    
+                    cluster：扩展你的node应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Node/如何保存价值上千万的Node源代码.html">
+            
+                <a href="../Node/如何保存价值上千万的Node源代码.html">
+            
+                    
+                    如何保存价值上千万的Node源代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Node/6个Async、Await优于Promise的方面.html">
+            
+                <a href="../Node/6个Async、Await优于Promise的方面.html">
+            
+                    
+                    6个Async、Await优于Promise的方面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Node/npm安装包时的几个命令区别.html">
+            
+                <a href="../Node/npm安装包时的几个命令区别.html">
+            
+                    
+                    npm安装包时的几个命令区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Koa/">
+            
+                <a href="../Koa/">
+            
+                    
+                    Koa
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Koa/Node原生模块整理.html">
+            
+                <a href="../Koa/Node原生模块整理.html">
+            
+                    
+                    Node原生模块整理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Koa/koa-bodyparser中间件.html">
+            
+                <a href="../Koa/koa-bodyparser中间件.html">
+            
+                    
+                    koa-bodyparser中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Koa/koa-multer实现文件上传并自定义文件名和目录.html">
+            
+                <a href="../Koa/koa-multer实现文件上传并自定义文件名和目录.html">
+            
+                    
+                    koa-multer实现文件上传并自定义文件名和目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Egg/">
+            
+                <a href="../Egg/">
+            
+                    
+                    Egg
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Egg/egg体系.html">
+            
+                <a href="../Egg/egg体系.html">
+            
+                    
+                    egg体系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Egg/egg应用自定义4xx和5xx的方案.html">
+            
+                <a href="../Egg/egg应用自定义4xx和5xx的方案.html">
+            
+                    
+                    egg应用自定义4xx和5xx的方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Egg/egg的Http请求.html">
+            
+                <a href="../Egg/egg的Http请求.html">
+            
+                    
+                    egg的Http请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../Egg/怎么开发一个像egg-init的脚手架.html">
+            
+                <a href="../Egg/怎么开发一个像egg-init的脚手架.html">
+            
+                    
+                    怎么开发一个像egg-init的脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../Egg/结合源码揭秘egg运行原理.html">
+            
+                <a href="../Egg/结合源码揭秘egg运行原理.html">
+            
+                    
+                    结合源码揭秘egg运行原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../Egg/脚手架之egg-init.html">
+            
+                <a href="../Egg/脚手架之egg-init.html">
+            
+                    
+                    脚手架之egg-init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../Egg/egg框架中的参数校验.html">
+            
+                <a href="../Egg/egg框架中的参数校验.html">
+            
+                    
+                    egg框架中的参数校验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../Egg/egg的Controller最佳实践.html">
+            
+                <a href="../Egg/egg的Controller最佳实践.html">
+            
+                    
+                    egg的Controller最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../Egg/egg基于egg-validate的定制化升级.html">
+            
+                <a href="../Egg/egg基于egg-validate的定制化升级.html">
+            
+                    
+                    egg基于egg-validate的定制化升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../Egg/egg中cookie与Session的使用笔记.html">
+            
+                <a href="../Egg/egg中cookie与Session的使用笔记.html">
+            
+                    
+                    egg中cookie与Session的使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../Egg/egg-bin源码解析笔记.html">
+            
+                <a href="../Egg/egg-bin源码解析笔记.html">
+            
+                    
+                    egg-bin源码解析笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../Egg/egg框架与nest框架的对比.html">
+            
+                <a href="../Egg/egg框架与nest框架的对比.html">
+            
+                    
+                    egg框架与nest框架的对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../Egg/egg常见问题笔.html">
+            
+                <a href="../Egg/egg常见问题笔.html">
+            
+                    
+                    egg常见问题笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../Egg/VScode调试Egg.html">
+            
+                <a href="../Egg/VScode调试Egg.html">
+            
+                    
+                    VScode调试Egg
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Chair/">
+            
+                <a href="../Chair/">
+            
+                    
+                    Chair
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Chair/基于NodeWeb框架Chair.html">
+            
+                <a href="../Chair/基于NodeWeb框架Chair.html">
+            
+                    
+                    基于NodeWeb框架Chair
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../ORM/">
+            
+                <a href="../ORM/">
+            
+                    
+                    ORM框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../ORM/ORM框架选型.html">
+            
+                <a href="../ORM/ORM框架选型.html">
+            
+                    
+                    ORM框架选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../ORM/Knexjs笔记.html">
+            
+                <a href="../ORM/Knexjs笔记.html">
+            
+                    
+                    Knexjs笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../ORM/bookshelf笔记.html">
+            
+                <a href="../ORM/bookshelf笔记.html">
+            
+                    
+                    bookshelf笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Mysql/">
+            
+                <a href="../Mysql/">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Mysql/语法笔记一：delete和truncate的区别和联系.html">
+            
+                <a href="../Mysql/语法笔记一：delete和truncate的区别和联系.html">
+            
+                    
+                    语法笔记一：delete和truncate的区别和联系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Mysql/语法笔记二：having与where.html">
+            
+                <a href="../Mysql/语法笔记二：having与where.html">
+            
+                    
+                    语法笔记二：having与where
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Mysql/语法笔记三：pluck.html">
+            
+                <a href="../Mysql/语法笔记三：pluck.html">
+            
+                    
+                    语法笔记三：pluck
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../Mysql/语法笔记四：first.html">
+            
+                <a href="../Mysql/语法笔记四：first.html">
+            
+                    
+                    语法笔记四：first
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../Mysql/语法笔记五：references.html">
+            
+                <a href="../Mysql/语法笔记五：references.html">
+            
+                    
+                    语法笔记五：references
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../Mysql/语法笔记六：where1.html">
+            
+                <a href="../Mysql/语法笔记六：where1.html">
+            
+                    
+                    语法笔记六：where1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../Mysql/语法笔记七：in和exists二者之间的区别和性能影响.html">
+            
+                <a href="../Mysql/语法笔记七：in和exists二者之间的区别和性能影响.html">
+            
+                    
+                    语法笔记七：in和exists二者之间的区别和性能影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Tools/">
+            
+                <a href="../Tools/">
+            
+                    
+                    工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Tools/Mac安装mongodb.html">
+            
+                <a href="../Tools/Mac安装mongodb.html">
+            
+                    
+                    Mac安装mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Tools/mac上redis环境搭建.html">
+            
+                <a href="../Tools/mac上redis环境搭建.html">
+            
+                    
+                    mac上redis环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../Tools/Docker与Kubernetes在Mac本地环境搭建与应用部署.html">
+            
+                <a href="../Tools/Docker与Kubernetes在Mac本地环境搭建与应用部署.html">
+            
+                    
+                    Docker与Kubernetes在Mac本地环境搭建与应用部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../Tools/Docker使用.html">
+            
+                <a href="../Tools/Docker使用.html">
+            
+                    
+                    Docker使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../Tools/centos7下yum安装和配置Nginx.html">
+            
+                <a href="../Tools/centos7下yum安装和配置Nginx.html">
+            
+                    
+                    centos7下yum安装和配置Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../Tools/使用kubectl连接远程k8s集群.html">
+            
+                <a href="../Tools/使用kubectl连接远程k8s集群.html">
+            
+                    
+                    使用kubectl连接远程k8s集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../Tools/MacOS上安装DockerDesktop和Kubernetes.html">
+            
+                <a href="../Tools/MacOS上安装DockerDesktop和Kubernetes.html">
+            
+                    
+                    MacOS上安装DockerDesktop和Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../Tools/alinode.html">
+            
+                <a href="../Tools/alinode.html">
+            
+                    
+                    alinode使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../Tools/iPic-Markdown图床、文件上传工具.html">
+            
+                <a href="../Tools/iPic-Markdown图床、文件上传工具.html">
+            
+                    
+                    iPic-Markdown图床、文件上传工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../Tools/图片搬家神奇：iPicMover.html">
+            
+                <a href="../Tools/图片搬家神奇：iPicMover.html">
+            
+                    
+                    图片搬家神奇：iPic Mover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../Tools/ffmpeg音视频处理.html">
+            
+                <a href="../Tools/ffmpeg音视频处理.html">
+            
+                    
+                    ffmpeg音视频处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../Tools/ffmpeg音视频处理需求升级版.html">
+            
+                <a href="../Tools/ffmpeg音视频处理需求升级版.html">
+            
+                    
+                    ffmpeg音视频处理需求升级版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="../Tools/七牛云存储中没有外链域名，无法下载的问题.html">
+            
+                <a href="../Tools/七牛云存储中没有外链域名，无法下载的问题.html">
+            
+                    
+                    七牛云存储中没有外链域名，无法下载的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="../Tools/基于WebAssembly的H265播放.html">
+            
+                <a href="../Tools/基于WebAssembly的H265播放.html">
+            
+                    
+                    基于WebAssembly的H265播放
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="../Tools/ffprobe ffplay ffmpeg常用的命令.html">
+            
+                <a href="../Tools/ffprobe ffplay ffmpeg常用的命令.html">
+            
+                    
+                    ffprobe ffplay ffmpeg常用的命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.16" data-path="../Tools/使用TravisCI构建Gitbook.html">
+            
+                <a href="../Tools/使用TravisCI构建Gitbook.html">
+            
+                    
+                    使用TravisCI构建Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.17" data-path="../Tools/持续集成和travisCI.html">
+            
+                <a href="../Tools/持续集成和travisCI.html">
+            
+                    
+                    持续集成和travisCI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git以及代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Git/Mac下配置多个Git账户.html">
+            
+                <a href="../Git/Mac下配置多个Git账户.html">
+            
+                    
+                    Mac下配置多个Git账户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Git/删除远程仓库的某次错误提交.html">
+            
+                <a href="../Git/删除远程仓库的某次错误提交.html">
+            
+                    
+                    删除远程仓库的某次错误提交
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Git/使用GithubActions进行版本发布.html">
+            
+                <a href="../Git/使用GithubActions进行版本发布.html">
+            
+                    
+                    使用Github Actions进行版本发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../Git/使用GithubActions进行版本发布（一）.html">
+            
+                <a href="../Git/使用GithubActions进行版本发布（一）.html">
+            
+                    
+                    使用Github Actions进行版本发布(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../Git/gitsubtree教程.html">
+            
+                <a href="../Git/gitsubtree教程.html">
+            
+                    
+                    Git subtree教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../Git/git分支开发规范.html">
+            
+                <a href="../Git/git分支开发规范.html">
+            
+                    
+                    git分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../Git/Git规范和Changelog生成.html">
+            
+                <a href="../Git/Git规范和Changelog生成.html">
+            
+                    
+                    Git规范和Changelog生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../Git/语义化（Semantic Versioning）规范格式.html">
+            
+                <a href="../Git/语义化（Semantic Versioning）规范格式.html">
+            
+                    
+                    语义化（Semantic Versioning）规范格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="Linux上部署Node服务-外网无法访问.html">
+            
+                <a href="Linux上部署Node服务-外网无法访问.html">
+            
+                    
+                    Linux上部署Node服务-外网无法访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="服务器中启动服务的时候的IP选择.html">
+            
+                <a href="服务器中启动服务的时候的IP选择.html">
+            
+                    
+                    服务器中启动服务的时候的IP选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12.3" data-path="怎样修改CentOS7SSH端口.html">
+            
+                <a href="怎样修改CentOS7SSH端口.html">
+            
+                    
+                    怎样修改CentOS 7 SSH端口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Deploy/">
+            
+                <a href="../Deploy/">
+            
+                    
+                    部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.html">
+            
+                <a href="../Deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.html">
+            
+                    
+                    使用AppVeyor和Travis，自动构建和发布Electron应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Deploy/跨平台桌面应用Electron.html">
+            
+                <a href="../Deploy/跨平台桌面应用Electron.html">
+            
+                    
+                    跨平台桌面应用Electron
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../Deploy/企业级分布式，EDAS模式.html">
+            
+                <a href="../Deploy/企业级分布式，EDAS模式.html">
+            
+                    
+                    企业级分布式，EDAS模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../Deploy/GitlabCI CD管道配置参考.html">
+            
+                <a href="../Deploy/GitlabCI CD管道配置参考.html">
+            
+                    
+                    GitlabCI CD管道配置参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../Deploy/Make命令教程.html">
+            
+                <a href="../Deploy/Make命令教程.html">
+            
+                    
+                    Make命令教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../Deploy/pm2深入学习.html">
+            
+                <a href="../Deploy/pm2深入学习.html">
+            
+                    
+                    pm2深入学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../Deploy/pm2的cluster模式与fork模式的区别.html">
+            
+                <a href="../Deploy/pm2的cluster模式与fork模式的区别.html">
+            
+                    
+                    pm2的cluster模式与fork模式的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Yarn/">
+            
+                <a href="../Yarn/">
+            
+                    
+                    Yarn
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../Yarn/package.json中的workspaces.html">
+            
+                <a href="../Yarn/package.json中的workspaces.html">
+            
+                    
+                    package.json中的workspaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../Yarn/项目开发中的规范.html">
+            
+                <a href="../Yarn/项目开发中的规范.html">
+            
+                    
+                    项目开发中的规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../Yarn/npm库：AJV，JSON模式验证.html">
+            
+                <a href="../Yarn/npm库：AJV，JSON模式验证.html">
+            
+                    
+                    npm库：AJV，JSON模式验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../Browser/">
+            
+                <a href="../Browser/">
+            
+                    
+                    浏览器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Browser/SEO小技巧.html">
+            
+                <a href="../Browser/SEO小技巧.html">
+            
+                    
+                    SEO小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Browser/URL的最大长度是多少？.html">
+            
+                <a href="../Browser/URL的最大长度是多少？.html">
+            
+                    
+                    URL的最大长度是多少？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../Browser/深入理解Session和Cookie.html">
+            
+                <a href="../Browser/深入理解Session和Cookie.html">
+            
+                    
+                    深入理解Session和Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../Browser/HTTP切面流程.html">
+            
+                <a href="../Browser/HTTP切面流程.html">
+            
+                    
+                    HTTP切面流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../Browser/Node与浏览器之间的区别.html">
+            
+                <a href="../Browser/Node与浏览器之间的区别.html">
+            
+                    
+                    Node与浏览器之间的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../Browser/JavaScript如何在浏览器和Node中工作.html">
+            
+                <a href="../Browser/JavaScript如何在浏览器和Node中工作.html">
+            
+                    
+                    JavaScript如何在浏览器和Node中工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../Design/">
+            
+                <a href="../Design/">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../Design/javaScript设计模式笔记一.html">
+            
+                <a href="../Design/javaScript设计模式笔记一.html">
+            
+                    
+                    javaScript设计模式笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../Design/javaScript设计模式笔记二.html">
+            
+                <a href="../Design/javaScript设计模式笔记二.html">
+            
+                    
+                    javaScript设计模式笔记二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../Design/javaScript设计模式笔记三.html">
+            
+                <a href="../Design/javaScript设计模式笔记三.html">
+            
+                    
+                    javaScript设计模式笔记三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="../Design/javaScript设计模式笔记四.html">
+            
+                <a href="../Design/javaScript设计模式笔记四.html">
+            
+                    
+                    javaScript设计模式笔记四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" data-path="../Design/javascript设计模式笔记五.html">
+            
+                <a href="../Design/javascript设计模式笔记五.html">
+            
+                    
+                    javascript设计模式笔记五
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.6" data-path="../Design/javaScript设计模式笔记六.html">
+            
+                <a href="../Design/javaScript设计模式笔记六.html">
+            
+                    
+                    javaScript设计模式笔记六
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.7" data-path="../Design/javaScript设计模式笔记七.html">
+            
+                <a href="../Design/javaScript设计模式笔记七.html">
+            
+                    
+                    javaScript设计模式笔记七
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.8" data-path="../Design/javaScript设计模式笔记八.html">
+            
+                <a href="../Design/javaScript设计模式笔记八.html">
+            
+                    
+                    javaScript设计模式笔记八
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.9" data-path="../Design/javaScript设计模式笔记九.html">
+            
+                <a href="../Design/javaScript设计模式笔记九.html">
+            
+                    
+                    javaScript设计模式笔记九
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../Mservice/">
+            
+                <a href="../Mservice/">
+            
+                    
+                    微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../Kubernetes/">
+            
+                <a href="../Kubernetes/">
+            
+                    
+                    Kubernetes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../Kubernetes/学习笔记一.html">
+            
+                <a href="../Kubernetes/学习笔记一.html">
+            
+                    
+                    学习笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../Nginx/">
+            
+                <a href="../Nginx/">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../Nginx/Nginx基础.html">
+            
+                <a href="../Nginx/Nginx基础.html">
+            
+                    
+                    Nginx基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../Nginx/Mac下安装nginx.html">
+            
+                <a href="../Nginx/Mac下安装nginx.html">
+            
+                    
+                    Mac下安装nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../Framework/">
+            
+                <a href="../Framework/">
+            
+                    
+                    架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../Framework/淘宝网的后台架构发展.html">
+            
+                <a href="../Framework/淘宝网的后台架构发展.html">
+            
+                    
+                    淘宝网的后台架构发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../Framework/应用场景数据库选型.html">
+            
+                <a href="../Framework/应用场景数据库选型.html">
+            
+                    
+                    应用场景数据库选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../Elasticsearch/">
+            
+                <a href="../Elasticsearch/">
+            
+                    
+                    Elasticsearch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../Elasticsearch/Mac上安装Elasticsearch，基本操作.html">
+            
+                <a href="../Elasticsearch/Mac上安装Elasticsearch，基本操作.html">
+            
+                    
+                    Mac上安装Elasticsearch，基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../Shell/">
+            
+                <a href="../Shell/">
+            
+                    
+                    shell脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../Shell/shell入门.html">
+            
+                <a href="../Shell/shell入门.html">
+            
+                    
+                    shell入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >怎样修改CentOS 7 SSH端口</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x573A;&#x666F;">&#x573A;&#x666F;</h1>
+<p>&#x4E00;&#x822C;centos&#x9ED8;&#x8BA4;&#x7684;ssh&#x767B;&#x9646;&#x7AEF;&#x53E3;&#x662F;22&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x53D7;&#x5230;&#x653B;&#x51FB;&#x767B;&#x9646;&#xFF0C;&#x4E3A;&#x4E86;&#x5B89;&#x5168;&#x578B;&#x8003;&#x8651;&#xFF0C;&#x6700;&#x597D;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;</p>
+<h1 id="&#x4FEE;&#x6539;sshdconfig&#x7AEF;&#x53E3;">&#x4FEE;&#x6539;sshd_config&#x7AEF;&#x53E3;</h1>
+<pre><code>vi /etc/ssh/sshd_config
+</code></pre><p>&#x53D6;&#x6D88;#PORT 22&#x7684;&#x6CE8;&#x91CA;&#xFF0C;&#x5728;&#x4E0B;&#x4E00;&#x884C;&#x6DFB;&#x52A0;&#x4F60;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x65B0;&#x7AEF;&#x53E3;Port 2048&#x3002;&#xFF08;&#x8FD9;&#x91CC;&#x4E0D;&#x5220;&#x9664;22&#x7AEF;&#x53E3;&#x662F;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x4FEE;&#x6539;&#x540E;&#x65B0;&#x7AEF;&#x53E3;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#xFF0C;&#x9020;&#x6210;&#x65E0;&#x6CD5;&#x7528; ssh &#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;&#xFF09;&#x3002;</p>
+<pre><code>Port 22
+Port 2048
+</code></pre><p>&#x4FEE;&#x6539;&#x4FDD;&#x5B58;sshd_config&#x6587;&#x4EF6;&#x540E;&#x91CD;&#x542F;sshd&#x670D;&#x52A1;</p>
+<pre><code>systemctl restart ssh
+</code></pre><p>&#x9000;&#x51FA;ssh&#x4F1A;&#x8BDD;&#x540E;&#xFF0C;&#x518D;&#x7528;&#x65B0;&#x7684;&#x7AEF;&#x53E3;&#x8FDE;&#x63A5;&#xFF1A;</p>
+<pre><code>$ ssh -p 2048 root@example.com
+ssh: conntect to host 0.0.0.0 port 2048: Connection refused
+</code></pre><p>&#x597D;&#x5427;&#xFF0C;native&#x4E86;...&#x5BF9;&#x4E8E;CentOS 7&#x8FD9;&#x4E00;&#x5957;&#x4FEE;&#x6539;&#x7AEF;&#x53E3;&#x7684;&#x65B9;&#x6CD5;&#x5DF2;&#x7ECF;&#x4E0D;&#x80FD;&#x751F;&#x6548;&#x4E86;&#x3002;</p>
+<h1 id="&#x6253;&#x5F00;selinux&#x7AEF;&#x53E3;">&#x6253;&#x5F00;<a href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux" target="_blank">SELinux</a>&#x7AEF;&#x53E3;</h1>
+<p>SELinux&#x5168;&#x7A0B;Security Enhanced Linux(&#x5B89;&#x5168;&#x5F3A;&#x5316;Linux)&#xFF0C;&#x662F;MAC&#xFF08;Mandatory Access Control&#xFF0C;&#x5F3A;&#x5236;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#xFF09;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#xFF0C;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#x660E;&#x786E;&#x7684;&#x77E5;&#x540D;&#x67D0;&#x4E2A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x90A3;&#x4E9B;&#x8D44;&#x6E90;&#xFF08;&#x6587;&#x4EF6;&#x3001;&#x7F51;&#x7EDC;&#x7AEF;&#x53E3;&#x7B49;&#xFF09;</p>
+<p>&#x5BF9;&#x4E8E;ssh&#xFF0C;SELinux&#x9ED8;&#x8BA4;&#x53EA;&#x5141;&#x8BB8;22&#x7AEF;&#x53E3;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;SELinux&#x7BA1;&#x7406;&#x914D;&#x7F6E;&#x5DE5;&#x5177;semanage&#xFF0C;&#x6765;&#x4FEE;&#x6539;ssh&#x53EF;&#x8BBF;&#x95EE;&#x7684;&#x7AEF;&#x53E3;</p>
+<p><strong>&#x5B89;&#x88C5;semanage&#x5DE5;&#x5177;</strong></p>
+<pre><code>$ yum provides semanage
+$ yum -y install policycoreutils-python
+</code></pre><p><strong>&#x4E3A;ssh&#x6253;&#x5F00;2048&#x7AEF;&#x53E3;</strong></p>
+<pre><code># &#x4E3A; ssh &#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x5141;&#x8BB8;&#x7AEF;&#x53E3;
+$ semanage port -a -t ssh_port_t -p tcp 2048
+# &#x67E5;&#x770B;&#x5F53;&#x524D; SELinux &#x5141;&#x8BB8;&#x7684;&#x7AEF;&#x53E3;
+$ semanage port -l | grep ssh
+ssh_port_t                     tcp      2048, 22
+</code></pre><p><strong>&#x9519;&#x8BEF;&#x5904;&#x7406;</strong></p>
+<p>&#x5F53;SELINUX&#x914D;&#x7F6E;&#x4E3A;&#x7981;&#x7528;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;semanage&#x56DE;&#x62A5;&#x9519;&#x63D0;&#x793A;&#x65E0;&#x6CD5;&#x8BFB;&#x53D6;policy&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code>SELinux:  Could not downgrade policy file /etc/selinux/targeted/policy/policy.30, searching for an older version.  
+SELinux:  Could not open policy file &lt;= /etc/selinux/targeted/policy/policy.30:  No such file or directory  
+/sbin/load_policy:  Can&apos;t load policy:  No such file or directory
+libsemanage.semanage_reload_policy: load_policy returned error code 2. (No such file or directory).  
+FileNotFoundError: [Errno 2] No such file or directory
+</code></pre><p>&#x4FEE;&#x6539;/etc/selinux/config</p>
+<pre><code>$ vi /etc/selinux/config
+SELINUX=permissive  
+# &#x91CD;&#x542F;&#x670D;&#x52A1;&#x5668;
+$ init 6
+# &#x91CD;&#x542F;&#x540E;&#x67E5;&#x770B; SELinux &#x72B6;&#x6001;
+$ sestatus
+# if it shows disable, you can run
+$ load_policy -qi
+</code></pre><p><strong>&#x68C0;&#x67E5;&#x914D;&#x7F6E;</strong></p>
+<pre><code>$ semanage port -a -t ssh_port_t -p tcp 2048
+$ semanage port -l | grep ssh
+ssh_port_t                     tcp      2048, 22  
+# &#x91CD;&#x542F; ssh &#x670D;&#x52A1;
+systemctl restart sshd
+</code></pre><p>&#x6CE8;&#xFF1A;semanage&#x4E0D;&#x80FD;&#x7981;&#x7528;ssh&#x7684;22&#x7AEF;&#x53E3;</p>
+<pre><code>$ semanage port -d -t ssh_port_t -p tcp 22
+ValueError: &#x5728;&#x7B56;&#x7565;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x7AEF;&#x53E3; tcp/22&#xFF0C;&#x65E0;&#x6CD5;&#x5220;&#x9664;&#x3002;
+</code></pre><h1 id="&#x914D;&#x7F6E;&#x9632;&#x706B;&#x5899;firewalld">&#x914D;&#x7F6E;&#x9632;&#x706B;&#x5899;firewalld</h1>
+<h2 id="&#x542F;&#x7528;&#x9632;&#x706B;&#x5899;--&#x4EA7;&#x770B;&#x9632;&#x706B;&#x5899;&#x72B6;&#x6001;&#xFF1A;">&#x542F;&#x7528;&#x9632;&#x706B;&#x5899; &amp;&amp; &#x4EA7;&#x770B;&#x9632;&#x706B;&#x5899;&#x72B6;&#x6001;&#xFF1A;</h2>
+<pre><code>$ systemctl enable firewalld
+$ systemctl start firewalld
+$ systemctl status firewalld
+&#x25CF; firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since &#x4E8C; 2016-12-20 02:12:59 CST; 1 day 13h ago
+ Main PID: 10379 (firewalld)
+   CGroup: /system.slice/firewalld.service
+           &#x2514;&#x2500;10379 /usr/bin/python -Es /usr/sbin/firewalld --nofork --nopid
+$ firewall-cmd --state
+running
+</code></pre><h2 id="&#x67E5;&#x770B;&#x9632;&#x706B;&#x5899;&#x5F53;&#x524D;&#x9ED8;&#x8BA4;&#x548C;&#x6FC0;&#x6D3B;zone&#xFF1A;">&#x67E5;&#x770B;&#x9632;&#x706B;&#x5899;&#x5F53;&#x524D;&#x9ED8;&#x8BA4;&#x548C;&#x6FC0;&#x6D3B;zone&#xFF1A;</h2>
+<pre><code>$ firewall-cmd --get-default-zone
+public  
+$ firewall-cmd --get-active-zones
+public  
+  interfaces: eth0 eth1
+</code></pre><p>&#x82E5;&#x6CA1;&#x6709;&#x6FC0;&#x6D3B;&#x533A;&#x57DF;&#x7684;&#x8BDD;&#xFF0C;&#x8981;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;</p>
+<h2 id="&#x6FC0;&#x6D3B;public&#x533A;&#x57DF;&#xFF0C;&#x589E;&#x52A0;&#x7F51;&#x5361;&#x63A5;&#x53E3;">&#x6FC0;&#x6D3B;public&#x533A;&#x57DF;&#xFF0C;&#x589E;&#x52A0;&#x7F51;&#x5361;&#x63A5;&#x53E3;</h2>
+<pre><code>$ firewall-cmd --set-default-zone=public
+$ firewall-cmd --zone=public --add-interface=eth0
+success  
+$ firewall-cmd --zone=public --add-interface=eth1
+success
+</code></pre><h2 id="&#x4E3A;public-zone&#x6C38;&#x4E45;&#x5F00;&#x653E;2048tcp&#x7AEF;&#x53E3;">&#x4E3A;public zone&#x6C38;&#x4E45;&#x5F00;&#x653E;2048/TCP&#x7AEF;&#x53E3;</h2>
+<pre><code># &#x4EE5;&#x9632;&#x65B0;&#x7AEF;&#x53E3;&#x4E0D;&#x751F;&#x6548;&#xFF0C;&#x5148;&#x628A; 22 &#x7AEF;&#x53E3;&#x66B4;&#x9732;
+$ firewall-cmd --permanent --zone=public --add-port=22/tcp
+$ firewall-cmd --permanent --zone=public --add-port=2048/tcp
+success  
+# &#x91CD;&#x8F7D;&#x9632;&#x706B;&#x5899;
+$ firewall-cmd --reload
+# &#x67E5;&#x770B;&#x66B4;&#x9732;&#x7AEF;&#x53E3;&#x89C4;&#x5219;
+$ firewall-cmd --permanent --list-port
+443/tcp 80/tcp 22/tcp 2048/tcp  
+$ firewall-cmd --zone=public --list-all
+public (default, active)  
+  interfaces: eth0 eth1
+  sources:
+  services: dhcpv6-client ssh
+  ports: 443/tcp 80/tcp 22/tcp 2048/tcp
+  masquerade: no
+  forward-ports:
+  icmp-blocks:
+  rich rules:
+</code></pre><p>&#x9000;&#x51FA;ssh&#x540E;&#xFF0C;&#x5C1D;&#x8BD5;&#x8FDE;&#x63A5;&#x65B0;&#x7AEF;&#x53E3;</p>
+<pre><code>$ ssh -p 2048 root@example.com
+</code></pre><p>&#x6210;&#x529F;&#x767B;&#x9646;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x505A;&#x6536;&#x5C3E;&#x5DE5;&#x4F5C;&#x4E86;&#x3002;</p>
+<h1 id="&#x7981;&#x7528;22&#x7AEF;&#x53E3;">&#x7981;&#x7528;22&#x7AEF;&#x53E3;</h1>
+<h2 id="&#x5220;&#x9664;ssh&#x5141;&#x8BB8;&#x7AEF;&#x53E3;">&#x5220;&#x9664;ssh&#x5141;&#x8BB8;&#x7AEF;&#x53E3;</h2>
+<pre><code>$ vi /etc/ssh/sshd_config
+#Port 22
+Port 2048  
+$ systemctl restart sshd
+# &#x7528; ss &#x547D;&#x4EE4;&#x68C0;&#x67E5; ssh &#x76D1;&#x542C;&#x7684;&#x7AEF;&#x53E3;&#xFF0C;&#x6CA1;&#x6709; 22 &#x8BC1;&#x660E;&#x4FEE;&#x6539;&#x6210;&#x529F;
+$ ss -tnlp | grep ssh
+LISTEN     0      128                       *:2048                    *:*      users:((&quot;sshd&quot;,18233,3))
+</code></pre><h2 id="&#x9632;&#x706B;&#x5899;&#x79FB;&#x9664;22&#x7AEF;&#x53E3;">&#x9632;&#x706B;&#x5899;&#x79FB;&#x9664;22&#x7AEF;&#x53E3;</h2>
+<pre><code>$ firewall-cmd --permanent --zone=public --remove-port=22/tcp
+success  
+$ firewall-cmd --reload
+$ firewall-cmd --permanent --list-port
+443/tcp 80/tcp 2048/tcp
+</code></pre><p>ssh&#x53D6;&#x6D88;&#x76D1;&#x542C;22&#x7AEF;&#x53E3;&#xFF0C;&#x5C31;&#x5DF2;&#x7ECF;&#x914D;&#x7F6E;&#x597D;&#x4E86;&#xFF0C;&#x9632;&#x706B;&#x5899;&#x53EA;&#x4E0D;&#x8FC7;&#x662F;&#x5728;ssh&#x5916;&#x591A;&#x4E00;&#x5C42;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x3002;&#x5982;&#x679C;&#x8981;&#x505A;&#x7684;&#x66F4;&#x597D;&#x8FD8;&#x53EF;&#x4EE5;&#x5C06;22&#x7AEF;&#x53E3;&#x7684;&#x8BBF;&#x95EE;&#x6D41;&#x91CF;&#x4E13;&#x9879;&#x8BBF;&#x95EE;&#x8005;&#x672C;&#x5730;&#xFF1A;</p>
+<pre><code>$ firewall-cmd --permanen --zone=public --add-forward-port=port=22:proto=tcp:toport=22:toaddr=127.0.0.1
+# &#x914D;&#x7F6E;&#x540E;&#x91CD;&#x8F7D;&#x9632;&#x706B;&#x5899;&#xFF0C;&#x7528; ssh -p 22 root@example.com &#x5C31;&#x4F1A;&#x8BBF;&#x95EE;&#x5230;&#x81EA;&#x5DF1;&#x672C;&#x5730;&#x7684; 22 &#x7AEF;&#x53E3;&#x3002;
+</code></pre><p>&#x82E5;&#x8981;&#x5220;&#x9664;forward&#x914D;&#x7F6E;&#xFF0C;&#x53EF;&#x4EE5;&#xFF1A;</p>
+<pre><code>$ firewall-cmd --permanen --zone=public --remove-forward-port=port=22:proto=tcp:toport=22:toaddr=127.0.0.1
+</code></pre><p>&#x68C0;&#x9A8C;&#x4FEE;&#x6539;ssh&#x7AEF;&#x53E3;&#x662F;&#x5426;&#x6210;&#x529F;&#xFF1A;</p>
+<pre><code>$ ssh -p 22 root@example.com
+# &#x65E0;&#x54CD;&#x5E94;&#xFF0C;&#x56E0;&#x4E3A;&#x8F6C;&#x5230;&#x4E86;&#x672C;&#x5730;&#x7684; 22 &#x7AEF;&#x53E3;
+# &#x82E5;&#x9632;&#x706B;&#x5899;&#x672A; forward &#x8FDE;&#x63A5;&#xFF0C;&#x5219;&#x4F1A;&#x56DE;&#x663E; &quot;ssh: connect to host {ip} port 22: Connection refused&quot;
+$ ssh -p 2048 root@example.com
+# &#x6210;&#x529F; success
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="服务器中启动服务的时候的IP选择.html" class="navigation navigation-prev " aria-label="Previous page: 服务器中启动服务的时候的IP选择">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Deploy/" class="navigation navigation-next " aria-label="Next page: 部署">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"怎样修改CentOS 7 SSH端口","level":"1.12.3","depth":2,"next":{"title":"部署","level":"1.13","depth":1,"path":"Deploy/README.md","ref":"Deploy/README.md","articles":[{"title":"使用AppVeyor和Travis，自动构建和发布Electron应用","level":"1.13.1","depth":2,"path":"Deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.md","ref":"Deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.md","articles":[]},{"title":"跨平台桌面应用Electron","level":"1.13.2","depth":2,"path":"Deploy/跨平台桌面应用Electron.md","ref":"Deploy/跨平台桌面应用Electron.md","articles":[]},{"title":"企业级分布式，EDAS模式","level":"1.13.3","depth":2,"path":"Deploy/企业级分布式，EDAS模式.md","ref":"Deploy/企业级分布式，EDAS模式.md","articles":[]},{"title":"GitlabCI CD管道配置参考","level":"1.13.4","depth":2,"path":"Deploy/GitlabCI CD管道配置参考.md","ref":"Deploy/GitlabCI CD管道配置参考.md","articles":[]},{"title":"Make命令教程","level":"1.13.5","depth":2,"path":"Deploy/Make命令教程.md","ref":"Deploy/Make命令教程.md","articles":[]},{"title":"pm2深入学习","level":"1.13.6","depth":2,"path":"Deploy/pm2深入学习.md","ref":"Deploy/pm2深入学习.md","articles":[]},{"title":"pm2的cluster模式与fork模式的区别","level":"1.13.7","depth":2,"path":"Deploy/pm2的cluster模式与fork模式的区别.md","ref":"Deploy/pm2的cluster模式与fork模式的区别.md","articles":[]}]},"previous":{"title":"服务器中启动服务的时候的IP选择","level":"1.12.2","depth":2,"path":"Linux/服务器中启动服务的时候的IP选择.md","ref":"Linux/服务器中启动服务的时候的IP选择.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"guoyanhong","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"coco's blog":""}},"gitbook":"*","extension":null},"file":{"path":"Linux/怎样修改CentOS7SSH端口.md","mtime":"2020-04-15T04:18:11.177Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T04:18:55.536Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,2164 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>egg的Controller最佳实践 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="guoyanhong">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="egg基于egg-validate的定制化升级.html" />
+    
+    
+    <link rel="prev" href="egg框架中的参数校验.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">coco's blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    后端技术笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../JavaScript/">
+            
+                <a href="../JavaScript/">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../TypeScript/">
+            
+                <a href="../TypeScript/">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../TypeScript/基础笔记一.html">
+            
+                <a href="../TypeScript/基础笔记一.html">
+            
+                    
+                    基础笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../TypeScript/基础笔记二.html">
+            
+                <a href="../TypeScript/基础笔记二.html">
+            
+                    
+                    基础笔记二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../TypeScript/函数笔记.html">
+            
+                <a href="../TypeScript/函数笔记.html">
+            
+                    
+                    函数笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../TypeScript/泛型笔记.html">
+            
+                <a href="../TypeScript/泛型笔记.html">
+            
+                    
+                    泛型笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../TypeScript/枚举笔记.html">
+            
+                <a href="../TypeScript/枚举笔记.html">
+            
+                    
+                    枚举笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../TypeScript/类型兼容性笔记.html">
+            
+                <a href="../TypeScript/类型兼容性笔记.html">
+            
+                    
+                    类型兼容性笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../TypeScript/高级类型笔记.html">
+            
+                <a href="../TypeScript/高级类型笔记.html">
+            
+                    
+                    高级类型笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../TypeScript/.d.ts和源文件.ts有什么区别?.html">
+            
+                <a href="../TypeScript/.d.ts和源文件.ts有什么区别?.html">
+            
+                    
+                    .d.ts和源文件.ts有什么区别?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../TypeScript/使用TypeScript装饰器装饰你的代码.html">
+            
+                <a href="../TypeScript/使用TypeScript装饰器装饰你的代码.html">
+            
+                    
+                    使用TypeScript装饰器装饰你的代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Node/">
+            
+                <a href="../Node/">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Node/如何发布一个npm包.html">
+            
+                <a href="../Node/如何发布一个npm包.html">
+            
+                    
+                    如何发布一个npm包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Node/node版本管理工具.html">
+            
+                <a href="../Node/node版本管理工具.html">
+            
+                    
+                    Node版本管理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Node/clinic快速定位性能问题.html">
+            
+                <a href="../Node/clinic快速定位性能问题.html">
+            
+                    
+                    使用node-clinic快速定位性能问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Node/cluster：扩展你的node应用.html">
+            
+                <a href="../Node/cluster：扩展你的node应用.html">
+            
+                    
+                    cluster：扩展你的node应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Node/如何保存价值上千万的Node源代码.html">
+            
+                <a href="../Node/如何保存价值上千万的Node源代码.html">
+            
+                    
+                    如何保存价值上千万的Node源代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Node/6个Async、Await优于Promise的方面.html">
+            
+                <a href="../Node/6个Async、Await优于Promise的方面.html">
+            
+                    
+                    6个Async、Await优于Promise的方面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Node/npm安装包时的几个命令区别.html">
+            
+                <a href="../Node/npm安装包时的几个命令区别.html">
+            
+                    
+                    npm安装包时的几个命令区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Koa/">
+            
+                <a href="../Koa/">
+            
+                    
+                    Koa
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Koa/Node原生模块整理.html">
+            
+                <a href="../Koa/Node原生模块整理.html">
+            
+                    
+                    Node原生模块整理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Koa/koa-bodyparser中间件.html">
+            
+                <a href="../Koa/koa-bodyparser中间件.html">
+            
+                    
+                    koa-bodyparser中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Koa/koa-multer实现文件上传并自定义文件名和目录.html">
+            
+                <a href="../Koa/koa-multer实现文件上传并自定义文件名和目录.html">
+            
+                    
+                    koa-multer实现文件上传并自定义文件名和目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Egg
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="egg体系.html">
+            
+                <a href="egg体系.html">
+            
+                    
+                    egg体系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="egg应用自定义4xx和5xx的方案.html">
+            
+                <a href="egg应用自定义4xx和5xx的方案.html">
+            
+                    
+                    egg应用自定义4xx和5xx的方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="egg的Http请求.html">
+            
+                <a href="egg的Http请求.html">
+            
+                    
+                    egg的Http请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="怎么开发一个像egg-init的脚手架.html">
+            
+                <a href="怎么开发一个像egg-init的脚手架.html">
+            
+                    
+                    怎么开发一个像egg-init的脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="结合源码揭秘egg运行原理.html">
+            
+                <a href="结合源码揭秘egg运行原理.html">
+            
+                    
+                    结合源码揭秘egg运行原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="脚手架之egg-init.html">
+            
+                <a href="脚手架之egg-init.html">
+            
+                    
+                    脚手架之egg-init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="egg框架中的参数校验.html">
+            
+                <a href="egg框架中的参数校验.html">
+            
+                    
+                    egg框架中的参数校验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.8" data-path="egg的Controller最佳实践.html">
+            
+                <a href="egg的Controller最佳实践.html">
+            
+                    
+                    egg的Controller最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="egg基于egg-validate的定制化升级.html">
+            
+                <a href="egg基于egg-validate的定制化升级.html">
+            
+                    
+                    egg基于egg-validate的定制化升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="egg中cookie与Session的使用笔记.html">
+            
+                <a href="egg中cookie与Session的使用笔记.html">
+            
+                    
+                    egg中cookie与Session的使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="egg-bin源码解析笔记.html">
+            
+                <a href="egg-bin源码解析笔记.html">
+            
+                    
+                    egg-bin源码解析笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="egg框架与nest框架的对比.html">
+            
+                <a href="egg框架与nest框架的对比.html">
+            
+                    
+                    egg框架与nest框架的对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="egg常见问题笔.html">
+            
+                <a href="egg常见问题笔.html">
+            
+                    
+                    egg常见问题笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="VScode调试Egg.html">
+            
+                <a href="VScode调试Egg.html">
+            
+                    
+                    VScode调试Egg
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Chair/">
+            
+                <a href="../Chair/">
+            
+                    
+                    Chair
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Chair/基于NodeWeb框架Chair.html">
+            
+                <a href="../Chair/基于NodeWeb框架Chair.html">
+            
+                    
+                    基于NodeWeb框架Chair
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../ORM/">
+            
+                <a href="../ORM/">
+            
+                    
+                    ORM框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../ORM/ORM框架选型.html">
+            
+                <a href="../ORM/ORM框架选型.html">
+            
+                    
+                    ORM框架选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../ORM/Knexjs笔记.html">
+            
+                <a href="../ORM/Knexjs笔记.html">
+            
+                    
+                    Knexjs笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../ORM/bookshelf笔记.html">
+            
+                <a href="../ORM/bookshelf笔记.html">
+            
+                    
+                    bookshelf笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Mysql/">
+            
+                <a href="../Mysql/">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Mysql/语法笔记一：delete和truncate的区别和联系.html">
+            
+                <a href="../Mysql/语法笔记一：delete和truncate的区别和联系.html">
+            
+                    
+                    语法笔记一：delete和truncate的区别和联系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Mysql/语法笔记二：having与where.html">
+            
+                <a href="../Mysql/语法笔记二：having与where.html">
+            
+                    
+                    语法笔记二：having与where
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Mysql/语法笔记三：pluck.html">
+            
+                <a href="../Mysql/语法笔记三：pluck.html">
+            
+                    
+                    语法笔记三：pluck
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../Mysql/语法笔记四：first.html">
+            
+                <a href="../Mysql/语法笔记四：first.html">
+            
+                    
+                    语法笔记四：first
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../Mysql/语法笔记五：references.html">
+            
+                <a href="../Mysql/语法笔记五：references.html">
+            
+                    
+                    语法笔记五：references
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../Mysql/语法笔记六：where1.html">
+            
+                <a href="../Mysql/语法笔记六：where1.html">
+            
+                    
+                    语法笔记六：where1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../Mysql/语法笔记七：in和exists二者之间的区别和性能影响.html">
+            
+                <a href="../Mysql/语法笔记七：in和exists二者之间的区别和性能影响.html">
+            
+                    
+                    语法笔记七：in和exists二者之间的区别和性能影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Tools/">
+            
+                <a href="../Tools/">
+            
+                    
+                    工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Tools/Mac安装mongodb.html">
+            
+                <a href="../Tools/Mac安装mongodb.html">
+            
+                    
+                    Mac安装mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Tools/mac上redis环境搭建.html">
+            
+                <a href="../Tools/mac上redis环境搭建.html">
+            
+                    
+                    mac上redis环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../Tools/Docker与Kubernetes在Mac本地环境搭建与应用部署.html">
+            
+                <a href="../Tools/Docker与Kubernetes在Mac本地环境搭建与应用部署.html">
+            
+                    
+                    Docker与Kubernetes在Mac本地环境搭建与应用部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../Tools/Docker使用.html">
+            
+                <a href="../Tools/Docker使用.html">
+            
+                    
+                    Docker使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../Tools/centos7下yum安装和配置Nginx.html">
+            
+                <a href="../Tools/centos7下yum安装和配置Nginx.html">
+            
+                    
+                    centos7下yum安装和配置Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../Tools/使用kubectl连接远程k8s集群.html">
+            
+                <a href="../Tools/使用kubectl连接远程k8s集群.html">
+            
+                    
+                    使用kubectl连接远程k8s集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../Tools/MacOS上安装DockerDesktop和Kubernetes.html">
+            
+                <a href="../Tools/MacOS上安装DockerDesktop和Kubernetes.html">
+            
+                    
+                    MacOS上安装DockerDesktop和Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../Tools/alinode.html">
+            
+                <a href="../Tools/alinode.html">
+            
+                    
+                    alinode使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../Tools/iPic-Markdown图床、文件上传工具.html">
+            
+                <a href="../Tools/iPic-Markdown图床、文件上传工具.html">
+            
+                    
+                    iPic-Markdown图床、文件上传工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../Tools/图片搬家神奇：iPicMover.html">
+            
+                <a href="../Tools/图片搬家神奇：iPicMover.html">
+            
+                    
+                    图片搬家神奇：iPic Mover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../Tools/ffmpeg音视频处理.html">
+            
+                <a href="../Tools/ffmpeg音视频处理.html">
+            
+                    
+                    ffmpeg音视频处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../Tools/ffmpeg音视频处理需求升级版.html">
+            
+                <a href="../Tools/ffmpeg音视频处理需求升级版.html">
+            
+                    
+                    ffmpeg音视频处理需求升级版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="../Tools/七牛云存储中没有外链域名，无法下载的问题.html">
+            
+                <a href="../Tools/七牛云存储中没有外链域名，无法下载的问题.html">
+            
+                    
+                    七牛云存储中没有外链域名，无法下载的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="../Tools/基于WebAssembly的H265播放.html">
+            
+                <a href="../Tools/基于WebAssembly的H265播放.html">
+            
+                    
+                    基于WebAssembly的H265播放
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="../Tools/ffprobe ffplay ffmpeg常用的命令.html">
+            
+                <a href="../Tools/ffprobe ffplay ffmpeg常用的命令.html">
+            
+                    
+                    ffprobe ffplay ffmpeg常用的命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.16" data-path="../Tools/使用TravisCI构建Gitbook.html">
+            
+                <a href="../Tools/使用TravisCI构建Gitbook.html">
+            
+                    
+                    使用TravisCI构建Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.17" data-path="../Tools/持续集成和travisCI.html">
+            
+                <a href="../Tools/持续集成和travisCI.html">
+            
+                    
+                    持续集成和travisCI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git以及代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Git/Mac下配置多个Git账户.html">
+            
+                <a href="../Git/Mac下配置多个Git账户.html">
+            
+                    
+                    Mac下配置多个Git账户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Git/删除远程仓库的某次错误提交.html">
+            
+                <a href="../Git/删除远程仓库的某次错误提交.html">
+            
+                    
+                    删除远程仓库的某次错误提交
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Git/使用GithubActions进行版本发布.html">
+            
+                <a href="../Git/使用GithubActions进行版本发布.html">
+            
+                    
+                    使用Github Actions进行版本发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../Git/使用GithubActions进行版本发布（一）.html">
+            
+                <a href="../Git/使用GithubActions进行版本发布（一）.html">
+            
+                    
+                    使用Github Actions进行版本发布(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../Git/gitsubtree教程.html">
+            
+                <a href="../Git/gitsubtree教程.html">
+            
+                    
+                    Git subtree教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../Git/git分支开发规范.html">
+            
+                <a href="../Git/git分支开发规范.html">
+            
+                    
+                    git分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../Git/Git规范和Changelog生成.html">
+            
+                <a href="../Git/Git规范和Changelog生成.html">
+            
+                    
+                    Git规范和Changelog生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../Git/语义化（Semantic Versioning）规范格式.html">
+            
+                <a href="../Git/语义化（Semantic Versioning）规范格式.html">
+            
+                    
+                    语义化（Semantic Versioning）规范格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Linux/">
+            
+                <a href="../Linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Linux/Linux上部署Node服务-外网无法访问.html">
+            
+                <a href="../Linux/Linux上部署Node服务-外网无法访问.html">
+            
+                    
+                    Linux上部署Node服务-外网无法访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Linux/服务器中启动服务的时候的IP选择.html">
+            
+                <a href="../Linux/服务器中启动服务的时候的IP选择.html">
+            
+                    
+                    服务器中启动服务的时候的IP选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../Linux/怎样修改CentOS7SSH端口.html">
+            
+                <a href="../Linux/怎样修改CentOS7SSH端口.html">
+            
+                    
+                    怎样修改CentOS 7 SSH端口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Deploy/">
+            
+                <a href="../Deploy/">
+            
+                    
+                    部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.html">
+            
+                <a href="../Deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.html">
+            
+                    
+                    使用AppVeyor和Travis，自动构建和发布Electron应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Deploy/跨平台桌面应用Electron.html">
+            
+                <a href="../Deploy/跨平台桌面应用Electron.html">
+            
+                    
+                    跨平台桌面应用Electron
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../Deploy/企业级分布式，EDAS模式.html">
+            
+                <a href="../Deploy/企业级分布式，EDAS模式.html">
+            
+                    
+                    企业级分布式，EDAS模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../Deploy/GitlabCI CD管道配置参考.html">
+            
+                <a href="../Deploy/GitlabCI CD管道配置参考.html">
+            
+                    
+                    GitlabCI CD管道配置参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../Deploy/Make命令教程.html">
+            
+                <a href="../Deploy/Make命令教程.html">
+            
+                    
+                    Make命令教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../Deploy/pm2深入学习.html">
+            
+                <a href="../Deploy/pm2深入学习.html">
+            
+                    
+                    pm2深入学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../Deploy/pm2的cluster模式与fork模式的区别.html">
+            
+                <a href="../Deploy/pm2的cluster模式与fork模式的区别.html">
+            
+                    
+                    pm2的cluster模式与fork模式的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Yarn/">
+            
+                <a href="../Yarn/">
+            
+                    
+                    Yarn
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../Yarn/package.json中的workspaces.html">
+            
+                <a href="../Yarn/package.json中的workspaces.html">
+            
+                    
+                    package.json中的workspaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../Yarn/项目开发中的规范.html">
+            
+                <a href="../Yarn/项目开发中的规范.html">
+            
+                    
+                    项目开发中的规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../Yarn/npm库：AJV，JSON模式验证.html">
+            
+                <a href="../Yarn/npm库：AJV，JSON模式验证.html">
+            
+                    
+                    npm库：AJV，JSON模式验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../Browser/">
+            
+                <a href="../Browser/">
+            
+                    
+                    浏览器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Browser/SEO小技巧.html">
+            
+                <a href="../Browser/SEO小技巧.html">
+            
+                    
+                    SEO小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Browser/URL的最大长度是多少？.html">
+            
+                <a href="../Browser/URL的最大长度是多少？.html">
+            
+                    
+                    URL的最大长度是多少？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../Browser/深入理解Session和Cookie.html">
+            
+                <a href="../Browser/深入理解Session和Cookie.html">
+            
+                    
+                    深入理解Session和Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../Browser/HTTP切面流程.html">
+            
+                <a href="../Browser/HTTP切面流程.html">
+            
+                    
+                    HTTP切面流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../Browser/Node与浏览器之间的区别.html">
+            
+                <a href="../Browser/Node与浏览器之间的区别.html">
+            
+                    
+                    Node与浏览器之间的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../Browser/JavaScript如何在浏览器和Node中工作.html">
+            
+                <a href="../Browser/JavaScript如何在浏览器和Node中工作.html">
+            
+                    
+                    JavaScript如何在浏览器和Node中工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../Design/">
+            
+                <a href="../Design/">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../Design/javaScript设计模式笔记一.html">
+            
+                <a href="../Design/javaScript设计模式笔记一.html">
+            
+                    
+                    javaScript设计模式笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../Design/javaScript设计模式笔记二.html">
+            
+                <a href="../Design/javaScript设计模式笔记二.html">
+            
+                    
+                    javaScript设计模式笔记二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../Design/javaScript设计模式笔记三.html">
+            
+                <a href="../Design/javaScript设计模式笔记三.html">
+            
+                    
+                    javaScript设计模式笔记三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="../Design/javaScript设计模式笔记四.html">
+            
+                <a href="../Design/javaScript设计模式笔记四.html">
+            
+                    
+                    javaScript设计模式笔记四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" data-path="../Design/javascript设计模式笔记五.html">
+            
+                <a href="../Design/javascript设计模式笔记五.html">
+            
+                    
+                    javascript设计模式笔记五
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.6" data-path="../Design/javaScript设计模式笔记六.html">
+            
+                <a href="../Design/javaScript设计模式笔记六.html">
+            
+                    
+                    javaScript设计模式笔记六
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.7" data-path="../Design/javaScript设计模式笔记七.html">
+            
+                <a href="../Design/javaScript设计模式笔记七.html">
+            
+                    
+                    javaScript设计模式笔记七
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.8" data-path="../Design/javaScript设计模式笔记八.html">
+            
+                <a href="../Design/javaScript设计模式笔记八.html">
+            
+                    
+                    javaScript设计模式笔记八
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.9" data-path="../Design/javaScript设计模式笔记九.html">
+            
+                <a href="../Design/javaScript设计模式笔记九.html">
+            
+                    
+                    javaScript设计模式笔记九
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../Mservice/">
+            
+                <a href="../Mservice/">
+            
+                    
+                    微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../Kubernetes/">
+            
+                <a href="../Kubernetes/">
+            
+                    
+                    Kubernetes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../Kubernetes/学习笔记一.html">
+            
+                <a href="../Kubernetes/学习笔记一.html">
+            
+                    
+                    学习笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../Nginx/">
+            
+                <a href="../Nginx/">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../Nginx/Nginx基础.html">
+            
+                <a href="../Nginx/Nginx基础.html">
+            
+                    
+                    Nginx基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../Nginx/Mac下安装nginx.html">
+            
+                <a href="../Nginx/Mac下安装nginx.html">
+            
+                    
+                    Mac下安装nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../Framework/">
+            
+                <a href="../Framework/">
+            
+                    
+                    架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../Framework/淘宝网的后台架构发展.html">
+            
+                <a href="../Framework/淘宝网的后台架构发展.html">
+            
+                    
+                    淘宝网的后台架构发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../Framework/应用场景数据库选型.html">
+            
+                <a href="../Framework/应用场景数据库选型.html">
+            
+                    
+                    应用场景数据库选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../Elasticsearch/">
+            
+                <a href="../Elasticsearch/">
+            
+                    
+                    Elasticsearch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../Elasticsearch/Mac上安装Elasticsearch，基本操作.html">
+            
+                <a href="../Elasticsearch/Mac上安装Elasticsearch，基本操作.html">
+            
+                    
+                    Mac上安装Elasticsearch，基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../Shell/">
+            
+                <a href="../Shell/">
+            
+                    
+                    shell脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../Shell/shell入门.html">
+            
+                <a href="../Shell/shell入门.html">
+            
+                    
+                    shell入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >egg的Controller最佳实践</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="egg-&#x7684;-controller-&#x6700;&#x4F73;&#x5B9E;&#x8DF5;">egg &#x7684; Controller &#x6700;&#x4F73;&#x5B9E;&#x8DF5;</h1>
+<p>router&#x63CF;&#x8FF0;&#x4E86;URL&#x4E0E;Controller&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x3002;egg&#x7EA6;&#x5B9A;&#x6240;&#x6709;&#x7684;&#x8DEF;&#x7531;&#x90FD;&#x9700;&#x8981;&#x5728;<code>app/router</code>&#x4E2D;&#x7533;&#x660E;&#xFF0C;&#x8DEF;&#x7531;&#x548C;&#x5BF9;&#x5E94;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x5206;&#x5F00;&#x4E24;&#x4E2A;&#x5730;&#x65B9;&#x7EF4;&#x62A4;&#xFF0C;&#x5F00;&#x53D1;&#x65F6;&#x8FDB;&#x573A;&#x9700;&#x8981;&#x5728;<code>router.js</code>&#x548C;<code>Controller</code>&#x4E4B;&#x95F4;&#x6765;&#x56DE;&#x5207;&#x6362;</p>
+<p>&#x524D;&#x540E;&#x534F;&#x4F5C;&#x65F6;&#xFF0C;&#x540E;&#x7AEF;&#x9700;&#x8981;&#x4E3A;&#x6BCF;&#x4E2A;API&#x90FD;&#x751F;&#x6210;&#x4E00;&#x4EFD;&#x5BF9;&#x5E94;&#x7684;API&#x6587;&#x6863;&#x7ED9;&#x524D;&#x7AEF;</p>
+<h2 id="&#x66F4;&#x4F18;&#x96C5;&#x7684;&#x5B9E;&#x73B0;">&#x66F4;&#x4F18;&#x96C5;&#x7684;&#x5B9E;&#x73B0;</h2>
+<p>&#x5F97;&#x76CA;&#x4E8E;JavaScript&#x52A0;&#x5165;&#x7684;decorator&#x7279;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x6211;&#x4EEC;&#x8DDF;Java/C#&#x4E00;&#x6837;&#xFF0C;&#x66F4;&#x52A0;&#x76F4;&#x89C2;&#x81EA;&#x7136;&#x7684;&#x505A;&#x9762;&#x5411;&#x5207;&#x9762;&#x7F16;&#x7A0B;&#x3002;</p>
+<pre><code class="lang-js">
+<span class="hljs-comment">// &#x57FA;&#x7840;&#x7248;</span>
+@route(<span class="hljs-string">&apos;/intro&apos;</span>)
+<span class="hljs-keyword">async</span> intro() { }
+
+<span class="hljs-comment">// &#x5B9A;&#x4E49; Method</span>
+@route(<span class="hljs-string">&apos;/intro&apos;</span>, { method: <span class="hljs-string">&apos;post&apos;</span> })
+<span class="hljs-keyword">async</span> intro() { }
+
+<span class="hljs-comment">// &#x589E;&#x52A0;&#x6743;&#x9650;</span>
+@route(<span class="hljs-string">&apos;/intro&apos;</span>, { method: <span class="hljs-string">&apos;post&apos;</span>, role: xxxRole })
+<span class="hljs-keyword">async</span> intro() { }
+
+<span class="hljs-comment">// Controller &#x7EA7;&#x522B;&#x4E2D;&#x95F4;&#x4EF6;</span>
+@route(<span class="hljs-string">&apos;/intro&apos;</span>, { method: <span class="hljs-string">&apos;post&apos;</span>, role: xxxRole, beforeMiddleware: xxMiddleware })
+<span class="hljs-keyword">async</span> intro() { }
+</code></pre>
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6848;">&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6848;</h2>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x5982;&#x6B64;&#x590D;&#x6742;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x5728;&#x6EE5;&#x7528;<code>Decorator</code>?</p>
+</blockquote>
+<p>&#x5148;&#x770B;&#x770B;<code>route</code>&#x7684;&#x529F;&#x80FD;:</p>
+<ul>
+<li>&#x8DEF;&#x7531;&#x5B9A;&#x4E49;</li>
+<li>&#x53C2;&#x6570;&#x6821;&#x9A8C;</li>
+<li>&#x6743;&#x9650;</li>
+<li><code>Controller</code>&#x7EA7;&#x522B;&#x4E2D;&#x95F4;&#x4EF6;</li>
+</ul>
+<p>router &#x5B98;&#x65B9;&#x5B8C;&#x6574;&#x5B9A;&#x4E49;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x529F;&#x80FD;&#xFF1A;&#x8DEF;&#x7531;&#x5B9A;&#x4E49;&#x3001;&#x4E2D;&#x95F4;&#x4EF6;&#x3001;&#x6743;&#x9650;&#x53CA;&#x6587;&#x6863;&#x4E2D;&#x672A;&#x76F4;&#x63A5;&#x5199;&#x7684;&#x201C;&#x6743;&#x9650;&#x201D;&#xFF1A;</p>
+<pre><code>router.verb(&apos;router-name&apos;, &apos;path-match&apos;, middleware1, ..., middlewareN, app.controller.action);
+</code></pre><p>&#x6BD4;&#x8F83;&#x4E0B;&#x6765;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x53EA;&#x662F;&#x591A;&#x4E86;&#x53C2;&#x6570;&#x6821;&#x9A8C;&#x7684;&#x529F;&#x80FD;</p>
+<h2 id="&#x53C2;&#x6570;&#x6821;&#x9A8C;">&#x53C2;&#x6570;&#x6821;&#x9A8C;</h2>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span> </span>{
+    <span class="hljs-keyword">async</span> create() {
+        <span class="hljs-keyword">const</span> ctx = <span class="hljs-keyword">this</span>.ctx;
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">// &#x6821;&#x9A8C;&#x53C2;&#x6570;</span>
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x4E0D;&#x4F20;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F1A;&#x81EA;&#x52A8;&#x6821;&#x9A8C; `ctx.request.body`</span>
+            ctx.validate(createRule);
+        } <span class="hljs-keyword">catch</span> (err) {
+            ctx.logger.warn(err.errors);
+            ctx.body = { success: <span class="hljs-literal">false</span> };
+            <span class="hljs-keyword">return</span>;
+        }
+    }
+};
+</code></pre>
+<p>&#x5728;&#x6211;&#x4EEC;&#x7684;&#x4E1A;&#x52A1;&#x5B9E;&#x8DF5;&#x4E2D;&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x4F1A;&#x6709;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<ul>
+<li>&#x53C2;&#x6570;&#x6F0F;&#x6821;&#x9A8C;</li>
+</ul>
+<p>&#x6BD4;&#x5982;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#x4E3A; <code>{ a: &apos;a&apos;, &apos;b&apos;: &apos;b&apos;, c: &apos;c&apos; }</code>&#xFF0C;&#x5982;&#x679C;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#x53EA;&#x5B9A;&#x4E49;&#x4E86; <code>a</code>&#xFF0C;&#x90A3;&#x4E48; <code>b&#x3001;c</code>&#x5C31;&#x88AB;&#x6F0F;&#x6389;&#x4E86;&#xFF0C;&#x5E76;&#x4E14;&#x540E;&#x7EED;&#x4E1A;&#x52A1;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x4F7F;&#x7528;&#x8FD9; 2 &#x4E2A;&#x503C;&#x3002;</p>
+<ul>
+<li>egg &#x4E00;&#x4E2A;request&#x751F;&#x547D;&#x5468;&#x671F;&#x5185;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x968F;&#x5730;&#x901A;&#x8FC7; <code>ctx.request</code>&#x62FF;&#x5230;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<p>&#x56E0;&#x4E3A;&#x201C;&#x53C2;&#x6570;&#x6F0F;&#x6821;&#x9A8C;&#x201D;&#x95EE;&#x9898;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x5BFC;&#x81F4;&#x540E;&#x7EED;&#x4E1A;&#x52A1;&#x53D8;&#x7684;&#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;&#x968F;&#x65F6;&#x53EF;&#x80FD;&#x90FD;&#x4F1A;&#x56E0;&#x4E3A;&#x7528;&#x6237;&#x7684;&#x5F02;&#x5E38;&#x6570;&#x636E;&#x5BFC;&#x81F4;&#x4E1A;&#x52A1;&#x5D29;&#x6E83;&#xFF0C;&#x6216;&#x8005;&#x51FA;&#x73B0;&#x5B89;&#x5168;&#x95EE;&#x9898;&#x3002;</p>
+<h2 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h2>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x201C;&#x53C2;&#x6570;&#x6F0F;&#x6821;&#x9A8C;&#x201D;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x505A;&#x4E86;&#x5982;&#x4E0B;&#x7EA6;&#x5B9A;&#xFF1A;</p>
+<ul>
+<li>Controller &#x4E5F;&#x9700;&#x8981;&#x7533;&#x660E;&#x5165;&#x53C2;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span> </span>{
+    @route(<span class="hljs-string">&apos;/api/user&apos;</span>, { method: <span class="hljs-string">&apos;post&apos;</span> })
+    <span class="hljs-keyword">async</span> updateUser(username) {
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5373;&#x4F7F;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x4E86;&#x6D77;&#x91CF;&#x6570;&#x636E;&#xFF0C;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x4E2D;&#x4E5F;&#x53EA;&#x80FD;&#x62FF;&#x5230; username</p>
+<ul>
+<li>Controller &#x4E4B;&#x5916;&#x7684;&#x4E1A;&#x52A1;&#x4E0D;&#x5E94;&#x8BE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE; ctx.request &#x4E0A;&#x7684;&#x6570;&#x636E;</li>
+</ul>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5F53;&#x67D0;&#x4E2A; Service &#x65B9;&#x6CD5;&#x4F9D;&#x8D56;&#x7528;&#x6237;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x901A;&#x8FC7;&#x5165;&#x53C2;&#x83B7;&#x53D6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x8BBF;&#x95EE; ctx.request</p>
+<p>&#x57FA;&#x4E8E;&#x4EE5;&#x4E0A;&#x7EA6;&#x5B9A;&#xFF0C;&#x5206;&#x522B;&#x770B;&#x770B; JS&#x3001;TypeScript &#x4E0B;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x53C2;&#x6570;&#x6821;&#x9A8C;&#x95EE;&#x9898;&#xFF1A;</p>
+<ul>
+<li>JS</li>
+</ul>
+<pre><code class="lang-js">@route(<span class="hljs-string">&apos;/api/user&apos;</span>, {
+    method: <span class="hljs-string">&apos;post&apos;</span>,
+    rule: {
+        username: { type: <span class="hljs-string">&apos;string&apos;</span>, max: <span class="hljs-number">20</span> },
+    }
+})
+<span class="hljs-keyword">async</span> updateUser(username) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86; egg-validate &#x5E95;&#x5C42;&#x4F9D;&#x8D56;&#x7684; parameter &#x4F5C;&#x4E3A;&#x6821;&#x9A8C;&#x5E93;</p>
+<ul>
+<li>TypeScript</li>
+</ul>
+<pre><code class="lang-ts">@route(<span class="hljs-string">&apos;/api/user&apos;</span>, {
+    method: <span class="hljs-string">&apos;post&apos;</span>
+})
+async updateUser(username: R&lt;{ <span class="hljs-keyword">type</span>: <span class="hljs-built_in">string</span>, max: <span class="hljs-number">20</span> }&gt;) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#x6CA1;&#x770B;&#x9519;&#xFF0C;&#x624B;&#x52A8;&#x8C03;&#x7528; ctx.validate(createRule) &#x5E76;&#x6355;&#x83B7;&#x5F02;&#x5E38;&#x7684;&#x903B;&#x8F91;&#x786E;&#x5B9E;&#x88AB;&#x6211;&#x4EEC;&#x7701;&#x7565;&#x6389;&#x4E86;&#x3002;&#x201C;&#x61D2;&#x60F0;&#x201D;&#x662F;&#x63D0;&#x9AD8;&#x751F;&#x4EA7;&#x529B;&#x7684;&#x7B2C;&#x4E00;&#x8981;&#x7D20;&#x3002;&#x53C2;&#x6570;&#x3001;&#x89C4;&#x5219;&#x90FD;&#x6709;&#x4E86;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD8;&#x8981;&#x81EA;&#x5DF1;&#x64B8;&#x4EE3;&#x7801;&#x5462;&#xFF1F;</p>
+<h2 id="&#x65B0;&#x7684;&#x524D;&#x540E;&#x7AEF;&#x534F;&#x4F5C;&#x5B9E;&#x8DF5;">&#x65B0;&#x7684;&#x524D;&#x540E;&#x7AEF;&#x534F;&#x4F5C;&#x5B9E;&#x8DF5;</h2>
+<p>&#x4F20;&#x7EDF;&#x7684;&#x524D;&#x540E;&#x7AEF;&#x5F00;&#x53D1;&#x534F;&#x4F5C;&#x65B9;&#x5F0F;&#x4E2D;&#xFF0C;&#x540E;&#x7AEF;&#x63D0;&#x4F9B; Api &#x7ED9;&#x524D;&#x7AEF;&#x8C03;&#x7528;&#xFF0C;&#x4EE3;&#x7801;&#x7C7B;&#x4F3C;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateUser</span>(<span class="hljs-params"></span>) </span>{
+    request
+        .post(<span class="hljs-string">`/api/user`</span>, { username })
+        .then(ret =&gt; {
+
+        });
+}
+</code></pre>
+<p>&#x524D;&#x7AEF;&#x540C;&#x5B66;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x8DEF;&#x7531;&#x3001;&#x53C2;&#x6570;&#x3001;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x800C;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F; Controller &#x90FD;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#xFF0C;&#x76F4;&#x63A5;&#x751F;&#x6210;&#x524D;&#x53F0; service &#x7528;&#x8D77;&#x6765;&#x662F;&#x4E0D;&#x662F;&#x66F4;&#x65B9;&#x4FBF;&#x5462;&#xFF1A;</p>
+<ul>
+<li>Controller &#x4EE3;&#x7801;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserController</span> </span>{
+
+  @route({ url: <span class="hljs-string">&apos;/api/user&apos;</span> })
+  <span class="hljs-keyword">async</span> getUserInfo(id: number) {
+    <span class="hljs-keyword">return</span> { ... };
+  }
+}
+</code></pre>
+<ul>
+<li>&#x751F;&#x6210;Service</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserService</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Base</span> </span>{
+  <span class="hljs-comment">/** &#x9996;&#x9875;  */</span>
+  <span class="hljs-keyword">async</span> getUserInfo(id: number) {
+    <span class="hljs-keyword">const</span> __data = { id };
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.request({
+      method: <span class="hljs-string">`get`</span>,
+      url: <span class="hljs-string">`/api/user`</span>,
+      data: __data,
+    });
+  }
+
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> metaService = <span class="hljs-keyword">new</span> UserService();
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> UserService();
+</code></pre>
+<ul>
+<li>&#x524D;&#x53F0;&#x4F7F;&#x7528;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { userService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;service/user&apos;</span>;
+
+<span class="hljs-keyword">const</span> userInfo = <span class="hljs-keyword">await</span> userService.getUserInfo(id);
+</code></pre>
+<p>&#x5BF9;&#x6BD4;&#x539F;&#x6765;&#x7684;&#x5199;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateUser</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+        request
+        .post(<span class="hljs-string">`/api/user`</span>, { username })
+        .then(ret =&gt; {
+            resolve(ret);
+        });
+    });
+}
+</code></pre>
+<p>userService.getUserInfo &#x5185;&#x90E8;&#x5C01;&#x88C5;&#x4E86; request &#x903B;&#x8F91;&#xFF0C;&#x524D;&#x7AEF;&#x4E0D;&#x9700;&#x8981;&#x5728;&#x5173;&#x5FC3;&#x8C03;&#x7528;&#x8FC7;&#x7A0B;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;">&#x5982;&#x4F55;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;</h2>
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x628A;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x62BD;&#x8C61;&#x4E3A;&#x4E86; egg-controller &#x63D2;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x6309;&#x4E0B;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#x5B89;&#x88C5;&#x4F7F;&#x7528;&#xFF1A;</p>
+<ol>
+<li>&#x5B89;&#x88C5; egg-controller</li>
+</ol>
+<pre><code>npm i egg-controller
+</code></pre><ol>
+<li>&#x542F;&#x7528;&#x63D2;&#x4EF6;</li>
+</ol>
+<p>&#x6253;&#x5F00; config/plugin.js&#xFF0C;&#x589E;&#x52A0;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-js">aop: {
+    enable: <span class="hljs-literal">true</span>,
+    package: <span class="hljs-string">&apos;egg-aop&apos;</span>,
+},
+controller: {
+    enable: <span class="hljs-literal">true</span>,
+    package: <span class="hljs-string">&apos;egg-controller&apos;</span>,
+},
+</code></pre>
+<ol>
+<li>&#x4F7F;&#x7528;&#x63D2;&#x4EF6;</li>
+</ol>
+<p>&#x8BE6;&#x7EC6;&#x7528;&#x6CD5;&#x53C2;&#x8003;<a href="https://github.com/zhang740/egg-controller#egg-controller" target="_blank">egg-controller &#x6587;&#x6863;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="egg框架中的参数校验.html" class="navigation navigation-prev " aria-label="Previous page: egg框架中的参数校验">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="egg基于egg-validate的定制化升级.html" class="navigation navigation-next " aria-label="Next page: egg基于egg-validate的定制化升级">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"egg的Controller最佳实践","level":"1.6.8","depth":2,"next":{"title":"egg基于egg-validate的定制化升级","level":"1.6.9","depth":2,"path":"Egg/egg基于egg-validate的定制化升级.md","ref":"Egg/egg基于egg-validate的定制化升级.md","articles":[]},"previous":{"title":"egg框架中的参数校验","level":"1.6.7","depth":2,"path":"Egg/egg框架中的参数校验.md","ref":"Egg/egg框架中的参数校验.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"guoyanhong","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"coco's blog":""}},"gitbook":"*","extension":null},"file":{"path":"Egg/egg的Controller最佳实践.md","mtime":"2020-04-15T04:18:11.177Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T04:18:55.536Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,2303 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>koa-bodyparser中间件 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="guoyanhong">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="koa-multer实现文件上传并自定义文件名和目录.html" />
+    
+    
+    <link rel="prev" href="Node原生模块整理.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">coco's blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    后端技术笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../JavaScript/">
+            
+                <a href="../JavaScript/">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../TypeScript/">
+            
+                <a href="../TypeScript/">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../TypeScript/基础笔记一.html">
+            
+                <a href="../TypeScript/基础笔记一.html">
+            
+                    
+                    基础笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../TypeScript/基础笔记二.html">
+            
+                <a href="../TypeScript/基础笔记二.html">
+            
+                    
+                    基础笔记二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../TypeScript/函数笔记.html">
+            
+                <a href="../TypeScript/函数笔记.html">
+            
+                    
+                    函数笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../TypeScript/泛型笔记.html">
+            
+                <a href="../TypeScript/泛型笔记.html">
+            
+                    
+                    泛型笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../TypeScript/枚举笔记.html">
+            
+                <a href="../TypeScript/枚举笔记.html">
+            
+                    
+                    枚举笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../TypeScript/类型兼容性笔记.html">
+            
+                <a href="../TypeScript/类型兼容性笔记.html">
+            
+                    
+                    类型兼容性笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../TypeScript/高级类型笔记.html">
+            
+                <a href="../TypeScript/高级类型笔记.html">
+            
+                    
+                    高级类型笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../TypeScript/.d.ts和源文件.ts有什么区别?.html">
+            
+                <a href="../TypeScript/.d.ts和源文件.ts有什么区别?.html">
+            
+                    
+                    .d.ts和源文件.ts有什么区别?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../TypeScript/使用TypeScript装饰器装饰你的代码.html">
+            
+                <a href="../TypeScript/使用TypeScript装饰器装饰你的代码.html">
+            
+                    
+                    使用TypeScript装饰器装饰你的代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Node/">
+            
+                <a href="../Node/">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Node/如何发布一个npm包.html">
+            
+                <a href="../Node/如何发布一个npm包.html">
+            
+                    
+                    如何发布一个npm包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Node/node版本管理工具.html">
+            
+                <a href="../Node/node版本管理工具.html">
+            
+                    
+                    Node版本管理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Node/clinic快速定位性能问题.html">
+            
+                <a href="../Node/clinic快速定位性能问题.html">
+            
+                    
+                    使用node-clinic快速定位性能问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Node/cluster：扩展你的node应用.html">
+            
+                <a href="../Node/cluster：扩展你的node应用.html">
+            
+                    
+                    cluster：扩展你的node应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Node/如何保存价值上千万的Node源代码.html">
+            
+                <a href="../Node/如何保存价值上千万的Node源代码.html">
+            
+                    
+                    如何保存价值上千万的Node源代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Node/6个Async、Await优于Promise的方面.html">
+            
+                <a href="../Node/6个Async、Await优于Promise的方面.html">
+            
+                    
+                    6个Async、Await优于Promise的方面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Node/npm安装包时的几个命令区别.html">
+            
+                <a href="../Node/npm安装包时的几个命令区别.html">
+            
+                    
+                    npm安装包时的几个命令区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Koa
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Node原生模块整理.html">
+            
+                <a href="Node原生模块整理.html">
+            
+                    
+                    Node原生模块整理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="koa-bodyparser中间件.html">
+            
+                <a href="koa-bodyparser中间件.html">
+            
+                    
+                    koa-bodyparser中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="koa-multer实现文件上传并自定义文件名和目录.html">
+            
+                <a href="koa-multer实现文件上传并自定义文件名和目录.html">
+            
+                    
+                    koa-multer实现文件上传并自定义文件名和目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Egg/">
+            
+                <a href="../Egg/">
+            
+                    
+                    Egg
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Egg/egg体系.html">
+            
+                <a href="../Egg/egg体系.html">
+            
+                    
+                    egg体系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Egg/egg应用自定义4xx和5xx的方案.html">
+            
+                <a href="../Egg/egg应用自定义4xx和5xx的方案.html">
+            
+                    
+                    egg应用自定义4xx和5xx的方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Egg/egg的Http请求.html">
+            
+                <a href="../Egg/egg的Http请求.html">
+            
+                    
+                    egg的Http请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../Egg/怎么开发一个像egg-init的脚手架.html">
+            
+                <a href="../Egg/怎么开发一个像egg-init的脚手架.html">
+            
+                    
+                    怎么开发一个像egg-init的脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../Egg/结合源码揭秘egg运行原理.html">
+            
+                <a href="../Egg/结合源码揭秘egg运行原理.html">
+            
+                    
+                    结合源码揭秘egg运行原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../Egg/脚手架之egg-init.html">
+            
+                <a href="../Egg/脚手架之egg-init.html">
+            
+                    
+                    脚手架之egg-init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../Egg/egg框架中的参数校验.html">
+            
+                <a href="../Egg/egg框架中的参数校验.html">
+            
+                    
+                    egg框架中的参数校验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../Egg/egg的Controller最佳实践.html">
+            
+                <a href="../Egg/egg的Controller最佳实践.html">
+            
+                    
+                    egg的Controller最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../Egg/egg基于egg-validate的定制化升级.html">
+            
+                <a href="../Egg/egg基于egg-validate的定制化升级.html">
+            
+                    
+                    egg基于egg-validate的定制化升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../Egg/egg中cookie与Session的使用笔记.html">
+            
+                <a href="../Egg/egg中cookie与Session的使用笔记.html">
+            
+                    
+                    egg中cookie与Session的使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../Egg/egg-bin源码解析笔记.html">
+            
+                <a href="../Egg/egg-bin源码解析笔记.html">
+            
+                    
+                    egg-bin源码解析笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../Egg/egg框架与nest框架的对比.html">
+            
+                <a href="../Egg/egg框架与nest框架的对比.html">
+            
+                    
+                    egg框架与nest框架的对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../Egg/egg常见问题笔.html">
+            
+                <a href="../Egg/egg常见问题笔.html">
+            
+                    
+                    egg常见问题笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../Egg/VScode调试Egg.html">
+            
+                <a href="../Egg/VScode调试Egg.html">
+            
+                    
+                    VScode调试Egg
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Chair/">
+            
+                <a href="../Chair/">
+            
+                    
+                    Chair
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Chair/基于NodeWeb框架Chair.html">
+            
+                <a href="../Chair/基于NodeWeb框架Chair.html">
+            
+                    
+                    基于NodeWeb框架Chair
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../ORM/">
+            
+                <a href="../ORM/">
+            
+                    
+                    ORM框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../ORM/ORM框架选型.html">
+            
+                <a href="../ORM/ORM框架选型.html">
+            
+                    
+                    ORM框架选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../ORM/Knexjs笔记.html">
+            
+                <a href="../ORM/Knexjs笔记.html">
+            
+                    
+                    Knexjs笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../ORM/bookshelf笔记.html">
+            
+                <a href="../ORM/bookshelf笔记.html">
+            
+                    
+                    bookshelf笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Mysql/">
+            
+                <a href="../Mysql/">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Mysql/语法笔记一：delete和truncate的区别和联系.html">
+            
+                <a href="../Mysql/语法笔记一：delete和truncate的区别和联系.html">
+            
+                    
+                    语法笔记一：delete和truncate的区别和联系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Mysql/语法笔记二：having与where.html">
+            
+                <a href="../Mysql/语法笔记二：having与where.html">
+            
+                    
+                    语法笔记二：having与where
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Mysql/语法笔记三：pluck.html">
+            
+                <a href="../Mysql/语法笔记三：pluck.html">
+            
+                    
+                    语法笔记三：pluck
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../Mysql/语法笔记四：first.html">
+            
+                <a href="../Mysql/语法笔记四：first.html">
+            
+                    
+                    语法笔记四：first
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../Mysql/语法笔记五：references.html">
+            
+                <a href="../Mysql/语法笔记五：references.html">
+            
+                    
+                    语法笔记五：references
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../Mysql/语法笔记六：where1.html">
+            
+                <a href="../Mysql/语法笔记六：where1.html">
+            
+                    
+                    语法笔记六：where1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../Mysql/语法笔记七：in和exists二者之间的区别和性能影响.html">
+            
+                <a href="../Mysql/语法笔记七：in和exists二者之间的区别和性能影响.html">
+            
+                    
+                    语法笔记七：in和exists二者之间的区别和性能影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Tools/">
+            
+                <a href="../Tools/">
+            
+                    
+                    工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Tools/Mac安装mongodb.html">
+            
+                <a href="../Tools/Mac安装mongodb.html">
+            
+                    
+                    Mac安装mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Tools/mac上redis环境搭建.html">
+            
+                <a href="../Tools/mac上redis环境搭建.html">
+            
+                    
+                    mac上redis环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../Tools/Docker与Kubernetes在Mac本地环境搭建与应用部署.html">
+            
+                <a href="../Tools/Docker与Kubernetes在Mac本地环境搭建与应用部署.html">
+            
+                    
+                    Docker与Kubernetes在Mac本地环境搭建与应用部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../Tools/Docker使用.html">
+            
+                <a href="../Tools/Docker使用.html">
+            
+                    
+                    Docker使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../Tools/centos7下yum安装和配置Nginx.html">
+            
+                <a href="../Tools/centos7下yum安装和配置Nginx.html">
+            
+                    
+                    centos7下yum安装和配置Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../Tools/使用kubectl连接远程k8s集群.html">
+            
+                <a href="../Tools/使用kubectl连接远程k8s集群.html">
+            
+                    
+                    使用kubectl连接远程k8s集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../Tools/MacOS上安装DockerDesktop和Kubernetes.html">
+            
+                <a href="../Tools/MacOS上安装DockerDesktop和Kubernetes.html">
+            
+                    
+                    MacOS上安装DockerDesktop和Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../Tools/alinode.html">
+            
+                <a href="../Tools/alinode.html">
+            
+                    
+                    alinode使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../Tools/iPic-Markdown图床、文件上传工具.html">
+            
+                <a href="../Tools/iPic-Markdown图床、文件上传工具.html">
+            
+                    
+                    iPic-Markdown图床、文件上传工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../Tools/图片搬家神奇：iPicMover.html">
+            
+                <a href="../Tools/图片搬家神奇：iPicMover.html">
+            
+                    
+                    图片搬家神奇：iPic Mover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../Tools/ffmpeg音视频处理.html">
+            
+                <a href="../Tools/ffmpeg音视频处理.html">
+            
+                    
+                    ffmpeg音视频处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../Tools/ffmpeg音视频处理需求升级版.html">
+            
+                <a href="../Tools/ffmpeg音视频处理需求升级版.html">
+            
+                    
+                    ffmpeg音视频处理需求升级版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="../Tools/七牛云存储中没有外链域名，无法下载的问题.html">
+            
+                <a href="../Tools/七牛云存储中没有外链域名，无法下载的问题.html">
+            
+                    
+                    七牛云存储中没有外链域名，无法下载的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="../Tools/基于WebAssembly的H265播放.html">
+            
+                <a href="../Tools/基于WebAssembly的H265播放.html">
+            
+                    
+                    基于WebAssembly的H265播放
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="../Tools/ffprobe ffplay ffmpeg常用的命令.html">
+            
+                <a href="../Tools/ffprobe ffplay ffmpeg常用的命令.html">
+            
+                    
+                    ffprobe ffplay ffmpeg常用的命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.16" data-path="../Tools/使用TravisCI构建Gitbook.html">
+            
+                <a href="../Tools/使用TravisCI构建Gitbook.html">
+            
+                    
+                    使用TravisCI构建Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.17" data-path="../Tools/持续集成和travisCI.html">
+            
+                <a href="../Tools/持续集成和travisCI.html">
+            
+                    
+                    持续集成和travisCI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git以及代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Git/Mac下配置多个Git账户.html">
+            
+                <a href="../Git/Mac下配置多个Git账户.html">
+            
+                    
+                    Mac下配置多个Git账户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Git/删除远程仓库的某次错误提交.html">
+            
+                <a href="../Git/删除远程仓库的某次错误提交.html">
+            
+                    
+                    删除远程仓库的某次错误提交
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Git/使用GithubActions进行版本发布.html">
+            
+                <a href="../Git/使用GithubActions进行版本发布.html">
+            
+                    
+                    使用Github Actions进行版本发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../Git/使用GithubActions进行版本发布（一）.html">
+            
+                <a href="../Git/使用GithubActions进行版本发布（一）.html">
+            
+                    
+                    使用Github Actions进行版本发布(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../Git/gitsubtree教程.html">
+            
+                <a href="../Git/gitsubtree教程.html">
+            
+                    
+                    Git subtree教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../Git/git分支开发规范.html">
+            
+                <a href="../Git/git分支开发规范.html">
+            
+                    
+                    git分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../Git/Git规范和Changelog生成.html">
+            
+                <a href="../Git/Git规范和Changelog生成.html">
+            
+                    
+                    Git规范和Changelog生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../Git/语义化（Semantic Versioning）规范格式.html">
+            
+                <a href="../Git/语义化（Semantic Versioning）规范格式.html">
+            
+                    
+                    语义化（Semantic Versioning）规范格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Linux/">
+            
+                <a href="../Linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Linux/Linux上部署Node服务-外网无法访问.html">
+            
+                <a href="../Linux/Linux上部署Node服务-外网无法访问.html">
+            
+                    
+                    Linux上部署Node服务-外网无法访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Linux/服务器中启动服务的时候的IP选择.html">
+            
+                <a href="../Linux/服务器中启动服务的时候的IP选择.html">
+            
+                    
+                    服务器中启动服务的时候的IP选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../Linux/怎样修改CentOS7SSH端口.html">
+            
+                <a href="../Linux/怎样修改CentOS7SSH端口.html">
+            
+                    
+                    怎样修改CentOS 7 SSH端口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Deploy/">
+            
+                <a href="../Deploy/">
+            
+                    
+                    部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.html">
+            
+                <a href="../Deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.html">
+            
+                    
+                    使用AppVeyor和Travis，自动构建和发布Electron应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Deploy/跨平台桌面应用Electron.html">
+            
+                <a href="../Deploy/跨平台桌面应用Electron.html">
+            
+                    
+                    跨平台桌面应用Electron
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../Deploy/企业级分布式，EDAS模式.html">
+            
+                <a href="../Deploy/企业级分布式，EDAS模式.html">
+            
+                    
+                    企业级分布式，EDAS模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../Deploy/GitlabCI CD管道配置参考.html">
+            
+                <a href="../Deploy/GitlabCI CD管道配置参考.html">
+            
+                    
+                    GitlabCI CD管道配置参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../Deploy/Make命令教程.html">
+            
+                <a href="../Deploy/Make命令教程.html">
+            
+                    
+                    Make命令教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../Deploy/pm2深入学习.html">
+            
+                <a href="../Deploy/pm2深入学习.html">
+            
+                    
+                    pm2深入学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../Deploy/pm2的cluster模式与fork模式的区别.html">
+            
+                <a href="../Deploy/pm2的cluster模式与fork模式的区别.html">
+            
+                    
+                    pm2的cluster模式与fork模式的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Yarn/">
+            
+                <a href="../Yarn/">
+            
+                    
+                    Yarn
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../Yarn/package.json中的workspaces.html">
+            
+                <a href="../Yarn/package.json中的workspaces.html">
+            
+                    
+                    package.json中的workspaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../Yarn/项目开发中的规范.html">
+            
+                <a href="../Yarn/项目开发中的规范.html">
+            
+                    
+                    项目开发中的规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../Yarn/npm库：AJV，JSON模式验证.html">
+            
+                <a href="../Yarn/npm库：AJV，JSON模式验证.html">
+            
+                    
+                    npm库：AJV，JSON模式验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../Browser/">
+            
+                <a href="../Browser/">
+            
+                    
+                    浏览器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Browser/SEO小技巧.html">
+            
+                <a href="../Browser/SEO小技巧.html">
+            
+                    
+                    SEO小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Browser/URL的最大长度是多少？.html">
+            
+                <a href="../Browser/URL的最大长度是多少？.html">
+            
+                    
+                    URL的最大长度是多少？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../Browser/深入理解Session和Cookie.html">
+            
+                <a href="../Browser/深入理解Session和Cookie.html">
+            
+                    
+                    深入理解Session和Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../Browser/HTTP切面流程.html">
+            
+                <a href="../Browser/HTTP切面流程.html">
+            
+                    
+                    HTTP切面流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../Browser/Node与浏览器之间的区别.html">
+            
+                <a href="../Browser/Node与浏览器之间的区别.html">
+            
+                    
+                    Node与浏览器之间的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../Browser/JavaScript如何在浏览器和Node中工作.html">
+            
+                <a href="../Browser/JavaScript如何在浏览器和Node中工作.html">
+            
+                    
+                    JavaScript如何在浏览器和Node中工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../Design/">
+            
+                <a href="../Design/">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../Design/javaScript设计模式笔记一.html">
+            
+                <a href="../Design/javaScript设计模式笔记一.html">
+            
+                    
+                    javaScript设计模式笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../Design/javaScript设计模式笔记二.html">
+            
+                <a href="../Design/javaScript设计模式笔记二.html">
+            
+                    
+                    javaScript设计模式笔记二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../Design/javaScript设计模式笔记三.html">
+            
+                <a href="../Design/javaScript设计模式笔记三.html">
+            
+                    
+                    javaScript设计模式笔记三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="../Design/javaScript设计模式笔记四.html">
+            
+                <a href="../Design/javaScript设计模式笔记四.html">
+            
+                    
+                    javaScript设计模式笔记四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" data-path="../Design/javascript设计模式笔记五.html">
+            
+                <a href="../Design/javascript设计模式笔记五.html">
+            
+                    
+                    javascript设计模式笔记五
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.6" data-path="../Design/javaScript设计模式笔记六.html">
+            
+                <a href="../Design/javaScript设计模式笔记六.html">
+            
+                    
+                    javaScript设计模式笔记六
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.7" data-path="../Design/javaScript设计模式笔记七.html">
+            
+                <a href="../Design/javaScript设计模式笔记七.html">
+            
+                    
+                    javaScript设计模式笔记七
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.8" data-path="../Design/javaScript设计模式笔记八.html">
+            
+                <a href="../Design/javaScript设计模式笔记八.html">
+            
+                    
+                    javaScript设计模式笔记八
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.9" data-path="../Design/javaScript设计模式笔记九.html">
+            
+                <a href="../Design/javaScript设计模式笔记九.html">
+            
+                    
+                    javaScript设计模式笔记九
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../Mservice/">
+            
+                <a href="../Mservice/">
+            
+                    
+                    微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../Kubernetes/">
+            
+                <a href="../Kubernetes/">
+            
+                    
+                    Kubernetes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../Kubernetes/学习笔记一.html">
+            
+                <a href="../Kubernetes/学习笔记一.html">
+            
+                    
+                    学习笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../Nginx/">
+            
+                <a href="../Nginx/">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../Nginx/Nginx基础.html">
+            
+                <a href="../Nginx/Nginx基础.html">
+            
+                    
+                    Nginx基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../Nginx/Mac下安装nginx.html">
+            
+                <a href="../Nginx/Mac下安装nginx.html">
+            
+                    
+                    Mac下安装nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../Framework/">
+            
+                <a href="../Framework/">
+            
+                    
+                    架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../Framework/淘宝网的后台架构发展.html">
+            
+                <a href="../Framework/淘宝网的后台架构发展.html">
+            
+                    
+                    淘宝网的后台架构发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../Framework/应用场景数据库选型.html">
+            
+                <a href="../Framework/应用场景数据库选型.html">
+            
+                    
+                    应用场景数据库选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../Elasticsearch/">
+            
+                <a href="../Elasticsearch/">
+            
+                    
+                    Elasticsearch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../Elasticsearch/Mac上安装Elasticsearch，基本操作.html">
+            
+                <a href="../Elasticsearch/Mac上安装Elasticsearch，基本操作.html">
+            
+                    
+                    Mac上安装Elasticsearch，基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../Shell/">
+            
+                <a href="../Shell/">
+            
+                    
+                    shell脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../Shell/shell入门.html">
+            
+                <a href="../Shell/shell入门.html">
+            
+                    
+                    shell入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >koa-bodyparser中间件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="koa-bodyparser&#x4E2D;&#x95F4;&#x4EF6;">koa-bodyparser&#x4E2D;&#x95F4;&#x4EF6;</h1>
+<p>&#x4F7F;&#x7528;koa-body&#x4EE3;&#x66FF;koa-bodyparser&#x548C;koa-multer</p>
+<p>&#x4E4B;&#x524D;&#x4F7F;&#x7528;koa2&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5904;&#x7406;post&#x8BF7;&#x6C42;&#x4F7F;&#x7528;&#x7684;&#x662F;<code>koa-bodyparser</code>&#xFF0C;&#x540C;&#x65F6;&#x5982;&#x679C;&#x662F;&#x56FE;&#x7247;&#x4E0A;&#x4F20;&#x4F7F;&#x7528;&#x7684;&#x662F;<code>koa-multer</code></p>
+<p>&#x8FD9;&#x4E24;&#x8005;&#x7684;&#x7EC4;&#x5408;&#x6CA1;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x8FC7;<code>koa-multer</code>&#x548C;<code>koa-route</code>&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x662F;koa-router&#xFF09;&#x5B58;&#x5728;&#x4E0D;&#x517C;&#x5BB9;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<h2 id="koa-bodyparser">koa-bodyparser</h2>
+<p>koa&#x5904;&#x7406;<code>post</code>&#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x5BF9;body&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;
+&#x5B9E;&#x9645;&#x4E0A;&#x5982;&#x679C;&#x8981;&#x624B;&#x52A8;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x5904;&#x7406; <code>application/x-www-from-urlencoded</code> &#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x8FD8;&#x662F;&#x501F;&#x52A9;&#x7684;&#x539F;&#x751F; node.js &#x7684;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+<p>koa&#x5C01;&#x88C5;&#x4E86;&#x539F;&#x751F;&#x4E86;node.js&#x7684;request&#x5BF9;&#x8C61;&#x7684;<code>ctx.req</code>&#x4E2D;&#x3002;</p>
+<p>&#x800C;&#x501F;&#x52A9;&#x539F;&#x751F;node.js&#x7684;request&#x5BF9;&#x8C61;&#xFF0C;&#x76D1;&#x542C;<code>data</code>&#x4E8B;&#x4EF6;&#x53CA;<code>end</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+<p><strong>&#x5B9E;&#x73B0;&#x4E2D;&#x95F4;&#x4EF6;</strong></p>
+<ol>
+<li>&#x5B9E;&#x73B0;listen&#x76D1;&#x542C;body&#x6570;&#x636E;&#x4F20;&#x8F93;</li>
+</ol>
+<p>&#x5F53;body&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x5C06;&#x62FC;&#x63A5;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x89E3;&#x6790;&#x4E4B;&#x540E;&#xFF0C;&#x5C06;<code>Promise.resolve</code>&#x5373;&#x53EF;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">listen</span>(<span class="hljs-params">ctx</span>)</span>{
+  <span class="hljs-keyword">let</span> str = <span class="hljs-string">&apos;&apos;</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve,reject) =&gt; {
+    ctx.req.addListener(<span class="hljs-string">&apos;data&apos;</span>,(data)=&gt;{
+      str += data;
+    });
+    ctx.req.addListener(<span class="hljs-string">&apos;end&apos;</span>,()=&gt;{
+      <span class="hljs-keyword">const</span> res = jsonBodyparser(str);
+      resolve(res);
+    });
+  });
+}
+</code></pre>
+<ol>
+<li>&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x6210;&#x5BF9;&#x8C61;</li>
+</ol>
+<p>&#x5904;&#x7406;&#x62FC;&#x63A5;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x7528;&#x4E86;&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5C31;&#x662F;&#x62C6;&#x5206;&#x904D;&#x5386;&#x5B57;&#x7B26;&#x4E32;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsonBodyparser</span>(<span class="hljs-params">str</span>)</span>{
+  <span class="hljs-keyword">let</span> parseBody = {};
+  <span class="hljs-keyword">let</span> strArr = str.split(<span class="hljs-string">&apos;&amp;&apos;</span>);
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> [index,item] <span class="hljs-keyword">of</span> strArr.entries()){
+    <span class="hljs-keyword">const</span> itemArr = item.split(<span class="hljs-string">&quot;=&quot;</span>);
+    parseBody[itemArr[<span class="hljs-number">0</span>]] = itemArr[<span class="hljs-number">1</span>];
+  }
+  <span class="hljs-keyword">return</span> parseBody;
+}
+</code></pre>
+<ol>
+<li>exports&#x4E2D;&#x95F4;&#x4EF6;</li>
+</ol>
+<p>&#x53C2;&#x7167;&#x4E86;<code>koa-bodypaser</code>&#x4E2D;&#x95F4;&#x4EF6;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF0C;&#x5C06;&#x7ED3;&#x679C;&#x5C01;&#x88C5;&#x8FDB;&#x4E86;<code>ctx.request.body</code>&#x4E2D;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = () =&gt; {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">async</span> (ctx, next) =&gt; {
+    bodyPaser = <span class="hljs-keyword">await</span> listen(ctx);;
+    ctx.request.body = bodyPaser;
+    <span class="hljs-keyword">await</span> next();
+  }
+}
+</code></pre>
+<ol>
+<li>&#x4F7F;&#x7528;&#x4E2D;&#x95F4;&#x4EF6;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> Router = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;koa-router&apos;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
+<span class="hljs-keyword">const</span> postBodyParser= <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../middlewares/postBodyParser&apos;</span>);
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> Router();
+
+router.use(postBodyParser());
+
+router.get(<span class="hljs-string">&apos;/&apos;</span>,<span class="hljs-keyword">async</span> (ctx)=&gt;{
+  <span class="hljs-keyword">const</span> htm = fs.readFileSync(path.resolve(<span class="hljs-string">&apos;./views/login.html&apos;</span>)).toString();
+  ctx.body = htm;
+}).post(<span class="hljs-string">&apos;/&apos;</span>,<span class="hljs-keyword">async</span> (ctx)=&gt;{
+  ctx.body = ctx.request.body;
+});
+
+<span class="hljs-built_in">module</span>.exports = router;
+</code></pre>
+<p><strong>&#x4F7F;&#x7528;<code>koa-bodypaser</code></strong></p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;<code>koa-bodypaser</code>&#xFF0C;&#x5219;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x800C;&#x4E14;&#x8003;&#x8651;&#x7684;&#x65B9;&#x9762;&#x975E;&#x5E38;&#x591A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> Koa = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;koa&apos;</span>);
+<span class="hljs-keyword">const</span> Router = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;koa-router&apos;</span>);
+<span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;koa-bodyparser&apos;</span>);
+<span class="hljs-keyword">const</span> router = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./routes/index&apos;</span>);
+
+
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Koa();
+
+app.use(bodyParser());
+
+app.use(router.routes()).use(router.allowedMethods());
+
+app.listen(<span class="hljs-number">5000</span>,()=&gt;{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;start : 5000&apos;</span>);
+});
+</code></pre>
+<h2 id="koa-body"><code>koa-body</code></h2>
+<p><code>koa-body</code>&#x4E3B;&#x8981;&#x662F;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-string">&quot;co-body&quot;</span>: <span class="hljs-string">&quot;^5.1.1&quot;</span>,
+<span class="hljs-string">&quot;formidable&quot;</span>: <span class="hljs-string">&quot;^1.1.1&quot;</span>
+</code></pre>
+<p>&#x5728;koa2&#x4E2D;&#x4F7F;&#x7528;<code>koa-body</code>&#xFF0C;&#x6211;&#x4F7F;&#x7528;&#x7684;&#x5168;&#x5C40;&#x5F15;&#x5165;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8DEF;&#x7531;&#x7EA7;&#x522B;&#x7684;&#x5F15;&#x5165;&#xFF0C;&#x56E0;&#x4E3A;&#x8003;&#x8651;&#x5230;&#x5F88;&#x591A;&#x5730;&#x65B9;&#x90FD;&#x6709;post&#x8BF7;&#x6C42;&#x6216;&#x8005;&#xFF0C;&#x6CA1;&#x5FC5;&#x8981;&#x53EA;&#x5728;&#x8DEF;&#x7531;&#x7EA7;&#x522B;&#x5F15;&#x5165;&#x3002;</p>
+<ol>
+<li>&#x5B89;&#x88C5;&#x4F9D;&#x8D56;</li>
+</ol>
+<pre><code class="lang-js">yarn add koa-body
+npm i koa-body -S
+</code></pre>
+<ol>
+<li>app.js</li>
+</ol>
+<p>&#x7701;&#x7565;&#x4E86; koa&#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7684;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> koaBody = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;koa-body&apos;</span>)
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Koa();
+app.use(koaBody({
+  multipart: <span class="hljs-literal">true</span>, <span class="hljs-comment">//&#x652F;&#x6301;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;</span>
+  encoding: <span class="hljs-string">&apos;gzip&apos;</span>,
+  formidable: {
+    uploadDir: path.join(__dirname, <span class="hljs-string">&apos;public/upload/&apos;</span>), <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x76EE;&#x5F55;</span>
+    keepExtension: <span class="hljs-literal">true</span>, <span class="hljs-comment">//&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;</span>
+    maxFieldsSize: <span class="hljs-number">2</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>, <span class="hljs-comment">// &#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5927;&#x5C0F;&#x9650;&#x5236;</span>
+    onFileBegin: (name, file) =&gt; {  <span class="hljs-comment">// &#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x524D;&#x7684;&#x8BBE;&#x7F6E;</span>
+      <span class="hljs-comment">// console.log(`name: ${name}`);</span>
+      <span class="hljs-comment">// console.log(file);</span>
+    }
+  }
+}));
+</code></pre>
+<ol>
+<li>&#x6709;&#x7528;&#x7684;&#x53C2;&#x6570;</li>
+</ol>
+<p>1&#xFF09;<code>koa-body</code>&#x7684;&#x57FA;&#x672C;&#x53C2;&#x6570;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x63CF;&#x8FF0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>patchNode</td>
+<td>&#x5C06;&#x8BF7;&#x6C42;&#x4F53;&#x6253;&#x5230;&#x539F;&#x751F;node&#x7684;<code>ctx.req</code>&#x4E2D;</td>
+<td>Boolean</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>patchKoa</td>
+<td>&#x5C06;&#x8BF7;&#x6C42;&#x4F53;&#x6253;&#x5230;&#x539F;&#x751F;koa&#x7684;<code>ctx.req</code>&#x4E2D;</td>
+<td>Boolean</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>jsonLimit</td>
+<td>JSON&#x6570;&#x636E;&#x4F53;&#x7684;&#x5927;&#x5C0F;&#x9650;&#x5236;</td>
+<td>String/Integer</td>
+<td><code>1mb</code></td>
+</tr>
+<tr>
+<td>formLimit</td>
+<td>&#x9650;&#x5236;&#x8868;&#x5355;&#x8BF7;&#x6C42;&#x5927;&#x5C0F;&#x9650;&#x5236;</td>
+<td>String/Integer</td>
+<td><code>56kb</code></td>
+</tr>
+<tr>
+<td>textLimit</td>
+<td>&#x9650;&#x5236; text body &#x7684;&#x5927;&#x5C0F;</td>
+<td>String/Integer</td>
+<td><code>56kb</code></td>
+</tr>
+<tr>
+<td>encoding</td>
+<td>&#x8868;&#x5355;&#x7684;&#x9ED8;&#x8BA4;&#x7F16;&#x7801;</td>
+<td>String</td>
+<td>utf-8</td>
+</tr>
+<tr>
+<td>multipart</td>
+<td>&#x662F;&#x5426;&#x652F;&#x6301;<code>multipart-formdate</code>&#x7684;&#x8868;&#x5355;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>urlencoded</td>
+<td>&#x662F;&#x5426;&#x652F;&#x6301; <code>urlencoded</code></td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>text</td>
+<td>&#x662F;&#x5426;&#x89E3;&#x6790;<code>text/plain</code>&#x7684;&#x8868;&#x5355;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>json</td>
+<td>&#x662F;&#x5426;&#x89E3;&#x6790;<code>json</code></td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>jsonStrict</td>
+<td>&#x662F;&#x5426;&#x4F7F;&#x7528;json&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#xFF0C;true&#x4F1A;&#x53EA;&#x5904;&#x7406;&#x6570;&#x7EC4;&#x548C;&#x5BF9;&#x8C61;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>formidable</td>
+<td>&#x914D;&#x7F6E;&#x66F4;&#x591A;&#x7684;&#x5173;&#x4E8E;multipart&#x7684;&#x9009;&#x9879;</td>
+<td>Object</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>onError</td>
+<td>&#x9519;&#x8BEF;&#x5904;&#x7406;</td>
+<td>Function</td>
+<td>function() {}</td>
+</tr>
+<tr>
+<td>stict</td>
+<td>&#x4E25;&#x683C;&#x6A21;&#x5F0F;</td>
+<td>&#x542F;&#x7528;&#x540E;&#x4E0D;&#x4F1A;&#x89E3;&#x6790;GET&#x3001;HEAD&#x3001;DELETE&#x8BF7;&#x6C42;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p>2&#xFF09; formidable&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x53C2;&#x6570;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x63CF;&#x8FF0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>maxFields</td>
+<td>&#x9650;&#x5236;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x91CF;</td>
+<td>Integer</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>maxFieldsSize</td>
+<td>&#x9650;&#x5236;&#x5B57;&#x6BB5;&#x7684;&#x6700;&#x5927;&#x5927;&#x5C0F;</td>
+<td>Integer</td>
+<td>2 <em> 1024 </em> 1024</td>
+</tr>
+<tr>
+<td>uploadDir</td>
+<td>&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x5939;</td>
+<td>String</td>
+<td>os.tmpDir()</td>
+</tr>
+<tr>
+<td>keepExtensions</td>
+<td>&#x4FDD;&#x7559;&#x539F;&#x6765;&#x7684;&#x6587;&#x4EF6;&#x540E;&#x7F00;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>hash</td>
+<td>&#x5982;&#x679C;&#x8981;&#x8BA1;&#x7B97;&#x6587;&#x4EF6;&#x7684; hash&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x9009;&#x62E9; md5/sha1</td>
+<td>String</td>
+<td>false</td>
+</tr>
+<tr>
+<td>multipart</td>
+<td>&#x662F;&#x5426;&#x652F;&#x6301;&#x591A;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>onFileBegin</td>
+<td>&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x524D;&#x7684;&#x4E00;&#x4E9B;&#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;</td>
+<td>Function</td>
+<td>function(name,file){}</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x540E;&#x7684;&#x4FE1;&#x606F;</li>
+</ol>
+<p>&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x662F;&#x5728;&#x8DEF;&#x7531;&#x4E2D;&#x4F53;&#x73B0;&#x7684;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x83B7;&#x53D6;&#x4E0A;&#x4F20;&#x540E;&#x6587;&#x4EF6;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728;<code>ctx.request.files</code> &#x4E2D;&#x83B7;&#x53D6;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x662F;&#x83B7;&#x53D6;&#x5176;&#x4ED6;&#x7684;&#x8868;&#x5355;&#x5B57;&#x6BB5;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728; <code>ctx.request.body</code> &#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x8FD9;&#x662F;&#x7531; <code>co-body</code> &#x51B3;&#x5B9A;&#x7684;&#xFF08;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#xFF09;&#x3002;</p>
+<pre><code class="lang-js">router.get(<span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-keyword">async</span> (ctx) =&gt; {
+  <span class="hljs-keyword">await</span> ctx.render(<span class="hljs-string">&apos;index&apos;</span>);
+});
+
+router.post(<span class="hljs-string">&apos;/&apos;</span>,<span class="hljs-keyword">async</span> (ctx)=&gt;{
+  <span class="hljs-built_in">console</span>.log(ctx.request.files);
+  <span class="hljs-built_in">console</span>.log(ctx.request.body);
+  ctx.body = <span class="hljs-built_in">JSON</span>.stringify(ctx.request.files);
+});
+</code></pre>
+<p>&#x56E0;&#x4E3A;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#xFF0C;&#x56E0;&#x6B64;<code>ctx.request.files</code>&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E14;&#x662F;&#x901A;&#x8FC7;&#x8868;&#x5355;&#x7684;<code>name=photo</code>&#x5C5E;&#x6027;&#x4F5C;&#x4E3A;&#x5BF9;&#x8C61;&#x7684;key,&#x503C;&#x4FBF;&#x662F;&#x4E00;&#x4E2A;File&#x5BF9;&#x8C61;&#xFF0C;&#x6709;&#x7528;&#x7684;&#x5B57;&#x6BB5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size</td>
+<td>&#x6587;&#x4EF6;&#x5927;&#x5C0F;</td>
+</tr>
+<tr>
+<td>path</td>
+<td>&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x540E;&#x7684;&#x76EE;&#x5F55;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>&#x6587;&#x4EF6;&#x7684;&#x539F;&#x59CB;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>type</td>
+<td>&#x6587;&#x4EF6;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>lastModifiedDate</td>
+<td>&#x4E0A;&#x6B21;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x95F4;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Node原生模块整理.html" class="navigation navigation-prev " aria-label="Previous page: Node原生模块整理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="koa-multer实现文件上传并自定义文件名和目录.html" class="navigation navigation-next " aria-label="Next page: koa-multer实现文件上传并自定义文件名和目录">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"koa-bodyparser中间件","level":"1.5.2","depth":2,"next":{"title":"koa-multer实现文件上传并自定义文件名和目录","level":"1.5.3","depth":2,"path":"Koa/koa-multer实现文件上传并自定义文件名和目录.md","ref":"Koa/koa-multer实现文件上传并自定义文件名和目录.md","articles":[]},"previous":{"title":"Node原生模块整理","level":"1.5.1","depth":2,"path":"Koa/Node原生模块整理.md","ref":"Koa/Node原生模块整理.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"guoyanhong","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"coco's blog":""}},"gitbook":"*","extension":null},"file":{"path":"Koa/koa-bodyparser中间件.md","mtime":"2020-04-15T04:18:11.177Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T04:18:55.536Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

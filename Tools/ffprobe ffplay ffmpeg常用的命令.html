@@ -1,0 +1,2126 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ffprobe ffplay ffmpeg常用的命令 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="guoyanhong">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="使用TravisCI构建Gitbook.html" />
+    
+    
+    <link rel="prev" href="基于WebAssembly的H265播放.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">coco's blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    后端技术笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../JavaScript/">
+            
+                <a href="../JavaScript/">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../TypeScript/">
+            
+                <a href="../TypeScript/">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../TypeScript/基础笔记一.html">
+            
+                <a href="../TypeScript/基础笔记一.html">
+            
+                    
+                    基础笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../TypeScript/基础笔记二.html">
+            
+                <a href="../TypeScript/基础笔记二.html">
+            
+                    
+                    基础笔记二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../TypeScript/函数笔记.html">
+            
+                <a href="../TypeScript/函数笔记.html">
+            
+                    
+                    函数笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../TypeScript/泛型笔记.html">
+            
+                <a href="../TypeScript/泛型笔记.html">
+            
+                    
+                    泛型笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../TypeScript/枚举笔记.html">
+            
+                <a href="../TypeScript/枚举笔记.html">
+            
+                    
+                    枚举笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../TypeScript/类型兼容性笔记.html">
+            
+                <a href="../TypeScript/类型兼容性笔记.html">
+            
+                    
+                    类型兼容性笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../TypeScript/高级类型笔记.html">
+            
+                <a href="../TypeScript/高级类型笔记.html">
+            
+                    
+                    高级类型笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../TypeScript/.d.ts和源文件.ts有什么区别?.html">
+            
+                <a href="../TypeScript/.d.ts和源文件.ts有什么区别?.html">
+            
+                    
+                    .d.ts和源文件.ts有什么区别?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../TypeScript/使用TypeScript装饰器装饰你的代码.html">
+            
+                <a href="../TypeScript/使用TypeScript装饰器装饰你的代码.html">
+            
+                    
+                    使用TypeScript装饰器装饰你的代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Node/">
+            
+                <a href="../Node/">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Node/如何发布一个npm包.html">
+            
+                <a href="../Node/如何发布一个npm包.html">
+            
+                    
+                    如何发布一个npm包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Node/node版本管理工具.html">
+            
+                <a href="../Node/node版本管理工具.html">
+            
+                    
+                    Node版本管理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Node/clinic快速定位性能问题.html">
+            
+                <a href="../Node/clinic快速定位性能问题.html">
+            
+                    
+                    使用node-clinic快速定位性能问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Node/cluster：扩展你的node应用.html">
+            
+                <a href="../Node/cluster：扩展你的node应用.html">
+            
+                    
+                    cluster：扩展你的node应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Node/如何保存价值上千万的Node源代码.html">
+            
+                <a href="../Node/如何保存价值上千万的Node源代码.html">
+            
+                    
+                    如何保存价值上千万的Node源代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Node/6个Async、Await优于Promise的方面.html">
+            
+                <a href="../Node/6个Async、Await优于Promise的方面.html">
+            
+                    
+                    6个Async、Await优于Promise的方面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Node/npm安装包时的几个命令区别.html">
+            
+                <a href="../Node/npm安装包时的几个命令区别.html">
+            
+                    
+                    npm安装包时的几个命令区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Koa/">
+            
+                <a href="../Koa/">
+            
+                    
+                    Koa
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Koa/Node原生模块整理.html">
+            
+                <a href="../Koa/Node原生模块整理.html">
+            
+                    
+                    Node原生模块整理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Koa/koa-bodyparser中间件.html">
+            
+                <a href="../Koa/koa-bodyparser中间件.html">
+            
+                    
+                    koa-bodyparser中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Koa/koa-multer实现文件上传并自定义文件名和目录.html">
+            
+                <a href="../Koa/koa-multer实现文件上传并自定义文件名和目录.html">
+            
+                    
+                    koa-multer实现文件上传并自定义文件名和目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Egg/">
+            
+                <a href="../Egg/">
+            
+                    
+                    Egg
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Egg/egg体系.html">
+            
+                <a href="../Egg/egg体系.html">
+            
+                    
+                    egg体系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Egg/egg应用自定义4xx和5xx的方案.html">
+            
+                <a href="../Egg/egg应用自定义4xx和5xx的方案.html">
+            
+                    
+                    egg应用自定义4xx和5xx的方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Egg/egg的Http请求.html">
+            
+                <a href="../Egg/egg的Http请求.html">
+            
+                    
+                    egg的Http请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../Egg/怎么开发一个像egg-init的脚手架.html">
+            
+                <a href="../Egg/怎么开发一个像egg-init的脚手架.html">
+            
+                    
+                    怎么开发一个像egg-init的脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../Egg/结合源码揭秘egg运行原理.html">
+            
+                <a href="../Egg/结合源码揭秘egg运行原理.html">
+            
+                    
+                    结合源码揭秘egg运行原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../Egg/脚手架之egg-init.html">
+            
+                <a href="../Egg/脚手架之egg-init.html">
+            
+                    
+                    脚手架之egg-init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../Egg/egg框架中的参数校验.html">
+            
+                <a href="../Egg/egg框架中的参数校验.html">
+            
+                    
+                    egg框架中的参数校验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../Egg/egg的Controller最佳实践.html">
+            
+                <a href="../Egg/egg的Controller最佳实践.html">
+            
+                    
+                    egg的Controller最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../Egg/egg基于egg-validate的定制化升级.html">
+            
+                <a href="../Egg/egg基于egg-validate的定制化升级.html">
+            
+                    
+                    egg基于egg-validate的定制化升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../Egg/egg中cookie与Session的使用笔记.html">
+            
+                <a href="../Egg/egg中cookie与Session的使用笔记.html">
+            
+                    
+                    egg中cookie与Session的使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../Egg/egg-bin源码解析笔记.html">
+            
+                <a href="../Egg/egg-bin源码解析笔记.html">
+            
+                    
+                    egg-bin源码解析笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../Egg/egg框架与nest框架的对比.html">
+            
+                <a href="../Egg/egg框架与nest框架的对比.html">
+            
+                    
+                    egg框架与nest框架的对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../Egg/egg常见问题笔.html">
+            
+                <a href="../Egg/egg常见问题笔.html">
+            
+                    
+                    egg常见问题笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../Egg/VScode调试Egg.html">
+            
+                <a href="../Egg/VScode调试Egg.html">
+            
+                    
+                    VScode调试Egg
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Chair/">
+            
+                <a href="../Chair/">
+            
+                    
+                    Chair
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Chair/基于NodeWeb框架Chair.html">
+            
+                <a href="../Chair/基于NodeWeb框架Chair.html">
+            
+                    
+                    基于NodeWeb框架Chair
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../ORM/">
+            
+                <a href="../ORM/">
+            
+                    
+                    ORM框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../ORM/ORM框架选型.html">
+            
+                <a href="../ORM/ORM框架选型.html">
+            
+                    
+                    ORM框架选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../ORM/Knexjs笔记.html">
+            
+                <a href="../ORM/Knexjs笔记.html">
+            
+                    
+                    Knexjs笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../ORM/bookshelf笔记.html">
+            
+                <a href="../ORM/bookshelf笔记.html">
+            
+                    
+                    bookshelf笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Mysql/">
+            
+                <a href="../Mysql/">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Mysql/语法笔记一：delete和truncate的区别和联系.html">
+            
+                <a href="../Mysql/语法笔记一：delete和truncate的区别和联系.html">
+            
+                    
+                    语法笔记一：delete和truncate的区别和联系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Mysql/语法笔记二：having与where.html">
+            
+                <a href="../Mysql/语法笔记二：having与where.html">
+            
+                    
+                    语法笔记二：having与where
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Mysql/语法笔记三：pluck.html">
+            
+                <a href="../Mysql/语法笔记三：pluck.html">
+            
+                    
+                    语法笔记三：pluck
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../Mysql/语法笔记四：first.html">
+            
+                <a href="../Mysql/语法笔记四：first.html">
+            
+                    
+                    语法笔记四：first
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../Mysql/语法笔记五：references.html">
+            
+                <a href="../Mysql/语法笔记五：references.html">
+            
+                    
+                    语法笔记五：references
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../Mysql/语法笔记六：where1.html">
+            
+                <a href="../Mysql/语法笔记六：where1.html">
+            
+                    
+                    语法笔记六：where1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../Mysql/语法笔记七：in和exists二者之间的区别和性能影响.html">
+            
+                <a href="../Mysql/语法笔记七：in和exists二者之间的区别和性能影响.html">
+            
+                    
+                    语法笔记七：in和exists二者之间的区别和性能影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="Mac安装mongodb.html">
+            
+                <a href="Mac安装mongodb.html">
+            
+                    
+                    Mac安装mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="mac上redis环境搭建.html">
+            
+                <a href="mac上redis环境搭建.html">
+            
+                    
+                    mac上redis环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="Docker与Kubernetes在Mac本地环境搭建与应用部署.html">
+            
+                <a href="Docker与Kubernetes在Mac本地环境搭建与应用部署.html">
+            
+                    
+                    Docker与Kubernetes在Mac本地环境搭建与应用部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="Docker使用.html">
+            
+                <a href="Docker使用.html">
+            
+                    
+                    Docker使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="centos7下yum安装和配置Nginx.html">
+            
+                <a href="centos7下yum安装和配置Nginx.html">
+            
+                    
+                    centos7下yum安装和配置Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="使用kubectl连接远程k8s集群.html">
+            
+                <a href="使用kubectl连接远程k8s集群.html">
+            
+                    
+                    使用kubectl连接远程k8s集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="MacOS上安装DockerDesktop和Kubernetes.html">
+            
+                <a href="MacOS上安装DockerDesktop和Kubernetes.html">
+            
+                    
+                    MacOS上安装DockerDesktop和Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="alinode.html">
+            
+                <a href="alinode.html">
+            
+                    
+                    alinode使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="iPic-Markdown图床、文件上传工具.html">
+            
+                <a href="iPic-Markdown图床、文件上传工具.html">
+            
+                    
+                    iPic-Markdown图床、文件上传工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="图片搬家神奇：iPicMover.html">
+            
+                <a href="图片搬家神奇：iPicMover.html">
+            
+                    
+                    图片搬家神奇：iPic Mover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="ffmpeg音视频处理.html">
+            
+                <a href="ffmpeg音视频处理.html">
+            
+                    
+                    ffmpeg音视频处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="ffmpeg音视频处理需求升级版.html">
+            
+                <a href="ffmpeg音视频处理需求升级版.html">
+            
+                    
+                    ffmpeg音视频处理需求升级版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="七牛云存储中没有外链域名，无法下载的问题.html">
+            
+                <a href="七牛云存储中没有外链域名，无法下载的问题.html">
+            
+                    
+                    七牛云存储中没有外链域名，无法下载的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="基于WebAssembly的H265播放.html">
+            
+                <a href="基于WebAssembly的H265播放.html">
+            
+                    
+                    基于WebAssembly的H265播放
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.15" data-path="ffprobe ffplay ffmpeg常用的命令.html">
+            
+                <a href="ffprobe ffplay ffmpeg常用的命令.html">
+            
+                    
+                    ffprobe ffplay ffmpeg常用的命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.16" data-path="使用TravisCI构建Gitbook.html">
+            
+                <a href="使用TravisCI构建Gitbook.html">
+            
+                    
+                    使用TravisCI构建Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.17" data-path="持续集成和travisCI.html">
+            
+                <a href="持续集成和travisCI.html">
+            
+                    
+                    持续集成和travisCI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git以及代码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Git/Mac下配置多个Git账户.html">
+            
+                <a href="../Git/Mac下配置多个Git账户.html">
+            
+                    
+                    Mac下配置多个Git账户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Git/删除远程仓库的某次错误提交.html">
+            
+                <a href="../Git/删除远程仓库的某次错误提交.html">
+            
+                    
+                    删除远程仓库的某次错误提交
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Git/使用GithubActions进行版本发布.html">
+            
+                <a href="../Git/使用GithubActions进行版本发布.html">
+            
+                    
+                    使用Github Actions进行版本发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../Git/使用GithubActions进行版本发布（一）.html">
+            
+                <a href="../Git/使用GithubActions进行版本发布（一）.html">
+            
+                    
+                    使用Github Actions进行版本发布(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../Git/gitsubtree教程.html">
+            
+                <a href="../Git/gitsubtree教程.html">
+            
+                    
+                    Git subtree教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../Git/git分支开发规范.html">
+            
+                <a href="../Git/git分支开发规范.html">
+            
+                    
+                    git分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../Git/Git规范和Changelog生成.html">
+            
+                <a href="../Git/Git规范和Changelog生成.html">
+            
+                    
+                    Git规范和Changelog生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../Git/语义化（Semantic Versioning）规范格式.html">
+            
+                <a href="../Git/语义化（Semantic Versioning）规范格式.html">
+            
+                    
+                    语义化（Semantic Versioning）规范格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Linux/">
+            
+                <a href="../Linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Linux/Linux上部署Node服务-外网无法访问.html">
+            
+                <a href="../Linux/Linux上部署Node服务-外网无法访问.html">
+            
+                    
+                    Linux上部署Node服务-外网无法访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Linux/服务器中启动服务的时候的IP选择.html">
+            
+                <a href="../Linux/服务器中启动服务的时候的IP选择.html">
+            
+                    
+                    服务器中启动服务的时候的IP选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../Linux/怎样修改CentOS7SSH端口.html">
+            
+                <a href="../Linux/怎样修改CentOS7SSH端口.html">
+            
+                    
+                    怎样修改CentOS 7 SSH端口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Deploy/">
+            
+                <a href="../Deploy/">
+            
+                    
+                    部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.html">
+            
+                <a href="../Deploy/使用AppVeyor和Travis，自动构建和发布Electron应用.html">
+            
+                    
+                    使用AppVeyor和Travis，自动构建和发布Electron应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Deploy/跨平台桌面应用Electron.html">
+            
+                <a href="../Deploy/跨平台桌面应用Electron.html">
+            
+                    
+                    跨平台桌面应用Electron
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../Deploy/企业级分布式，EDAS模式.html">
+            
+                <a href="../Deploy/企业级分布式，EDAS模式.html">
+            
+                    
+                    企业级分布式，EDAS模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../Deploy/GitlabCI CD管道配置参考.html">
+            
+                <a href="../Deploy/GitlabCI CD管道配置参考.html">
+            
+                    
+                    GitlabCI CD管道配置参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../Deploy/Make命令教程.html">
+            
+                <a href="../Deploy/Make命令教程.html">
+            
+                    
+                    Make命令教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../Deploy/pm2深入学习.html">
+            
+                <a href="../Deploy/pm2深入学习.html">
+            
+                    
+                    pm2深入学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../Deploy/pm2的cluster模式与fork模式的区别.html">
+            
+                <a href="../Deploy/pm2的cluster模式与fork模式的区别.html">
+            
+                    
+                    pm2的cluster模式与fork模式的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Yarn/">
+            
+                <a href="../Yarn/">
+            
+                    
+                    Yarn
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../Yarn/package.json中的workspaces.html">
+            
+                <a href="../Yarn/package.json中的workspaces.html">
+            
+                    
+                    package.json中的workspaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../Yarn/项目开发中的规范.html">
+            
+                <a href="../Yarn/项目开发中的规范.html">
+            
+                    
+                    项目开发中的规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../Yarn/npm库：AJV，JSON模式验证.html">
+            
+                <a href="../Yarn/npm库：AJV，JSON模式验证.html">
+            
+                    
+                    npm库：AJV，JSON模式验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../Browser/">
+            
+                <a href="../Browser/">
+            
+                    
+                    浏览器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Browser/SEO小技巧.html">
+            
+                <a href="../Browser/SEO小技巧.html">
+            
+                    
+                    SEO小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Browser/URL的最大长度是多少？.html">
+            
+                <a href="../Browser/URL的最大长度是多少？.html">
+            
+                    
+                    URL的最大长度是多少？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../Browser/深入理解Session和Cookie.html">
+            
+                <a href="../Browser/深入理解Session和Cookie.html">
+            
+                    
+                    深入理解Session和Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../Browser/HTTP切面流程.html">
+            
+                <a href="../Browser/HTTP切面流程.html">
+            
+                    
+                    HTTP切面流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../Browser/Node与浏览器之间的区别.html">
+            
+                <a href="../Browser/Node与浏览器之间的区别.html">
+            
+                    
+                    Node与浏览器之间的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../Browser/JavaScript如何在浏览器和Node中工作.html">
+            
+                <a href="../Browser/JavaScript如何在浏览器和Node中工作.html">
+            
+                    
+                    JavaScript如何在浏览器和Node中工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../Design/">
+            
+                <a href="../Design/">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../Design/javaScript设计模式笔记一.html">
+            
+                <a href="../Design/javaScript设计模式笔记一.html">
+            
+                    
+                    javaScript设计模式笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../Design/javaScript设计模式笔记二.html">
+            
+                <a href="../Design/javaScript设计模式笔记二.html">
+            
+                    
+                    javaScript设计模式笔记二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../Design/javaScript设计模式笔记三.html">
+            
+                <a href="../Design/javaScript设计模式笔记三.html">
+            
+                    
+                    javaScript设计模式笔记三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="../Design/javaScript设计模式笔记四.html">
+            
+                <a href="../Design/javaScript设计模式笔记四.html">
+            
+                    
+                    javaScript设计模式笔记四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" data-path="../Design/javascript设计模式笔记五.html">
+            
+                <a href="../Design/javascript设计模式笔记五.html">
+            
+                    
+                    javascript设计模式笔记五
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.6" data-path="../Design/javaScript设计模式笔记六.html">
+            
+                <a href="../Design/javaScript设计模式笔记六.html">
+            
+                    
+                    javaScript设计模式笔记六
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.7" data-path="../Design/javaScript设计模式笔记七.html">
+            
+                <a href="../Design/javaScript设计模式笔记七.html">
+            
+                    
+                    javaScript设计模式笔记七
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.8" data-path="../Design/javaScript设计模式笔记八.html">
+            
+                <a href="../Design/javaScript设计模式笔记八.html">
+            
+                    
+                    javaScript设计模式笔记八
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.9" data-path="../Design/javaScript设计模式笔记九.html">
+            
+                <a href="../Design/javaScript设计模式笔记九.html">
+            
+                    
+                    javaScript设计模式笔记九
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../Mservice/">
+            
+                <a href="../Mservice/">
+            
+                    
+                    微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../Kubernetes/">
+            
+                <a href="../Kubernetes/">
+            
+                    
+                    Kubernetes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../Kubernetes/学习笔记一.html">
+            
+                <a href="../Kubernetes/学习笔记一.html">
+            
+                    
+                    学习笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../Nginx/">
+            
+                <a href="../Nginx/">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../Nginx/Nginx基础.html">
+            
+                <a href="../Nginx/Nginx基础.html">
+            
+                    
+                    Nginx基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../Nginx/Mac下安装nginx.html">
+            
+                <a href="../Nginx/Mac下安装nginx.html">
+            
+                    
+                    Mac下安装nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../Framework/">
+            
+                <a href="../Framework/">
+            
+                    
+                    架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../Framework/淘宝网的后台架构发展.html">
+            
+                <a href="../Framework/淘宝网的后台架构发展.html">
+            
+                    
+                    淘宝网的后台架构发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../Framework/应用场景数据库选型.html">
+            
+                <a href="../Framework/应用场景数据库选型.html">
+            
+                    
+                    应用场景数据库选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../Elasticsearch/">
+            
+                <a href="../Elasticsearch/">
+            
+                    
+                    Elasticsearch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../Elasticsearch/Mac上安装Elasticsearch，基本操作.html">
+            
+                <a href="../Elasticsearch/Mac上安装Elasticsearch，基本操作.html">
+            
+                    
+                    Mac上安装Elasticsearch，基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../Shell/">
+            
+                <a href="../Shell/">
+            
+                    
+                    shell脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../Shell/shell入门.html">
+            
+                <a href="../Shell/shell入门.html">
+            
+                    
+                    shell入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ffprobe ffplay ffmpeg常用的命令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ffprobe-ffplay-ffmpeg&#x5E38;&#x7528;&#x7684;&#x547D;&#x4EE4;">ffprobe ffplay ffmpeg&#x5E38;&#x7528;&#x7684;&#x547D;&#x4EE4;</h1>
+<h2 id="ffprobe">ffprobe</h2>
+<h3 id="&#x67E5;&#x770B;&#x5A92;&#x4F53;&#x6587;&#x4EF6;&#x4FE1;&#x606F;">&#x67E5;&#x770B;&#x5A92;&#x4F53;&#x6587;&#x4EF6;&#x4FE1;&#x606F;</h3>
+<pre><code>ffprobe &#x6587;&#x4EF6;
+</code></pre><p>&#x5148;&#x770B;&#x4E00;&#x4E2A;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#xFF1A;</p>
+<p>&#x4ECE;&#x8F93;&#x51FA;&#x7684;&#x5185;&#x5BB9;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x7684;&#x64AD;&#x653E;&#x65F6;&#x957F;&#xFF0C;&#x5F00;&#x59CB;&#x64AD;&#x653E;&#x65F6;&#x95F4;&#xFF0C;&#x4EE5;&#x53CA;&#x6587;&#x4EF6;&#x7684;&#x6BD4;&#x7279;&#x7387;&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#x662F;mp3&#xFF0C;&#x91C7;&#x6837;&#x7387;&#x662F;444.1khz&#xFF0C;&#x8FD9;&#x8DEF;&#x6D41;&#x7684;&#x6BD4;&#x7279;&#x7387;&#x662F;320kb/s</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x6587;&#x4EF6;</p>
+<p>&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x662F;H264&#xFF0C;&#x6BCF;&#x4E00;&#x5E27;&#x662F;YUV420P &#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x5206;&#x8FA8;&#x7387;&#x662F;1440*810&#xFF0C;&#x6BCF;&#x79D2;24&#x5E27;&#x3002;&#x97F3;&#x9891;&#x6D41;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x662F;aac(&#x5C01;&#x88C5;&#x683C;&#x5F0F;&#x662F;HE-AACv2)&#xFF0C;&#x91C7;&#x6837;&#x7387;&#x662F;44.1khz</p>
+<h3 id="ffprobe&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x4FE1;&#x606F;">ffprobe&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x4FE1;&#x606F;</h3>
+<ul>
+<li>&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;&#x4FE1;&#x606F;&#xFF08;&#x5305;&#x62EC;&#x65F6;&#x957F;&#xFF0C;&#x6587;&#x4EF6;&#x7231;&#x4F60;&#x5927;&#x5C0F;&#xFF0C;&#x683C;&#x5F0F;&#x4FE1;&#x606F;&#x7B49;&#x7B49;&#xFF09;</li>
+</ul>
+<pre><code class="lang-shell">ffprobe -show_format &#x6587;&#x4EF6;&#x8DEF;&#x5F84;
+</code></pre>
+<ul>
+<li>&#x4EE5;json&#x683C;&#x5F0F;&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x6D41;&#x91CF;&#x8BE6;&#x7EC6;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#x89C6;&#x9891;&#x5BBD;&#x9AD8;&#x4FE1;&#x606F;&#xFF0C;&#x662F;&#x5426;&#x6709;B&#x5E27;&#xFF0C;&#x89C6;&#x9891;&#x5E27;&#x7684;&#x603B;&#x6570;&#x76EE;&#xFF0C;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF0C;&#x663E;&#x793A;&#x6BD4;&#x4F8B;&#xFF0C;&#x97F3;&#x9891;&#x7684;&#x7701;&#x9053;&#xFF0C;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#x7B49;&#x7B49;&#x3002;</li>
+</ul>
+<pre><code>ffprobe -print_format json -show_streams &#x6587;&#x4EF6;&#x8DEF;&#x5F84;
+</code></pre><ul>
+<li>&#x663E;&#x793A;&#x5E27;&#x4FE1;&#x606F;</li>
+</ul>
+<pre><code>ffprobe -show_frames file
+</code></pre><p>&#x67E5;&#x770B;&#x5305;&#x4FE1;&#x606F;</p>
+<pre><code>ffprobe -show_packets file
+</code></pre><h2 id="ffplay">ffplay</h2>
+<h3 id="&#x64AD;&#x653E;&#x97F3;&#x89C6;&#x9891;&#x6587;&#x4EF6;">&#x64AD;&#x653E;&#x97F3;&#x89C6;&#x9891;&#x6587;&#x4EF6;</h3>
+<pre><code>ffplay file
+</code></pre><p>&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x952E;&#x76D8;&#x65B9;&#x5411;&#x952E;&#x64CD;&#x4F5C;&#xFF0C;W&#x662F;&#x7ED8;&#x5236;&#x6CE2;&#x5F62;&#xFF0C;&#x6309;S&#x952E;&#x5219;&#x8FDB;&#x5165;frame-step&#x6A21;&#x5F0F;&#xFF0C;&#x6309;&#x4E00;&#x6B21;&#x5C31;&#x4F1A;&#x5C55;&#x793A;&#x4E0B;&#x4E00;&#x5E27;&#x7684;&#x56FE;&#x50CF;</p>
+<h3 id="&#x5FAA;&#x73AF;&#x64AD;&#x653E;">&#x5FAA;&#x73AF;&#x64AD;&#x653E;</h3>
+<pre><code>ffplay file -loop &#x5FAA;&#x73AF;&#x6B21;&#x6570;
+</code></pre><h3 id="&#x64AD;&#x653E;&#x6307;&#x5B9A;&#x6D41;">&#x64AD;&#x653E;&#x6307;&#x5B9A;&#x6D41;</h3>
+<pre><code>&#x97F3;&#x9891;
+ffplay &#x6587;&#x4EF6;&#x8DEF;&#x5F84; -ast &#x6D41;&#x5B57;&#x6570;
+
+// &#x89C6;&#x9891;
+ffplay &#x6587;&#x4EF6;&#x8DEF;&#x5F84; -vst &#x6D41;&#x6570;&#x5B57;
+</code></pre><h3 id="&#x64AD;&#x653E;&#x6570;&#x636E;">&#x64AD;&#x653E;&#x6570;&#x636E;</h3>
+<pre><code>&#x97F3;&#x9891;
+
+ffplay &#x539F;&#x59CB;&#x6587;&#x4EF6;&#xFF08;pcm&#x6587;&#x4EF6;&#xFF09; -f &#x683C;&#x5F0F;  -channels &#x58F0;&#x9053;&#x6570; -ar &#x91C7;&#x6837;&#x7387;
+
+&#x89C6;&#x9891;
+
+ffplay &#x539F;&#x59CB;&#x683C;&#x5F0F;&#xFF08;&#x4F8B;&#x5982; -f rawvideo&#xFF09; &#x683C;&#x5F0F;&#xFF08;-pixel_format yuv420p&#xFF09; &#x5BBD;&#x9AD8;&#xFF08;&#x4F8B;&#x5982;-s 480*480&#xFF09;
+
+RGB
+ffplay -f rawvideo -pixel_format rgb24 -s 480*480 texture.rgb
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x6B63;&#x786E;&#xFF0C;&#x5426;&#x5219;&#x65E0;&#x6CD5;&#x64AD;&#x653E;</p>
+<h3 id="ffplay&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#xFF08;&#x97F3;&#x753B;&#x540C;&#x6B65;&#xFF09;&#x7684;&#x8BBE;&#x7F6E;">ffplay&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#xFF08;&#x97F3;&#x753B;&#x540C;&#x6B65;&#xFF09;&#x7684;&#x8BBE;&#x7F6E;</h3>
+<pre><code>ffpaly &#x6587;&#x4EF6;&#x8DEF;&#x5F84; -sync audio // &#x4EE5;&#x97F3;&#x9891;&#x4E3A;&#x57FA;&#x51C6;
+ffplay &#x6587;&#x4EF6;&#x8DEF;&#x5F84; -sync video // &#x4EE5;&#x89C6;&#x9891;&#x4E3A;&#x57FA;&#x51C6;
+ffplay &#x6587;&#x4EF6;&#x8DEF;&#x5F84; -sync ext // &#x5916;&#x90E8;&#x65F6;&#x949F;
+</code></pre><h2 id="ffmpeg">ffmpeg</h2>
+<h3 id="&#x901A;&#x7528;&#x53C2;&#x6570;">&#x901A;&#x7528;&#x53C2;&#x6570;</h3>
+<pre><code class="lang-shell">-f fmt &#x6307;&#x5B9A;&#x683C;&#x5F0F;&#xFF08;&#x97F3;&#x9891;&#x6216;&#x89C6;&#x9891;&#x683C;&#x5F0F;&#xFF09;
+-i filename (&#x97F3;&#x9891;&#x6216;&#x89C6;&#x9891;&#x683C;&#x5F0F;)
+-y &#x8986;&#x76D6;&#x5DF2;&#x6709;&#x6587;&#x4EF6;
+-t duration &#x8BB0;&#x5F55;&#x65F6;&#x957F;
+-fs limit_size &#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4E0A;&#x9650;
+-ss time_off &#x4ECE;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;(s)&#x5F00;&#x59CB;&#xFF0C; [-]hh:mm:ss[.xxx]&#x7684;&#x683C;&#x5F0F;&#x4E5F;&#x652F;&#x6301;
+-re &#x4EE3;&#x8868;&#x6309;&#x7167;&#x5E27;&#x7387;&#x53D1;&#x9001;&#xFF0C;&#x4F5C;&#x4E3A;&#x63A8;&#x6D41;&#x5DE5;&#x5177;&#x4E00;&#x5B9A;&#x8981;&#x52A0;&#x5165;&#x53C2;&#x6570;&#xFF0C;&#x5426;&#x5219;&#xFF0C;ffmpeg&#x4F1A;&#x6309;&#x7167;&#x6700;&#x9AD8;&#x901F;&#x7387;&#x5411;&#x5A92;&#x4F53;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x505C;&#x53D1;&#x9001;&#x6570;&#x636E;
+</code></pre>
+<h3 id="&#x89C6;&#x9891;&#x53C2;&#x6570;">&#x89C6;&#x9891;&#x53C2;&#x6570;</h3>
+<pre><code class="lang-shell">-b &#x6307;&#x5B9A;&#x6BD4;&#x7279;&#x7387;&#xFF08;bit/s&#xFF09;&#xFF0C;&#x4F3C;&#x4E4E;ffmpeg&#x662F;&#x81EA;&#x52A8;VBR&#x7684;&#xFF0C;&#x6307;&#x5B9A;&#x4E86;&#x5C31;&#x5927;&#x6982;&#x662F;&#x5E73;&#x5747;&#x6BD4;&#x7279;&#x7387;
+-bitexact &#x4F7F;&#x7528;&#x6807;&#x51C6;&#x6BD4;&#x7279;&#x7387;
+-vb &#x6307;&#x5B9A;&#x89C6;&#x9891;&#x6BD4;&#x7279;&#x7387;&#xFF08;bit/s&#xFF09;
+-vframes number &#x8BBE;&#x7F6E;&#x8F6C;&#x6362;&#x591A;&#x5C11;&#x5E27;&#xFF08;frame&#xFF09;&#x7684;&#x89C6;&#x9891;
+-r rate &#x5E27;&#x901F;&#x7387;&#xFF08;fps&#xFF09; &#xFF08;&#x53EF;&#x4EE5;&#x6539;&#xFF0C;&#x786E;&#x8BA4;&#x975E;&#x6807;&#x51C6;&#x5E27;&#x7387;&#x4F1A;&#x5BFC;&#x81F4;&#x97F3;&#x753B;&#x4E0D;&#x540C;&#x6B65;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x80FD;&#x8BBE;&#x5B9A;&#x4E3A;15&#x6216;&#x8005;29.97&#xFF09;
+-s size &#x6307;&#x5B9A;&#x5206;&#x8FA8;&#x7387;
+-aspect aspect &#x8BBE;&#x7F6E;&#x89C6;&#x9891;&#x957F;&#x5BBD;&#x6BD4;&#xFF08;4:3&#xFF0C; 16:9 or 1.3333, 1.7777&#xFF09;
+-croptop size &#x8BBE;&#x7F6E;&#x9876;&#x90E8;&#x5207;&#x9664;&#x5C3A;&#x5BF8;&#xFF08;in pixels&#xFF09;
+-cropbottom size &#x8BBE;&#x7F6E;&#x5E95;&#x90E8;&#x5207;&#x9664;&#x5C3A;&#x5BF8;&#xFF08;in pixels&#xFF09;
+-cropleft size &#x8BBE;&#x7F6E;&#x5DE6;&#x5207;&#x9664;&#x5C3A;&#x5BF8; &#xFF08;in pixels&#xFF09;
+-cropright size &#x8BBE;&#x7F6E;&#x53F3;&#x5207;&#x9664;&#x5C3A;&#x5BF8; &#xFF08;in pixels&#xFF09;
+- padtop size &#x8BBE;&#x7F6E;&#x9876;&#x90E8;&#x8865;&#x9F50;&#x5C3A;&#x5BF8;&#xFF08;in pixels&#xFF09;
+- padbottom size &#x8BBE;&#x7F6E;&#x5E95;&#x90E8;&#x8865;&#x9F50;&#x5C3A;&#x5BF8;&#xFF08;in pixels&#xFF09;
+- padleft size &#x8BBE;&#x7F6E;&#x5DE6;&#x8865;&#x9F50;&#x5C3A;&#x5BF8;&#xFF08;in pixels&#xFF09;
+- padright size &#x8BBE;&#x7F6E;&#x53F3;&#x8865;&#x9F50;&#x5C3A;&#x5BF8;&#xFF08;in pixels&#xFF09;
+- padcolor color &#x8865;&#x9F50;&#x5E26;&#x989C;&#x8272;&#xFF08;000000-FFFFFF&#xFF09;
+-vn &#x53D6;&#x6D88;&#x89C6;&#x9891;
+-vcodec codec &#x5F3A;&#x5236;&#x4F7F;&#x7528;codec&#x7F16;&#x89E3;&#x7801;&#x65B9;&#x5F0F;&#xFF08;&#x2018;copy&#x2019; to copy stream&#xFF09;
+-sameq &#x4F7F;&#x7528;&#x540C;&#x6837;&#x89C6;&#x9891;&#x8D28;&#x91CF;&#x4F5C;&#x4E3A;&#x6E90;&#xFF08;VBR&#xFF09;
+-pass n &#x9009;&#x62E9;&#x5904;&#x7406;&#x904D;&#x6570;&#xFF08;1&#x6216;&#x8005;2&#xFF09;&#x4E24;&#x904D;&#x7F16;&#x7801;&#x975E;&#x5E38;&#x6709;&#x7528;
+-passlogfile file &#x9009;&#x62E9;&#x4E24;&#x904D;&#x7684;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#x540D;&#x4E3A;file
+-newvideo &#x5728;&#x73B0;&#x5728;&#x7684;&#x89C6;&#x9891;&#x6D41;&#x540E;&#x9762;&#x52A0;&#x5165;&#x65B0;&#x7684;&#x89C6;&#x9891;&#x6D41;
+</code></pre>
+<h3 id="&#x9AD8;&#x7EA7;&#x89C6;&#x9891;&#x9009;&#x9879;">&#x9AD8;&#x7EA7;&#x89C6;&#x9891;&#x9009;&#x9879;</h3>
+<pre><code class="lang-shell">-pix_fmt format set pixel format, &apos;list&apos; as argument shows all the pixel formats supported
+- intra &#x4EC5;&#x9002;&#x7528;&#x5E27;&#x5185;&#x7F16;&#x7801;
+- qscale q &#x4EE5;&lt;&#x6570;&#x503C;&gt;&#x8D28;&#x91CF;&#x4E3A;&#x57FA;&#x7840;&#x7684;VBR&#xFF0C;&#x53D6;&#x4E4B;0.01-255&#xFF0C;&#x7EA6;&#x5C0F;&#x8D28;&#x91CF;&#x8D8A;&#x597D;
+-loop_input &#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x6D41;&#x7684;&#x5FAA;&#x73AF;&#x6B21;&#x6570;&#xFF08;&#x76EE;&#x524D;&#x53EA;&#x5BF9;&#x56FE;&#x50CF;&#x6709;&#x6548;&#xFF09;
+-loop_output &#x8BBE;&#x7F6E;&#x8F93;&#x51FA;&#x89C6;&#x9891;&#x7684;&#x5FAA;&#x73AF;&#x6B21;&#x6570;&#xFF0C;&#x6BD4;&#x5982;&#x8F93;&#x51FA;gif&#x65F6;&#x8BBE;&#x4E3A;0&#x8868;&#x793A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;
+-g int &#x8BBE;&#x7F6E;&#x56FE;&#x50CF;&#x7EC4;&#x5927;&#x5C0F;
+-cutoff int &#x8BBE;&#x7F6E;&#x622A;&#x6B62;&#x9891;&#x7387;
+-qmin int &#x8BBE;&#x5B9A;&#x6700;&#x5C0F;&#x8D28;&#x91CF;&#xFF0C; &#x4E0E;-qmax(&#x8BBE;&#x5B9A;&#x6700;&#x5927;&#x8D28;&#x91CF;)&#x5171;&#x7528;&#xFF0C;&#x6BD4;&#x5982;-qmin 10 -qmax 31
+-qmax int &#x8BBE;&#x5B9A;&#x6700;&#x5927;&#x8D28;&#x91CF;&#xFF0C;
+-qdiff int &#x91CF;&#x5316;&#x6807;&#x5EA6;&#x95F4;&#x6700;&#x5927;&#x504F;&#x5DEE;&#xFF08;VBR&#xFF09;
+-bf int &#x4F7F;&#x7528;frames B&#x5E27;&#xFF0C;&#x652F;&#x6301; mpeg1&#xFF0C;mpeg2&#xFF0C;mpeg4
+</code></pre>
+<h3 id="&#x97F3;&#x9891;&#x53C2;&#x6570;">&#x97F3;&#x9891;&#x53C2;&#x6570;</h3>
+<pre><code class="lang-shell">
+-ab &#x8BBE;&#x7F6E;&#x6BD4;&#x7279;&#x7387;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;bit/s&#xFF0C;&#x4E5F;&#x8BB8;&#x8001;&#x7248;&#x662F;kb/s&#xFF09;&#x524D;&#x9762;-ac&#x8BBE;&#x4E3A;&#x7ACB;&#x4F53;&#x58F0;&#x65F6;&#xFF0C;&#x8981;&#x4EE5;&#x4E00;&#x822C;&#x6BD4;&#x7279;&#x7387;&#x6765;&#x8BBE;&#x7F6E;&#xFF0C;&#x6BD4;&#x5982;192kbps&#x7684;&#x5C31;&#x8BBE;&#x4E3A;96&#xFF0C;&#x8F6C;&#x6362; &#x9ED8;&#x8BA4;&#x6BD4;&#x7279;&#x7387;&#x90FD;&#x6BD4;&#x8F83;&#x5C0F;&#xFF0C;&#x8981;&#x542C;&#x5230;&#x8F83;&#x9AD8;&#x54C1;&#x8D28;&#x58F0;&#x97F3;&#x7684;&#x8BDD;&#x5EFA;&#x8BAE;&#x8BBE;&#x5230;160kbps(80)&#x4EE5;&#x4E0A;
+-aframes number &#x8BBE;&#x7F6E;&#x8F6C;&#x6362;&#x591A;&#x5C11;&#x5E27;&#xFF08;frame&#xFF09;&#x7684;&#x97F3;&#x9891;
+-aq quality &#x8BBE;&#x7F6E;&#x97F3;&#x9891;&#x8D28;&#x91CF;&#xFF08;&#x6307;&#x5B9A;&#x7F16;&#x7801;&#xFF09;
+-ar rate &#x8BBE;&#x7F6E;&#x97F3;&#x9891;&#x91C7;&#x6837;&#x7387; &#xFF08;&#x5355;&#x4F4D;&#xFF1A;Hz&#xFF09;,PSP &#x53EA;&#x8BA4;24000
+-ac channels &#x8BBE;&#x7F6E;&#x58F0;&#x9053;&#x6570;&#xFF0C;1&#x5C31;&#x662F;&#x5355;&#x58F0;&#x9053;&#xFF0C;2&#x5C31;&#x662F;&#x7ACB;&#x4F53;&#x58F0;&#xFF0C;&#x8F6C;&#x6362;&#x5355;&#x58F0;&#x9053;&#x7684;TVrip&#x53EF;&#x4EE5;&#x7528;1&#xFF08;&#x8282;&#x7701;&#x4E00;&#x822C;&#x5BB9;&#x91CF;&#xFF09;&#xFF0C;&#x9AD8;&#x54C1;&#x8D28;DVrip&#x5C31;&#x53EF;&#x4EE5;&#x7528;2
+-an &#x53D6;&#x6D88;&#x97F3;&#x9891;
+-acodec codec &#x6307;&#x5B9A;&#x97F3;&#x9891;&#x7F16;&#x7801;
+-vol volume &#x8BBE;&#x7F6E;&#x5F55;&#x5236;&#x97F3;&#x91CF;&#x5927;&#x5C0F;&#xFF08;&#x9ED8;&#x8BA4;256&#xFF09;&lt;&#x767E;&#x5206;&#x6BD4;&gt;&#xFF0C;&#x67D0;&#x4E9B;DVDrip&#x7684;AC3&#x8F68;&#x97F3;&#x91CF;&#x6781;&#x5C0F;&#xFF0C;&#x8F6C;&#x6362;&#x65F6;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x4E2A;&#x63D0;&#x9AD8;&#x97F3;&#x91CF;&#xFF0C;&#x6BD4;&#x5982;200&#x5C31;&#x662F;&#x539F;&#x6765;&#x7684;2&#x500D;
+- newaudio &#x5728;&#x73B0;&#x5728;&#x7684;&#x97F3;&#x9891;&#x6D41;&#x540E;&#x9762;&#x52A0;&#x5165;&#x65B0;&#x7684;&#x97F3;&#x9891;&#x6D41;
+</code></pre>
+<h3 id="&#x5B57;&#x5E55;&#x53C2;&#x6570;">&#x5B57;&#x5E55;&#x53C2;&#x6570;</h3>
+<pre><code class="lang-shell">-sn &#x53D6;&#x6D88;&#x5B57;&#x5E55;
+-scodec codec &#x8BBE;&#x7F6E;&#x5B57;&#x5E55;&#x7F16;&#x7801;&#xFF08;&#x2018;copy&#x2019; to copy stream&#xFF09;
+-newsubtitle &#x5728;&#x5F53;&#x524D;&#x5B57;&#x5E55;&#x540E;&#x65B0;&#x589E;
+-slang code &#x8BBE;&#x7F6E;&#x5B57;&#x5E55;&#x6240;&#x7528;&#x7684;ISO 639 &#x7F16;&#x7801;&#xFF08;3&#x4E2A;&#x5B57;&#x6BCD;&#xFF09;
+-Audio/Video &#x6293;&#x53D6;&#x9009;&#x9879;
+-vc channel &#x8BBE;&#x7F6E;&#x89C6;&#x9891;&#x6355;&#x83B7;&#x901A;&#x9053;&#xFF08;&#x53EA;&#x5BF9;DV1394&#xFF09;
+-tvstd standard &#x8BBE;&#x7F6E;&#x7535;&#x89C6;&#x6807;&#x51C6; NTSC PAL&#xFF08;SECAM&#xFF09;
+</code></pre>
+<h2 id="&#x4E3E;&#x4F8B;&#xFF1A;">&#x4E3E;&#x4F8B;&#xFF1A;</h2>
+<h3 id="&#x5217;&#x51FA;ffmpeg&#x652F;&#x6301;&#x7684;&#x6240;&#x6709;&#x683C;&#x5F0F;">&#x5217;&#x51FA;ffmpeg&#x652F;&#x6301;&#x7684;&#x6240;&#x6709;&#x683C;&#x5F0F;</h3>
+<p>ffmpeg -formats</p>
+<h3 id="&#x526A;&#x5207;&#x4E00;&#x6BB5;&#x5A92;&#x4F53;&#x6587;&#x4EF6;">&#x526A;&#x5207;&#x4E00;&#x6BB5;&#x5A92;&#x4F53;&#x6587;&#x4EF6;</h3>
+<p>ffmpeg -i input.mp4 -ss 00:00:50.0 -codec copy -t 20 output,mp4</p>
+<h3 id="&#x5C06;&#x6587;&#x4EF6;&#x4ECE;50&#x79D2;&#x5F00;&#x59CB;&#x526A;&#x5207;20&#x79D2;&#x8F93;&#x5165;&#x5230;&#x65B0;&#x6587;&#x4EF6;-ss&#x662F;&#x6307;&#x5B9A;&#x65F6;&#x95F4;-t&#x662F;&#x6307;&#x5B9A;&#x65F6;&#x957F;&#xFF0C;&#x63D0;&#x53D6;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x4E2D;&#x7684;&#x97F3;&#x9891;&#x6587;&#x4EF6;">&#x5C06;&#x6587;&#x4EF6;&#x4ECE;50&#x79D2;&#x5F00;&#x59CB;&#x526A;&#x5207;20&#x79D2;,&#x8F93;&#x5165;&#x5230;&#x65B0;&#x6587;&#x4EF6;,-ss&#x662F;&#x6307;&#x5B9A;&#x65F6;&#x95F4;,-t&#x662F;&#x6307;&#x5B9A;&#x65F6;&#x957F;&#xFF0C;&#x63D0;&#x53D6;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x4E2D;&#x7684;&#x97F3;&#x9891;&#x6587;&#x4EF6;</h3>
+<p>ffmpeg -i input.mp4 -vn -acodec copy output.m4a</p>
+<h3 id="&#x4F7F;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x4E2D;&#x7684;&#x97F3;&#x9891;&#x9759;&#x97F3;">&#x4F7F;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x4E2D;&#x7684;&#x97F3;&#x9891;&#x9759;&#x97F3;</h3>
+<p>ffmpeg -i input.mp4 -an -vcodec copy output.mp4</p>
+<h3 id="&#x4ECE;mp4&#x6587;&#x4EF6;&#x4E2D;&#x5230;&#x5904;h264&#x88F8;&#x6D41;">&#x4ECE;MP4&#x6587;&#x4EF6;&#x4E2D;&#x5230;&#x5904;H264&#x88F8;&#x6D41;</h3>
+<p>ffmpeg -i output.mp4 -an -vcodec copy -bsf:v h264_mp4toannexb output.h264</p>
+<h3 id="&#x4F7F;&#x7528;aac&#x548C;h264&#x6587;&#x4EF6;&#x751F;&#x6210;mp4&#x6587;&#x4EF6;">&#x4F7F;&#x7528;aac&#x548C;h264&#x6587;&#x4EF6;&#x751F;&#x6210;mp4&#x6587;&#x4EF6;</h3>
+<p>ffmpeg -i input.aac -i input.h264 -acodec copy -bsf:a aac_adtstoasc -vcodec copy -f mp4 output.mp4</p>
+<h3 id="&#x5BF9;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x7684;&#x7F16;&#x7801;&#x505A;&#x8F6C;&#x6362;">&#x5BF9;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x7684;&#x7F16;&#x7801;&#x505A;&#x8F6C;&#x6362;</h3>
+<p>ffmpeg -i input.wav -acodec libfdk_aac output.aac</p>
+<h3 id="&#x4ECE;wav&#x6587;&#x4EF6;&#x5BFC;&#x51FA;pcm&#x88F8;&#x6570;&#x636E;">&#x4ECE;wav&#x6587;&#x4EF6;&#x5BFC;&#x51FA;pcm&#x88F8;&#x6570;&#x636E;</h3>
+<p>ffmpeg -i input.wav -acodec pcm_s16le -f s16le output.pcm</p>
+<h3 id="&#x5C06;mp4&#x5BFC;&#x51FA;&#x4E3A;gif&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;&#x5BBD;&#x5EA6;100&#x5E27;&#x7387;10&#x53EA;&#x5904;&#x7406;&#x524D;&#x4E94;&#x79D2;">&#x5C06;mp4&#x5BFC;&#x51FA;&#x4E3A;gif,&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;&#x5BBD;&#x5EA6;100,&#x5E27;&#x7387;10,&#x53EA;&#x5904;&#x7406;&#x524D;&#x4E94;&#x79D2;</h3>
+<p>ffmpeg -i input.mp4 -vf sacle=100:-1 -t 5 -r 10 output.gif</p>
+<h3 id="&#x5C06;&#x89C6;&#x9891;&#x753B;&#x9762;&#x751F;&#x6210;&#x56FE;&#x7247;&#x53C2;&#x6570;&#x4E3A;&#x6BCF;&#x56DB;&#x79D2;&#x622A;&#x53D6;&#x4E00;&#x5F20;&#x751F;&#x6210;&#x7F29;&#x7565;&#x56FE;">&#x5C06;&#x89C6;&#x9891;&#x753B;&#x9762;&#x751F;&#x6210;&#x56FE;&#x7247;,&#x53C2;&#x6570;&#x4E3A;&#x6BCF;&#x56DB;&#x79D2;&#x622A;&#x53D6;&#x4E00;&#x5F20;,&#x751F;&#x6210;&#x7F29;&#x7565;&#x56FE;</h3>
+<p>ffmpeg -i input.mp4 -r 0.25 frames_%04d.png</p>
+<h3 id="&#x5C06;&#x4E24;&#x8DEF;&#x58F0;&#x97F3;&#x5408;&#x5E76;&#x4F8B;&#x5982;&#x6DFB;&#x52A0;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x8F93;&#x51FA;&#x65F6;&#x95F4;&#x662F;&#x4EE5;&#x8F83;&#x77ED;&#x7684;&#x4E3A;&#x51C6;">&#x5C06;&#x4E24;&#x8DEF;&#x58F0;&#x97F3;&#x5408;&#x5E76;,&#x4F8B;&#x5982;&#x6DFB;&#x52A0;&#x80CC;&#x666F;&#x97F3;&#x4E50;,&#x8F93;&#x51FA;&#x65F6;&#x95F4;&#x662F;&#x4EE5;&#x8F83;&#x77ED;&#x7684;&#x4E3A;&#x51C6;</h3>
+<p>ffmpeg -i input.wav -i bgm.wav -filter_complex amix=inputs=2:deration=shortest output.wav</p>
+<h3 id="&#x89C6;&#x9891;&#x6DFB;&#x52A0;&#x6C34;&#x5370;&#x89C6;&#x9891;&#x5BBD;&#x5EA6;&#x4E3A;100&#x6C34;&#x5370;&#x5BBD;&#x5EA6;&#x4E3A;20">&#x89C6;&#x9891;&#x6DFB;&#x52A0;&#x6C34;&#x5370;,&#x89C6;&#x9891;&#x5BBD;&#x5EA6;&#x4E3A;100,&#x6C34;&#x5370;&#x5BBD;&#x5EA6;&#x4E3A;20</h3>
+<p>ffmpeg -i input.mp4 -i image.png -filter_complex &apos;[0:v][1:v]overlay=100-20-10:10:1[out]&apos; -map &apos;[out]&apos; output.mp4</p>
+<h4 id="&#x5C06;&#x89C6;&#x9891;&#x63A8;&#x9001;&#x5230;&#x6D41;&#x5A92;&#x4F53;&#x670D;&#x52A1;&#x5668;-re&#x8868;&#x793A;&#x5B9E;&#x9645;&#x901F;&#x5EA6;">&#x5C06;&#x89C6;&#x9891;&#x63A8;&#x9001;&#x5230;&#x6D41;&#x5A92;&#x4F53;&#x670D;&#x52A1;&#x5668;(-re&#x8868;&#x793A;&#x5B9E;&#x9645;&#x901F;&#x5EA6;)</h4>
+<p>ffmpeg -re -i input.mp4 -acodec copy-vcodec copy -f flv rtmp://xxx</p>
+<h3 id="&#x5C06;&#x6D41;&#x5A92;&#x4F53;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6D41;dump&#x5230;&#x672C;&#x5730;">&#x5C06;&#x6D41;&#x5A92;&#x4F53;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6D41;dump&#x5230;&#x672C;&#x5730;</h3>
+<p>ffmpeg -i <a href="http://xxx.flv" target="_blank">http://xxx.flv</a> -acodec copy -vcodec copy -f flv output.flv</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="基于WebAssembly的H265播放.html" class="navigation navigation-prev " aria-label="Previous page: 基于WebAssembly的H265播放">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="使用TravisCI构建Gitbook.html" class="navigation navigation-next " aria-label="Next page: 使用TravisCI构建Gitbook">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ffprobe ffplay ffmpeg常用的命令","level":"1.10.15","depth":2,"next":{"title":"使用TravisCI构建Gitbook","level":"1.10.16","depth":2,"path":"Tools/使用TravisCI构建Gitbook.md","ref":"Tools/使用TravisCI构建Gitbook.md","articles":[]},"previous":{"title":"基于WebAssembly的H265播放","level":"1.10.14","depth":2,"path":"Tools/基于WebAssembly的H265播放.md","ref":"Tools/基于WebAssembly的H265播放.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"guoyanhong","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"coco's blog":""}},"gitbook":"*","extension":null},"file":{"path":"Tools/ffprobe ffplay ffmpeg常用的命令.md","mtime":"2020-04-15T04:18:11.181Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T04:18:55.536Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
